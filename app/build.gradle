@@ -91,7 +91,6 @@ dependencies {
   compile(name: 'zaf-sdk-1.6', ext: 'aar')
   //    compile(name: 'youyusdk-release', ext: 'aar')
   compile project(':consumerlibrary')
-  compile project(':youyusdk')
   compile project(':lfrecyclerview')
   //    compile(name: 'consumerlibrary-release', ext: 'aar')
   //    compile(name: 'lfrecyclerview-release', ext: 'aar')

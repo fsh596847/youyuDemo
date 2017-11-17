@@ -23,8 +23,7 @@ import android.widget.TextView;
 import com.megvii.idcardquality.IDCardQualityAssessment;
 import com.megvii.idcardquality.IDCardQualityResult;
 import com.megvii.idcardquality.bean.IDCardAttr;
-import com.youyu.fin.pro.util.RotaterUtil;
-import com.youyu.fin.pro.util.Util;
+
 import com.zhongan.demo.R;
 import com.zhongan.demo.hxin.util.DialogUtil;
 import com.zhongan.demo.hxin.util.IDCardCamera;
@@ -33,6 +32,8 @@ import com.zhongan.demo.hxin.util.IDCardUtil;
 import com.zhongan.demo.hxin.view.IDCardIndicator;
 import com.zhongan.demo.hxin.view.IDCardNewIndicator;
 
+import consumer.fin.rskj.com.library.utils.RotaterUtil;
+import consumer.fin.rskj.com.library.utils.Util;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -428,10 +429,6 @@ public class HXFaceIDCardScanActivity extends Activity implements
 
 	// 用取余运算
 	public boolean isEven01(int num) {
-		if (num % 2 == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return num % 2 == 0;
 	}
 }
