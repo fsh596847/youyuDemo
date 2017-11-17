@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhongan.demo">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+  <uses-feature android:name="android.hardware.camera"/>
+  <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <!--采集传感器信息必要权限-->
+  <uses-feature
+      android:required="true"
+      android:name="android.hardware.sensor.accelerometer"/>
+  <!--以下三个权限不需要采集，可以不加-->
+  <!--获取联系人-->
+  <uses-permission android:name="android.permission.READ_CONTACTS"/>
+  <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+  <!--获取通话记录-->
+  <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+  <!--可选权限-->
+  <uses-permission
+      android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission
+      android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"
+      android:name=".MyApplication">
+    <activity
+        android:name=".MainActivity"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        >
+      <!--<intent-filter>-->
+      <!--<action android:name="android.intent.action.MAIN" />-->
+      <!--<category android:name="android.intent.category.LAUNCHER" />-->
+      <!--</intent-filter>-->
+    </activity>
+
+    <activity
+        android:name=".StartActivity"
+        android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+
+    <activity
+        android:name=".SettingActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".AboutActivity"
+        android:screenOrientation="portrait"/>
+
+
+    <activity
+        android:name=".LoginActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".RegisterActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".HtmlActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize"/>
+
+    <!--找回密码-->
+    <activity
+        android:name=".GetPasswordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".ChangePasswordActivity"
+        android:screenOrientation="portrait"/>
+
+    <!--功能菜单-->
+    <activity
+        android:name=".MenuListActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".MenuListActivity2"
+        android:screenOrientation="portrait"
+        android:launchMode="singleTask">
+      <intent-filter>
+        <action android:name="android.com.rskj.menu.list"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".HotPActivity"
+        android:screenOrientation="portrait"/>
+
+    <meta-data
+        android:value="59351f78b27b0a2c8900020c"
+        android:name="UMENG_APPKEY"/>
+    <meta-data
+        android:value="${UMENG_CHANNEL_VALUE}"
+        android:name="UMENG_CHANNEL"/>
+
+
+    <!-- -恒心小贷-->
+    <activity
+        android:name=".hxin.activitys.HXRegisterActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoginActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXMainActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".hxin.activitys.HXAboutActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXAccountSafeActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXAllPayBanksActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXApplyNowActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXBankCardManageActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXBasicCompanyInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXBasicLinkInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXBasicSelfInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXChangePayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXClipImageActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXCommonProblemActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXDealBankCardActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXDealResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXFaceActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXFaceIDCardInfoUploadActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".hxin.activitys.HXFaceIDCardScanActivity"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+        android:configChanges="orientation|keyboardHidden"/>
+    <activity
+        android:name=".hxin.activitys.HXFaceResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXFaceStartActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXForgetPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXForgetPwdActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXGuideActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneyDetailActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneyDetailListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneyFirstActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneyResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneySecondActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanMoneyThirdActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXLoanPayRecordListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXPayMoneyListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXPayMoneyPayDetailActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXPayMoneyResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXPersonCenterActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXSetBankCardPwdActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXSetBankCardPwdAgainActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXSetPayPassWordActivity2"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXSetPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXTrueNameActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXUserLineActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.activitys.HXResultingActivity"
+        android:screenOrientation="portrait"/>
+
+
+    <!-- 消金-->
+    <activity
+        android:name=".hxin.xjactivitys.XJAboutActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJAccountSafeActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJAllPayBanksActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJBankCardManageActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJBasicCompanyInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJBasicLinkInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJBasicSelfInfoActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJChangePayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJClipImageActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJCommonProblemActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJDealBankCardActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJDealResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJFaceActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJFaceIDCardInfoUploadActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJFaceIDCardScanActivity"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+        android:configChanges="orientation|keyboardHidden"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJFaceResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJFaceStartActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJForgetPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJForgetPwdActivity"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".hxin.xjactivitys.XJGuideActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneyDetailActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneyDetailListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneyFirstActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneyResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneySecondActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanMoneyThirdActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoanPayRecordListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJLoginActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJMainActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJPayMoneyListActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJPayMoneyPayDetailActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJPayMoneyResultActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity android:name=".hxin.xjactivitys.XJPersonCenterActivity"/>
+    <activity android:name=".hxin.xjactivitys.XJRegisterActivity"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJSetBankCardPwdActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJSetBankCardPwdAgainActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJSetPayPassWordActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJSetPayPassWordActivity2"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJTrueNameActivity"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name=".hxin.xjactivitys.XJUserLineActivity"
+        android:screenOrientation="portrait"/>
+
+
+    <!-- 白骑士键盘调用 -->
+    <activity
+        android:name="com.wknight.keyboard.WKnightKeyboardActivity"
+        android:theme="@style/wKnightDialogStyleBottom">
+    </activity>
+    <activity
+        android:name="com.wknight.shield.FingerPrintDialog"
+        android:theme="@android:style/Theme.Holo.Dialog"/>
+
+    <service
+        android:name="com.wknight.keyboard.WKnightService"
+        android:exported="false"/>
+
+  </application>
+
+</manifest>
