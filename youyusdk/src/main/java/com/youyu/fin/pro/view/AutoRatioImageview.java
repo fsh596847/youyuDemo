@@ -1,5 +1,6 @@
 package com.youyu.fin.pro.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -7,7 +8,7 @@ import android.widget.ImageView;
 /**
  * Created by binghezhouke on 14-1-2.
  */
-public class AutoRatioImageview extends ImageView {
+@SuppressLint("AppCompatCustomView") public class AutoRatioImageview extends ImageView {
     private float mRatio = -1;
     private int mPrefer = 0;
 

@@ -568,7 +568,7 @@ public class HXZhangHuFragment extends HXBaseFragment implements OnClickListener
 //					}
 //				});
 //	}
-    @Override
+      @SuppressLint("WrongConstant") @Override
     public void onClick(View view) {
         // TODO Auto-generated method stub
         switch (view.getId()) {

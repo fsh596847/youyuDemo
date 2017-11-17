@@ -1,6 +1,6 @@
 package com.zhongan.demo.hxin.view;
 
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -8,8 +8,7 @@ import android.widget.ImageView;
 
 import com.zhongan.demo.R;
 
-
-public class AutoRatioImageview extends ImageView {
+@SuppressLint("AppCompatCustomView") public class AutoRatioImageview extends ImageView {
     private float mRatio = -1;
     private int mPrefer = 0;
 

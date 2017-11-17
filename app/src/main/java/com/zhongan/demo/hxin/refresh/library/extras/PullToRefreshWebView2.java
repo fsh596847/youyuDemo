@@ -1,10 +1,10 @@
 
 package com.zhongan.demo.hxin.refresh.library.extras;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
-
 
 import com.zhongan.demo.hxin.refresh.library.PullToRefreshWebView;
 
@@ -33,8 +33,8 @@ public class PullToRefreshWebView2 extends PullToRefreshWebView {
 	private final AtomicBoolean mIsReadyForPullDown = new AtomicBoolean(false);
 	private final AtomicBoolean mIsReadyForPullUp = new AtomicBoolean(false);
 
-	@Override
-	protected WebView createRefreshableView(Context context, AttributeSet attrs) {
+  @SuppressLint("JavascriptInterface") @Override
+  protected WebView createRefreshableView(Context context, AttributeSet attrs) {
 		WebView webView = super.createRefreshableView(context, attrs);
 
 		// Need to add JS Interface so we can get the response back

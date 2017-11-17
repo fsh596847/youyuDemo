@@ -28,7 +28,7 @@ import com.zhongan.demo.R;
 /**
  * CircleImageView
  */
-public class CircleImageView extends ImageView {
+@SuppressLint("AppCompatCustomView") public class CircleImageView extends ImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 

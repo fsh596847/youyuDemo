@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
-public class MyEditText extends EditText {
+@SuppressLint("AppCompatCustomView") public class MyEditText extends EditText {
 
 	private OnImputCompleteListener mOnImputCompleteListener;
 

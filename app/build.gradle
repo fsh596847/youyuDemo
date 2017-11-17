@@ -12,16 +12,47 @@ android {
     versionName "2.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
-  buildTypes {
+
+  signingConfigs {
+
     release {
-      minifyEnabled true
-      debuggable true
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      storeFile file('../keystore/android.keystore')
+      storePassword 'xmqq66'
+      keyAlias 'android.keystore'
+      keyPassword 'xmqq66'
     }
 
-
+    debug {
+      storeFile file('../keystore/android.keystore')
+      storePassword 'xmqq66'
+      keyAlias 'android.keystore'
+      keyPassword 'xmqq66'
+    }
   }
 
+  buildTypes {
+    release {
+      minifyEnabled false
+      zipAlignEnabled true
+      shrinkResources false
+      debuggable true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
+    }
+
+    debug {
+      minifyEnabled false
+      zipAlignEnabled true
+      shrinkResources false
+      debuggable true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
+    }
+
+  }
+  lintOptions {
+    abortOnError false
+  }
   sourceSets {
     main {
       jniLibs.srcDir(['libs'])

@@ -1,5 +1,6 @@
 package com.zhongan.demo.hxin.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,10 +9,9 @@ import android.widget.EditText;
 
 import com.zhongan.demo.hxin.util.LoggerUtil;
 
+@SuppressLint("AppCompatCustomView") public class CardInputEditText extends EditText {
 
-public class CardInputEditText extends EditText {
-	  
-    public CardInputEditText(Context ctx) {
+  public CardInputEditText(Context ctx) {
         this(ctx, null);  
     }  
   

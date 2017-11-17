@@ -1,5 +1,6 @@
 package com.zhongan.demo.hxin.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -19,7 +20,7 @@ import com.zhongan.demo.R;
  * 自定义seekbar
  */
 
-public class TSeekBar extends SeekBar {
+@SuppressLint("AppCompatCustomView") public class TSeekBar extends SeekBar {
     /**
      * 文本的颜色
      */

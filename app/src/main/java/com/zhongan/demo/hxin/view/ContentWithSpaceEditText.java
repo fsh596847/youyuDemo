@@ -18,7 +18,7 @@ import com.zhongan.demo.R;
  * 该控件是支持输入时自带控件的，目前支持xml属性指定，也支持代码指定该输入卡所属的类型
  * 现在支持：电话、卡号、身份证号，或者无类型（正常输入）
  */
-public class ContentWithSpaceEditText extends EditText {
+public class ContentWithSpaceEditText extends android.support.v7.widget.AppCompatEditText {
 
     private int contentType;
     public static final int TYPE_PHONE = 0;

@@ -19,7 +19,8 @@ import java.lang.reflect.Field;
  * Created by JakeYang on 2016/11/24.
  */
 
-public class JYPEditText extends EditText implements Animation.AnimationListener{
+public class JYPEditText extends android.support.v7.widget.AppCompatEditText
+    implements Animation.AnimationListener {
 
     /**
      * 画线
@@ -369,13 +370,13 @@ public class JYPEditText extends EditText implements Animation.AnimationListener
          * 完成时，回调此方法
          * @param text
          */
-        public void onComplete(CharSequence text);
+        void onComplete(CharSequence text);
 
         /**
          * 输入框内容改变时，回调次方法
          * @param text
          */
-        public void onTextChanged(CharSequence text);
+        void onTextChanged(CharSequence text);
     }
 
 }

@@ -1,12 +1,13 @@
 package com.youyu.fin.pro.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class MyTextView extends TextView {
-	public MyTextView(Context context) {
+@SuppressLint("AppCompatCustomView") public class MyTextView extends TextView {
+  public MyTextView(Context context) {
 		super(context);
 	}
 

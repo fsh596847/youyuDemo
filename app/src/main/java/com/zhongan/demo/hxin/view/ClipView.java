@@ -1,5 +1,6 @@
 package com.zhongan.demo.hxin.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -52,7 +53,7 @@ public class ClipView extends View {
         xfermode = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
     }
 
-    @Override
+  @SuppressLint("WrongConstant") @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int LAYER_FLAGS = Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG
