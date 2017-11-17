@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginTop="6dip"
+        android:background="@color/color_d9d9d9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/upload_idcard_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:hint="@string/input_tur_name_text"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@color/color_d9d9d9" />
+
+        <EditText
+            android:id="@+id/upload_idcard_idcard_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:hint="@string/input_idnum_text"
+            android:maxLength="18"
+            android:singleLine="true"
+            android:inputType="number"
+            android:digits="0123456789X"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginTop="6dip"
+        android:background="@color/color_d9d9d9" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/idcard_text"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/T3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/idcard_face_text"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/T0" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/upload_idcard_face"
+            android:layout_width="160dip"
+            android:layout_height="100dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginBottom="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/m_icon_idcard_face" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/basic_lines_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_e5e5e5" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/idcard_text"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/T3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/idcard_back_text"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/T0" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/upload_idcard_back"
+            android:layout_width="160dip"
+            android:layout_height="100dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginBottom="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/m_icon_idcard_back" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/upload_idcard_info_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/hxcommon_btn_normal_bg"
+        android:gravity="center"
+        android:text="@string/submit_ok_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/T5" />
+
+    <include layout="@layout/hxface_network_warring_layout" />
+
+</LinearLayout>

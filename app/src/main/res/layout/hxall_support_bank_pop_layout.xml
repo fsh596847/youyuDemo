@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="275dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/hxcommon_white_bg"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:text="@string/support_bank_text"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/T5" />
+
+            <ListView
+                android:id="@+id/support_bank_listview"
+                android:layout_width="match_parent"
+                android:layout_height="320dip"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:layout_marginRight="@dimen/common_layout_margin"
+                android:layout_marginTop="20dip"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:focusable="false"
+                android:listSelector="#00000000"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center"
+            android:background="@color/color_ffffff" />
+
+        <ImageView
+            android:id="@+id/support_bank_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/m_icon_close" />
+    </LinearLayout>
+
+</RelativeLayout>

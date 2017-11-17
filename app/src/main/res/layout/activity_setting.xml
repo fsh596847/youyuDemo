@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <com.zhongan.demo.view.TopNavigationView
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:titleColor="@color/color_000000"
+        app:titleText="设置"
+        app:titleSize="12sp"
+        app:leftDrawable="@drawable/m_icon_back"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/divide" />
+
+    <LinearLayout
+        android:id="@+id/chanegpwd"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:textColor="@color/color_666666"
+            android:drawableLeft="@mipmap/icon_changepwd"
+            android:drawablePadding="5dp"
+            android:text="修改登录密码"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/enter"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/divide" />
+
+    <LinearLayout
+        android:id="@+id/change_paypassword"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:textColor="@color/color_666666"
+            android:drawableLeft="@mipmap/icon_changepwd"
+            android:drawablePadding="5dp"
+            android:text="重置交易密码"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/enter"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/divide"
+        />
+
+
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/button_background"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/textcolor_selector"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>

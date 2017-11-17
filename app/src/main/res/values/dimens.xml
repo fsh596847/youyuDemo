@@ -1,0 +1,35 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- 主菜单字体大小 -->
+    <dimen name="menu_text_size">12sp</dimen>
+    <dimen name="common_title_bar_height">45dip</dimen>
+    <dimen name="common_logo_height">190dip</dimen>
+    <dimen name="common_layout_margin">10dip</dimen>
+    <dimen name="common_layout_margin_one">30dip</dimen>
+    <dimen name="common_layout_width">320dip</dimen>
+    <dimen name="common_edit_text_height">38dip</dimen>
+    <dimen name="common_btn_height">45dip</dimen>
+    <dimen name="line_high">0.3dip</dimen>
+    <!--  常规字体 		 正文普通信息  、 超接连 -->
+    <dimen name="T0">12sp</dimen>
+    <dimen name="T1">13sp</dimen>
+    <dimen name="T2">14sp</dimen>
+    <dimen name="T3">15sp</dimen>
+    <dimen name="T4">16sp</dimen>
+    <dimen name="T5">17sp</dimen>
+    <dimen name="T6">18sp</dimen>
+    <dimen name="T7">19sp</dimen>
+    <dimen name="T8">20sp</dimen>
+
+
+    <!--  刷新加载 -->
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+</resources>

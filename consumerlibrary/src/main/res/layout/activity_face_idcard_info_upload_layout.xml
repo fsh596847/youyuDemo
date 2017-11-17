@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_title_bar_layout" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/upload_idcard_face_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/upload_idcard_face"
+                android:layout_width="87dip"
+                android:layout_height="87dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="33dip"
+                android:background="@mipmap/m_icon_idcard_front" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="33dip"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/idcard_face_text"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_15" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upload_idcard_face_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="33dip"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="33dip"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/idcard_face"
+                android:layout_width="140dip"
+                android:layout_height="100dip"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dip"
+                    android:gravity="center"
+                    android:text="@string/name_tip_text"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+
+                <EditText
+                    android:id="@+id/idcard_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dip"
+                    android:background="@null"
+                    android:drawablePadding="5dip"
+                    android:drawableRight="@mipmap/m_icon_edit"
+                    android:gravity="center"
+                    android:textColor="@color/color_000000"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center"
+                    android:text="@string/idcard_tip_text"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:id="@+id/idcard_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="8dip"
+                    android:gravity="center"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/driver_line_height"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/dash_line"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:id="@+id/upload_idcard_back_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/upload_idcard_back"
+                android:layout_width="87dip"
+                android:layout_height="87dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="33dip"
+                android:background="@mipmap/m_icon_idcard_back"
+                android:contentDescription="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="33dip"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/idcard_back_text"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upload_idcard_back_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="33dip"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="33dip"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/idcard_back"
+                android:layout_width="140dip"
+                android:layout_height="100dip"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dip"
+                    android:gravity="center"
+                    android:text="@string/idcard_fazhengjiguan_text"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:id="@+id/idcard_fazhengjiguan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dip"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center"
+                    android:text="@string/idcard_longtime_text"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:id="@+id/idcard_longtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="8dip"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_size_13" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/driver_line_height"
+        android:background="@color/color_d9d9d9" />
+
+
+    <Button
+        android:id="@+id/upload_idcard_info_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/common_button_selector"
+        android:gravity="center"
+        android:text="@string/next_step_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/text_size_17" />
+
+    <include layout="@layout/face_network_warring_layout" />
+
+</LinearLayout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <ScrollView
+        android:id="@+id/basic_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_e5e5e5"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="10dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                 >
+
+                <CheckBox
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/color_e5e5e5"
+                     android:clickable="false"
+                    android:button="@null"
+                     />
+
+                <RadioButton
+                    android:id="@+id/basic_info_self_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dip"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/hxbasic_self_selector"
+                     android:clickable="false"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/basic_info_self_cb_right"
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/hxbasic_line_selector"
+                    android:button="@null"
+                     android:clickable="false"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/basic_info_company_cb_left"
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/hxbasic_line_selector"
+                    android:button="@null"
+                     android:clickable="false"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/basic_info_compony_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dip"
+                    android:layout_gravity="center_vertical"
+                    android:checked="true"
+                     android:clickable="false"
+                    android:button="@drawable/hxbasic_company_selector"
+                   />
+                
+
+                <CheckBox
+                    android:id="@+id/basic_info_company_cb_right"
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/hxbasic_line_selector"
+                    android:button="@null"
+                     android:clickable="false"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/basic_info_link_cb_left"
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                     android:clickable="false"
+                    android:background="@drawable/hxbasic_line_selector"
+                    android:button="@null"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/basic_info_link_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dip"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                     android:clickable="false"
+                    android:button="@drawable/hxbasic_link_selector"
+                   />
+
+                <CheckBox
+                    android:layout_width="0dip"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/color_e5e5e5"
+                     android:clickable="false"
+                    android:button="@null"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:orientation="horizontal"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/self_info_text"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/T0" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/company_info_text"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/T0" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/link_info_text"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/T0" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_d9d9d9" />
+
+            <RelativeLayout
+                android:id="@+id/basic_company_info_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_ffffff"
+             
+                >
+
+                <EditText
+                    android:id="@+id/basic_company_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                  
+                    android:background="@null"
+                    android:drawableLeft="@drawable/m_icon_company"
+                    android:drawablePadding="3dip"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_company_name_text"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/company_line_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/basic_company_name_et"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:background="@color/color_e5e5e5" />
+
+                <EditText
+                    android:id="@+id/basic_company_phonenum_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/company_line_one"
+                   
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                   
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/m_icon_phone"
+                    android:drawablePadding="3dip"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_company_phone_text"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/company_line_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/basic_company_phonenum_et"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:background="@color/color_e5e5e5" />
+                <TextView
+                    android:id="@+id/basic_company_come_date_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/company_line_two"
+                  
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                   
+                    android:inputType="number"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/m_icon_datetime"
+                    android:drawablePadding="3dip"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_company_come_date_text"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/company_line_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/basic_company_come_date_tv"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:background="@color/color_e5e5e5" />
+
+                <EditText
+                    android:id="@+id/basic_company_address_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/company_line_three"
+                  
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                   
+                    android:background="@null"
+                    android:drawableLeft="@drawable/m_icon_address"
+                    android:drawablePadding="3dip"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_company_address_text"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+              
+            </RelativeLayout>
+           
+            
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_d9d9d9" />
+
+            <Button
+                android:id="@+id/basic_next_or_finish_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:layout_marginRight="@dimen/common_layout_margin"
+                android:layout_marginTop="50dip"
+                android:background="@drawable/hxcommon_btn_normal_bg"
+                android:gravity="center"
+                android:text="@string/next_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T5" />
+            <TextView 
+                android:id="@+id/basic_tip_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dip"
+                android:layout_marginTop="10dip"
+                android:drawableLeft="@drawable/m_icon_tip"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="2dip"
+                android:textColor="@color/color_666666"
+                 android:layout_marginBottom="20dip"
+               android:text="@string/basic_info_tip_text"/>
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="10dip"
+                android:layout_marginTop="20dip"
+                 android:layout_gravity="center_horizontal"
+                  android:visibility="gone"
+                 android:orientation="horizontal">
+                 <CheckBox
+                     android:id="@+id/allow_the_lines_cb"  
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center_vertical"  
+                    android:drawableLeft="@drawable/hxcommon_checkbox_selector"
+                    android:text="@string/allow_lines_text"
+                    android:drawablePadding="3dip"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T0"
+                    android:button="@null"
+                    android:checked="true" />
+                 <TextView 
+                     android:id="@+id/all_the_lines_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center_vertical"  
+                     android:text="@string/all_lines_text"
+                     android:gravity="center_vertical"
+                     android:textColor="@color/color_ff7920"
+                     android:textSize="@dimen/T0"/>
+             </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

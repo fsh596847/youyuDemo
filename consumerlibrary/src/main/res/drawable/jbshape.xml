@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <gradient
+        android:startColor="#ff6633"
+        android:centerColor="#fd3d54"
+        android:endColor="#fd3d54"
+        android:angle="180"
+        android:type="linear"
+        />
+
+    <corners android:radius="0dip" />
+
+
+</shape>
+
+    <!--其中android:angle ="270.0"代表角度为270，由上到下的渐变，如果我改变成0那么就变成了从左到右的渐变，-->
+    <!--如果改变90.0那么渐变会从下边往上渐变，可以 多改变一下参数试试效果。centerColor中间颜色； -->
+    <!--centerX: x轴渐变中心，从左到右渐变时有意义；-->
+    <!--centerY: 同理y轴的渐变中心；-->
+    <!--endColor 渐变终点颜色，同样startColor为渐变起点颜色。-->

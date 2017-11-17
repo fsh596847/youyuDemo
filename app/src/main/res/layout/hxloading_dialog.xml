@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/loding_dialog"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:minHeight="60dp"
+              android:minWidth="180dp"
+              android:gravity="center"
+              android:padding="10dp"
+              android:background="@drawable/hxdialog_bg"
+    >
+    <ImageView
+        android:id="@+id/loding_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hxswipe_refresh_loding"
+        android:scaleType="center"
+        />
+
+    <TextView
+        android:id="@+id/loding_tip_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/T1"
+        android:text="@string/loding_text" />
+
+</LinearLayout>

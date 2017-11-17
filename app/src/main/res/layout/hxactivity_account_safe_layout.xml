@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+   <include layout="@layout/hxtop_title_bar_layout" />
+    <ScrollView
+        android:id="@+id/account_safe_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginTop="6dip"
+                android:background="@color/color_d9d9d9" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:id="@+id/account_safe_zhifu_pwd_fl"
+                    android:layout_width="match_parent"
+                     android:layout_height="@dimen/common_edit_text_height"
+                    android:background="@color/color_ffffff" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/common_layout_margin"
+                        android:text="@string/pay_password_text"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/T2" />
+
+                    <TextView
+                        android:id="@+id/account_safe_zhifu_pwd_open_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="30dip"
+                        android:text="@string/alreday_open_text"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/T1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/common_layout_margin"
+                        android:src="@drawable/m_icon_enter" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                     android:visibility="gone"
+                    android:background="@color/color_d9d9d9" />
+
+                <FrameLayout
+                    android:id="@+id/account_safe_shoushi_fl"
+                    android:layout_width="match_parent"
+                     android:layout_height="@dimen/common_edit_text_height"
+                     android:visibility="gone"
+                    android:background="@color/color_ffffff" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/common_layout_margin"
+                        android:text="@string/shoushi_password_text"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/T2" />
+
+                    <TextView
+                        android:id="@+id/account_safe_shoushi_open_tip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="30dip"
+                        android:text="@string/alreday_open_text"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/T1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/common_layout_margin"
+                        android:src="@drawable/m_icon_enter" />
+                </FrameLayout>
+
+                <View
+                    android:id="@+id/account_safe_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_marginLeft="@dimen/common_layout_margin" 
+                    android:background="@color/color_d9d9d9" />
+
+                <FrameLayout
+                    android:id="@+id/account_safe_zhiwen_fl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                     android:visibility="gone"
+                    android:background="@color/color_ffffff" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/common_layout_margin"
+                        android:text="@string/zhiwen_pay_text"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/T2" />
+
+                    <TextView
+                        android:id="@+id/account_safe_zhiwen_open_tip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="30dip"
+                        android:text="@string/alreday_open_text"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/T1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/common_layout_margin"
+                        android:src="@drawable/m_icon_enter" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                 android:visibility="gone"
+                android:background="@color/color_d9d9d9" />
+
+            <View
+               
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginTop="6dip"
+                 android:visibility="gone"
+                android:background="@color/color_d9d9d9" />
+
+            <FrameLayout
+                android:id="@+id/accound_safe_forget_password_fl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_edit_text_height"
+                android:visibility="gone"
+                android:background="@color/color_ffffff" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:text="@string/reset_password_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T2" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:src="@drawable/m_icon_enter" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_d9d9d9" />
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

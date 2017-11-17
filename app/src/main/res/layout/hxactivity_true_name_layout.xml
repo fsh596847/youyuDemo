@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <ScrollView
+        android:id="@+id/person_center_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="50dip" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:background="@color/color_ff7920"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/true_name_result_iv"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dip"
+                    android:background="@drawable/m_icon_alreday_check_true_name" />
+
+                <TextView
+                    android:id="@+id/true_name_result_tip_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dip"
+                    android:text="@string/true_name_success_text"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_d9d9d9" />
+
+            <FrameLayout
+                android:id="@+id/true_name_not_check_fl"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:visibility="gone"
+                android:background="@color/color_ffffff" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:text="@string/true_name_card_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="30dip"
+                    android:text="@string/click_upload_text"
+                    android:textColor="@color/color_738cc4"
+                    android:textSize="@dimen/T1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:src="@drawable/m_icon_enter"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/true_name_already_check_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <FrameLayout
+                    android:id="@+id/true_name_name_fl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:background="@color/color_ffffff" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/common_layout_margin"
+                        android:text="@string/true_name_name_text"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/T2" />
+
+                    <TextView
+                        android:id="@+id/true_name_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/common_layout_margin"
+                       
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/T1" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:background="@color/color_d9d9d9" />
+
+                <FrameLayout
+                    android:id="@+id/true_name_idcard_fl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:background="@color/color_ffffff" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/common_layout_margin"
+                        android:text="@string/loan_money_idcard_text"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/T2" />
+
+                    <TextView
+                        android:id="@+id/true_name_idcard_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/common_layout_margin"
+                       
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/T1" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:background="@color/color_d9d9d9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_gravity="center_vertical"
+                  
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/true_name_card_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T2" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dip"
+                    android:orientation="horizontal" 
+                    android:layout_marginBottom="15dip">
+
+                    <ImageView
+                        android:id="@+id/true_name_idcard_font_iv"
+                        android:layout_width="140dip"
+                        android:layout_height="90dip"
+                        android:layout_marginLeft="10dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/m_icon_true_name_idcard_font" />
+
+                    <ImageView
+                        android:id="@+id/true_name_idcard_back_iv"
+                        android:layout_width="140dip"
+                        android:layout_height="90dip"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/m_icon_true_name_idcard_back" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_d9d9d9" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

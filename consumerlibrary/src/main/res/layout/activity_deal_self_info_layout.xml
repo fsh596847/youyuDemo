@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_title_bar_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/driver_line_height"
+        android:layout_marginTop="5dip"
+        android:background="@color/color_d9d9d9" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff">
+
+        <TextView
+            android:id="@+id/open_card_name_tip_tv"
+            style="@style/left_text_tip_style1"
+            android:text="@string/name_text"
+            tools:ignore="RtlHardcoded" />
+
+        <EditText
+            android:id="@+id/open_card_name_value_tv"
+            style="@style/right_text_value_style"
+            android:layout_toRightOf="@id/open_card_name_tip_tv"
+            tools:ignore="RtlHardcoded" />
+
+        <View
+            android:id="@+id/open_line_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/driver_line_height"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:background="@color/color_e5e5e5"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/open_card_idcard_tip_tv"
+            style="@style/left_text_tip_style1"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:text="@string/idcard_text"
+            />
+
+        <EditText
+            android:id="@+id/open_card_idcard_value_tv"
+            style="@style/right_text_value_style"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:layout_toRightOf="@id/open_card_idcard_tip_tv"
+            />
+
+        <View
+            android:id="@+id/open_line_two"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/driver_line_height"
+            android:layout_below="@id/open_card_idcard_tip_tv"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:background="@color/color_e5e5e5" />
+
+        <TextView
+            android:id="@+id/open_card_no_tip_tv"
+            style="@style/left_text_tip_style1"
+            android:text="@string/bank_card_no_text"
+            android:layout_below="@id/open_line_two"
+           />
+
+        <EditText
+            android:id="@+id/open_card_no_value_tv"
+            style="@style/right_text_value_style"
+            android:layout_below="@id/open_line_two"
+            android:layout_toRightOf="@id/open_card_no_tip_tv"
+            android:hint="@string/input_bank_card_no_text"
+            android:inputType="number"
+            android:maxLength="25"/>
+
+        <ImageView
+            android:id="@+id/open_card_warn_btn"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/open_line_two"
+            android:layout_marginBottom="4dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="4dip"
+            android:background="@mipmap/m_icon_warn"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/driver_line_height"
+        android:layout_marginLeft="@dimen/common_margin"
+        android:background="@color/color_d9d9d9" />
+
+    <RelativeLayout
+        android:id="@+id/open_card_two_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff">
+
+        <TextView
+            android:id="@+id/open_card_phone_tip_tv"
+            style="@style/left_text_tip_style1"
+            android:text="@string/mobile_text"
+            />
+
+        <EditText
+            android:id="@+id/open_card_phonenum_value_et"
+            style="@style/right_text_value_style"
+            android:layout_toRightOf="@id/open_card_phone_tip_tv"
+            android:hint="@string/input_bank_mobile_text"
+            android:inputType="number"
+            android:maxLength="11"
+           />
+
+        <View
+            android:id="@+id/open_line_four"
+            android:layout_width="@dimen/driver_line_height"
+            android:layout_height="30dip"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:layout_marginLeft="3dip"
+            android:layout_toLeftOf="@+id/open_yzm_btn"
+            android:background="@color/color_d9d9d9" />
+
+        <Button
+            android:id="@id/open_yzm_btn"
+            android:layout_width="83dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_margin"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/yzm_btn_text"
+            android:textColor="@color/color_eb8311"
+            android:textSize="@dimen/text_size_14"
+            tools:ignore="RtlHardcoded" />
+
+        <View
+            android:id="@+id/open_line_three"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/driver_line_height"
+            android:layout_below="@id/open_card_phone_tip_tv"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:background="@color/color_e5e5e5" />
+
+        <TextView
+            android:id="@+id/open_card_yzm_tip_tv"
+            style="@style/left_text_tip_style1"
+            android:layout_below="@id/open_line_three"
+            android:text="@string/yzm_tip_text"
+          />
+
+        <EditText
+            android:id="@+id/open_card_yzm_value_et"
+            style="@style/right_text_value_style"
+            android:layout_below="@id/open_line_three"
+            android:layout_toRightOf="@id/open_card_yzm_tip_tv"
+            android:hint="请输入手机验证码"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="15"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/open_line_seven"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/driver_line_height"
+        android:background="@color/color_d9d9d9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_margin"
+        android:layout_marginRight="@dimen/common_margin"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/lines_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_666666"
+            android:drawableLeft="@drawable/common_checkbox_btn_bg"
+            android:drawablePadding="5dip"
+            android:button="@null"
+            android:checked="false"
+            android:textSize="@dimen/tab_text_size" />
+        <TextView
+            android:id="@+id/lines_all_lines_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="2dip"
+            android:lineSpacingExtra="5dip"
+            android:text="@string/lines_text"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/tab_text_size">
+            </TextView>
+
+        <TextView
+            android:id="@+id/lines_zhanghu_weituoshu_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/lines_zhanghu_weituoshu_text"
+            android:textColor="@color/color_eb8311"
+            android:visibility="gone"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/spilit_text"
+            android:textColor="@color/color_666666"
+            android:visibility="gone"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/lines_zhidong_huankuan_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/lines_zhidong_huankuan_text"
+            android:textColor="@color/color_eb8311"
+            android:visibility="gone"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/spilit_text"
+            android:textColor="@color/color_666666"
+            android:visibility="gone"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/lines_jiekuan_hetong_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/lines_jiekuan_hetong_text"
+            android:textColor="@color/color_eb8311"
+            android:visibility="gone"
+            android:textSize="@dimen/tab_text_size" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lines_person_info_zhengxin_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="20dip"
+        android:layout_marginLeft="45dip"
+        android:gravity="center_vertical"
+        android:text="@string/lines_person_info_zhengxin_text"
+        android:textColor="@color/color_eb8311"
+        android:visibility="gone"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/open_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/common_button_selector"
+        android:gravity="center"
+        android:text="@string/next_step_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/text_size_17" />
+
+</LinearLayout>

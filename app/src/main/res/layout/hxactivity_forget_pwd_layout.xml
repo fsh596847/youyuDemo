@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginTop="6dip"
+        android:background="@color/color_d9d9d9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/forget_pwd_new_one_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入6-20位新密码"
+            android:maxLength="20"
+            android:password="true"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@color/color_d9d9d9" />
+
+        <EditText
+            android:id="@+id/forget_pwd_new_two_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/input_sure_new_pwd_text"
+            android:maxLength="20"
+            android:password="true"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginTop="6dip"
+        android:background="@color/color_d9d9d9" />
+
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff" >
+
+        <EditText
+            android:id="@+id/forget_pwd_moblie_et"
+            android:layout_width="160dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginBottom="@dimen/common_layout_margin"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:background="@null"
+            android:hint="@string/input_login_mobile_text"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+         <View
+             android:id="@+id/forget_pwd_three"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+         android:layout_marginLeft="@dimen/common_layout_margin"
+         android:layout_below="@id/forget_pwd_moblie_et"
+        android:background="@color/color_d9d9d9" />
+        <EditText
+            android:id="@+id/forget_pwd_yzm_et"
+            android:layout_width="160dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginBottom="@dimen/common_layout_margin"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:layout_below="@id/forget_pwd_three"
+            android:background="@null"
+            android:hint="@string/input_moble_yzm_pwd_text"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+
+        <View
+            android:id="@+id/forget_pwd_line_one"
+            android:layout_width="@dimen/line_high"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginBottom="@dimen/common_layout_margin"
+             android:layout_below="@id/forget_pwd_three"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:layout_toLeftOf="@+id/forget_pwd_yzm_btn"
+            android:background="@color/color_ff7920" />
+
+        <Button
+            android:id="@id/forget_pwd_yzm_btn"
+            android:layout_width="80dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/common_layout_margin"
+             android:layout_below="@id/forget_pwd_three"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/yzm_btn_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T2" />
+    </RelativeLayout>
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff" >
+
+        <EditText
+            android:id="@+id/forget_pwd_moblie_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:hint="@string/input_mobile_text"
+            android:textSize="@dimen/T2" 
+            />
+
+        <View
+            android:id="@+id/forget_pwd_line_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_below="@id/forget_pwd_moblie_et"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+           
+            android:background="@color/color_d9d9d9" />
+
+        <EditText
+            android:id="@+id/forget_pwd_yzm_et"
+            android:layout_width="160dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/forget_pwd_line_one"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/input_yzm_tip"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2" />
+
+        <View
+            android:id="@+id/forget_pwd_line_two"
+            android:layout_width="@dimen/line_high"
+            android:layout_height="30dip"
+            android:layout_below="@id/forget_pwd_line_one"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:layout_toLeftOf="@+id/yzm_btn"
+            android:background="@color/color_ff7920"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/yzm_btn"
+            android:layout_width="80dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/forget_pwd_line_one"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/yzm_btn_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T2" />
+
+        <View
+            android:id="@+id/forget_pwd_line_three"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_below="@id/forget_pwd_yzm_et"
+            android:background="@color/color_d9d9d9" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/forget_pwd_yzm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_edit_text_height"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/common_layout_margin"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/common_layout_margin"
+        android:background="@null"
+        android:gravity="center|right"
+        android:text="@string/forget_password_text"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/T2"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/forget_pwd_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginRight="@dimen/common_layout_margin"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/hxcommon_btn_normal_bg"
+        android:gravity="center"
+        android:text="@string/submit_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/T5" />
+
+</LinearLayout>

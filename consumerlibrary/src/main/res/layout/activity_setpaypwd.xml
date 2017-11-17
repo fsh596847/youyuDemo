@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <consumer.fin.rskj.com.library.views.TopNavigationView2
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:titleColor="@android:color/black"
+        app:titleText="设置交易密码"
+        app:titleSize="15sp"
+        app:leftDrawable="@mipmap/back_b"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="请设置交易密码"
+        android:gravity="center"
+        />
+
+    <consumer.fin.rskj.com.library.views.MultiEditText
+        android:id="@+id/edittext1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="25dp"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:maxLength="6"
+        android:padding="0dp"
+        android:textSize="30sp"/>
+
+    <!--<consumer.fin.rskj.com.library.views.MultiEditText-->
+        <!--xmlns:custom="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/edittext2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="56dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:cursorVisible="false"-->
+        <!--android:inputType="textPassword"-->
+        <!--android:padding="0dp"-->
+        <!--android:textSize="16sp"-->
+        <!--custom:borderColor="@color/divide"-->
+        <!--custom:borderRadius="@dimen/custom_ev_border_radius"-->
+        <!--custom:borderWidth="@dimen/custom_ev_border_width"-->
+        <!--custom:multiColor="@color/green"-->
+        <!--custom:multiLength="6"-->
+        <!--custom:multiWidth="@dimen/custom_ev_multi_width"-->
+        <!--custom:multiTextVisible="true"/>-->
+
+
+</LinearLayout>

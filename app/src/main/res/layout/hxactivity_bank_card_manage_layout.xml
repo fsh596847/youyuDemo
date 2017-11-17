@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+    <TextView 
+        android:id="@+id/bank_card_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/color_666666"
+        android:text="暂无数据"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="@dimen/T5"
+        android:background="@color/color_e5e5e5"/>
+    <ListView
+        android:id="@+id/bank_card_listview_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginRight="@dimen/common_layout_margin"
+        android:layout_marginTop="@dimen/common_layout_margin"
+        android:divider="@null"    
+        android:scrollbars="none"
+        android:visibility="gone" />
+    <com.zhongan.demo.hxin.view.DragDelListView
+        android:id="@+id/bank_card_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginRight="@dimen/common_layout_margin"
+        android:layout_marginTop="@dimen/common_layout_margin"
+        android:divider="@null"    
+        android:scrollbars="none"
+        android:visibility="gone"/>
+
+</LinearLayout>

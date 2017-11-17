@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="light_gray">#eeeeee</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="divide">#d9d9d9</color>
+    <color name="text_color">#000</color>
+    <color name="tab_bar_bg_color">#f0ffffff</color>
+
+    <color name="green">#12c185</color>
+    <color name="ab_gray">#ababab</color>
+
+    <color name="dark_gray">#898989</color>
+    <color name="black_9">#999999</color>
+    <color name="diver_line_color">#d9d9d9</color>
+    <color name="card_color">#4dffffff</color>
+
+    <color name="alpha">#00ffffff</color>
+
+    <color name="color_683804">#683804</color>
+    <color name="color_66000000">#66000000</color>
+    <color name="color_66ff7920">#66ff7920</color>
+    <color name="color_ff7920">#ff7920</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_99ffffff">#99ffffff</color>
+    <color name="color_F0ffffff">#F0ffffff</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f9f9f9">#f9f9f9</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_ededed">#ededed</color>
+    <color name="color_d9d9d9">#d9d9d9</color>
+    <color name="color_ff0000">#ff0000</color>
+    <color name="color_ee5f1e">#ee5f1e</color>
+    <color name="color_c2c2c2">#c2c2c2</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_738cc4">#738cc4</color>
+    <color name="color_b2b2b2">#b2b2b2</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="color_c7c7cd">#c7c7cd</color>
+    <color name="color_eb8311">#eb8311</color>
+
+    <color name="color_31c2ff">#31c2ff</color>
+    <color name="pickerview_time_btn_nor">#31c2ff</color>
+    <color name="pickerview_timebtn_pre">#31c2ff</color>
+    <color name="pickerview_topbar_title">#333333</color>
+    <color name="pickerview_bg_topbar">#e5e5e5</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <color name="pickerview_bgColor_overlay">#60000000</color>
+    <color name="pickerview_bgColor_default">#FFFFFFFF</color>
+
+    <drawable name="wwhite">#ffffff</drawable>
+
+</resources>

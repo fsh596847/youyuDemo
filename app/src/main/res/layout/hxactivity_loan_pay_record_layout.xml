@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+    
+    <RadioGroup
+        android:id="@+id/loan_pay_record_rg"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/color_ffffff"
+        android:checkedButton="@+id/loan_record_btn"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <RadioButton
+            android:id="@id/loan_record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_weight="1"
+            android:background="@drawable/hxcommon_radiobutton_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/loan_record_text"
+            android:textColor="@drawable/hxcommon_radiobutton_title_selector"
+            android:textSize="@dimen/T3"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="@dimen/line_high"
+            android:layout_height="30dip"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_d9d9d9" />
+
+        <RadioButton
+            android:id="@+id/pay_record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_weight="1"
+            android:background="@drawable/hxcommon_radiobutton_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/pay_record_text"
+            android:textColor="@drawable/hxcommon_radiobutton_title_selector"
+            android:textSize="@dimen/T3"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_gravity="center_vertical"
+        android:background="@color/color_d9d9d9" />
+     <LinearLayout
+       android:id="@+id/loan_record_no_data_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/m_icon_no_record" />
+
+        <TextView
+            android:id="@+id/loan_record_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dip"
+            android:gravity="center"
+            android:text="暂无数据"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/T5"
+            />
+    </LinearLayout>
+ 
+    <com.zhongan.demo.hxin.refresh.library.PullToRefreshListView
+        android:id="@+id/loan_pay_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dip"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:focusable="false"
+        android:listSelector="#00000000"
+        android:scrollbars="none"
+        app:ptrAnimationStyle="flip"
+        app:ptrHeaderBackground="@android:color/transparent"
+        app:ptrHeaderTextColor="@color/color_999999" />
+
+</LinearLayout>

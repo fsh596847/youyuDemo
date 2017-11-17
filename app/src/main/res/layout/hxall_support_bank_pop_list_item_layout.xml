@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:id="@+id/support_bank_name_tv"
+        android:layout_marginTop="4dip"
+        android:layout_marginBottom="4dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="中国农业银行"
+        android:textColor="@color/color_333333"
+       android:textSize="@dimen/T3" />
+     <TextView
+        android:id="@+id/support_bank_name_breif_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dip"
+        android:layout_marginBottom="4dip"
+        android:text="中国银行"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/T3" />
+</RelativeLayout>

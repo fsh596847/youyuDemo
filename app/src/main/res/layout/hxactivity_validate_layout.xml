@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/rl_tittle"
+        layout="@layout/hxtop_title_bar_layout" />
+        <ImageView
+            android:id="@+id/img_in_audit"
+            android:layout_below="@+id/rl_tittle"
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_in_audit"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_below="@+id/img_in_audit"
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您的信息已提交，正在审核中"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

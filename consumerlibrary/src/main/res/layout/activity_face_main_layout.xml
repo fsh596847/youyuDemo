@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/face_main_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff" >
+
+    <TextureView
+        android:id="@+id/face_main_textureview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <consumer.fin.rskj.com.library.views.AutoRatioImageview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <consumer.fin.rskj.com.library.utils.FaceMask
+        android:id="@+id/face_main_facemask"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <consumer.fin.rskj.com.library.views.AutoRatioImageview
+        android:id="@+id/face_main_head_mask"
+        android:layout_width="260dip"
+        android:layout_height="300dip"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="15dip"
+         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/face_head_mask" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/face_main_head_mask"
+        android:background="@color/color_ffffff" >
+        <include
+            android:id="@+id/face_main_detection_first_step_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginTop="15dip"
+            layout="@layout/face_detection_step"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/face_main_detection_secont_step_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginTop="15dip"
+            layout="@layout/face_detection_step"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/face_main_detection_bottom_tips_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="120dip"
+                android:layout_height="120dip"
+                android:src="@mipmap/face_liveness_phone_image" />
+               <TextView
+                android:id="@+id/liveness_layout_promptText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/common_margin"
+                android:layout_marginTop="@dimen/common_margin"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/text_size_18"
+                android:text="@string/keep_light_full"
+               />
+        </LinearLayout>
+        <TextView
+                android:id="@+id/detection_step_cancle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/color_999999"
+                android:text="@string/cancle_text"
+                android:textSize="@dimen/text_size_18" />
+        <RelativeLayout
+            android:id="@+id/detection_step_timeoutRel"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dip"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/detection_step_timeout_garden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/color_ff7920"
+                android:text="10"
+                android:textSize="@dimen/text_size_18" />
+
+            <consumer.fin.rskj.com.library.views.CircleProgressBar
+                android:id="@+id/detection_step_timeout_progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    
+
+    <ProgressBar
+        android:id="@+id/face_main_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>

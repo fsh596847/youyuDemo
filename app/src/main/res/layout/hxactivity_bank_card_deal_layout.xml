@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginTop="12dip"
+        android:text="@string/open_bank_info_text"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/T2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff">
+
+        <TextView
+            android:id="@+id/open_card_name_tip_tv"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="@string/name_text"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/T2"/>
+
+        <TextView
+            android:id="@+id/open_card_name_value_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_toRightOf="@id/open_card_name_tip_tv"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T2"/>
+
+        <View
+            android:id="@+id/open_line_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@color/color_e5e5e5"/>
+
+        <TextView
+            android:id="@+id/open_card_idcard_tip_tv"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="@string/loan_money_idcard_text"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/T0"/>
+
+        <TextView
+            android:id="@+id/open_card_idcard_value_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_card_name_tip_tv"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_toRightOf="@id/open_card_idcard_tip_tv"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_666666"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T0"/>
+
+        <View
+            android:id="@+id/open_line_two"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_below="@id/open_card_idcard_tip_tv"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@color/color_e5e5e5"/>
+
+        <TextView
+            android:id="@+id/open_card_no_tip_tv"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_line_two"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="@string/bank_card_no_text"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/T0"/>
+
+        <com.zhongan.demo.hxin.view.CardInputEditText
+            android:id="@+id/open_card_no_value_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_line_two"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_toRightOf="@id/open_card_no_tip_tv"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/input_bank_card_no_text"
+            android:inputType="number"
+            android:maxLength="23"
+            android:textColor="@color/color_738cc4"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T0"/>
+
+        <ImageView
+            android:id="@+id/open_card_warn_btn"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/open_line_two"
+            android:layout_marginBottom="4dip"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_marginRight="@dimen/common_layout_margin"
+            android:layout_marginTop="4dip"
+            android:background="@drawable/m_icon_warn"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginTop="5dip"
+        android:background="@color/color_d9d9d9" />
+
+    <LinearLayout
+        android:id="@+id/open_card_bankname_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:background="@color/color_d9d9d9" />
+
+        <TextView
+            android:id="@+id/open_card_bankname"
+            android:layout_width="match_parent"
+            android:layout_height="20dip"
+            android:layout_marginRight="@dimen/common_layout_margin"
+            android:gravity="right|center_vertical"
+            android:textColor="@color/color_738cc4"
+            android:textSize="@dimen/T0" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:background="@color/color_d9d9d9" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/open_card_two_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff" >
+
+        <TextView
+            android:id="@+id/open_card_phone_tip_tv"
+            android:layout_width="75dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="@string/mobile_text"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/T0" />
+
+        <EditText
+            android:id="@+id/open_card_phonenum_value_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_toRightOf="@id/open_card_phone_tip_tv"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/input_bank_mobile_text"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_738cc4"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T0" />
+
+        <View
+            android:id="@+id/open_line_four"
+            android:layout_width="@dimen/line_high"
+            android:layout_height="30dip"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:layout_toLeftOf="@+id/open_yzm_btn"
+            android:background="@color/color_ff7920" />
+
+        <Button
+            android:id="@id/open_yzm_btn"
+            android:layout_width="80dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_layout_margin"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/yzm_btn_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T0" />
+
+        <View
+            android:id="@+id/open_line_three"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:layout_below="@id/open_card_phone_tip_tv"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:background="@color/color_e5e5e5" />
+
+        <TextView
+            android:id="@+id/open_card_yzm_tip_tv"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_line_three"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="@string/yzm_tip_text"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/T0" />
+
+        <EditText
+            android:id="@+id/open_card_yzm_value_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_edit_text_height"
+            android:layout_below="@id/open_line_three"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_toRightOf="@id/open_card_yzm_tip_tv"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/input_yzm_tip_text"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColor="@color/color_738cc4"
+            android:textColorHint="@color/color_d9d9d9"
+            android:textSize="@dimen/T0" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/open_line_seven"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9" />
+
+    <Button
+        android:id="@+id/open_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/hxcommon_btn_selected_bg"
+        android:gravity="center"
+        android:text="@string/submit_info_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/T5" />
+     <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dip"
+               
+                 android:layout_gravity="center_horizontal"
+                 android:orientation="horizontal">
+                  <CheckBox
+                     android:id="@+id/allow_the_lines_cb"  
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center_vertical"  
+                    android:drawableLeft="@drawable/hxcommon_checkbox_selector"
+                    android:text="@string/allow_lines_text"
+                    android:drawablePadding="3dip"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T0"
+                    android:button="@null"
+                     />
+                 <TextView 
+                     android:id="@+id/all_the_lines_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center_vertical"  
+                     android:text="@string/all_lines_text"
+                     android:gravity="center_vertical"
+                     android:textColor="@color/color_ff7920"
+                     android:textSize="@dimen/T0"/>
+             </LinearLayout>
+
+</LinearLayout>

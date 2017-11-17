@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">有余</string>
+
+    <string name="register_protocol">
+        <Data><![CDATA[我已阅读并完全同意 <font color="#043d6e">《用户注册协议》</font> ]]></Data>
+    </string>
+
+    <string name="weixin_focus">微信搜索并关注"融数有余"公众号,福利放送中</string>
+
+    <string name="do_register"><u>立即注册</u></string>
+    <string name="do_forgetpwd"><u>忘记密码</u></string>
+
+
+    <string name="map_notifyTitle">提示</string>
+    <string name="map_notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="map_setting">设置</string>
+    <string name="map_cancel">取消</string>
+
+
+    <string name="tap_home">首页</string>
+    <string name="tap_market">金融超市</string>
+    <string name="tap_center">个人中心</string>
+
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5">
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="@dimen/common_layout_margin"
+        android:paddingRight="@dimen/common_layout_margin"
+        android:text="@string/pickerview_cancel"
+        android:textColor="@color/color_31c2ff"
+        android:textSize="@dimen/T6" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btnSubmit"
+        android:layout_toRightOf="@+id/btnCancel"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/T6" />
+
+    <Button
+        android:id="@id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="@dimen/common_layout_margin"
+        android:paddingRight="@dimen/common_layout_margin"
+        android:text="@string/pickerview_submit"
+        android:textColor="@color/color_31c2ff"
+        android:textSize="@dimen/T6" />
+</RelativeLayout>

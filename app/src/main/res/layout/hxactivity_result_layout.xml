@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <ImageView
+        android:id="@+id/deal_result_iv"
+        android:layout_width="90dip"
+        android:layout_height="90dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dip"
+        android:background="@drawable/m_icon_deal_sucess" />
+
+    <TextView
+        android:id="@+id/deal_result_tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/reslt_success_tip_text"
+        android:textColor="@color/color_ff7920"
+        android:textSize="@dimen/T3" />
+
+    <TextView
+        android:id="@+id/deal_result_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip"
+        android:text="@string/reslt_success_text"
+        android:textColor="@color/color_000000"
+        android:textSize="@dimen/T6" />
+
+     <Button
+            android:id="@+id/result_sucess_go_shouye_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_btn_height"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="60dip"
+            android:background="@drawable/hxcommon_btn_normal_bg"
+            android:gravity="center"
+            android:text="@string/goto_shouye"
+            android:textColor="@color/color_ffffff"
+            android:visibility="gone"
+            android:textSize="@dimen/T5" />
+    <LinearLayout
+        android:id="@+id/result_failure_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dip"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/result_failure_go_shouye_btn"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/common_btn_height"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_weight="1"
+            android:background="@drawable/hxcommon_btn_normal_bg_white"
+            android:gravity="center"
+            android:text="@string/goto_shouye"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T5" />
+
+        <Button
+            android:id="@+id/result_failure_check_three_btn"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/common_btn_height"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_weight="1"
+            android:background="@drawable/hxcommon_btn_normal_bg"
+            android:gravity="center"
+            android:text="@string/check_three_text"
+            android:textColor="@color/color_ffffff"
+            android:visibility="gone"
+            android:textSize="@dimen/T5" />
+    </LinearLayout>
+
+</LinearLayout>

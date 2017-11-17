@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/credit"
+    android:orientation="vertical">
+
+    <consumer.fin.rskj.com.library.views.TopNavigationView2
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:titleColor="@android:color/black"
+        app:titleText="借据"
+        app:titleSize="15sp"
+        app:leftDrawable="@mipmap/back_b"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@mipmap/combined_shape">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:gravity="center|left"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="姓名"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="贷款金额"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="贷款期限"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="起止时间"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="日利率"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="还款方式"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:text="还款银行"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="放款银行"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="贷款合同"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="贷款用途"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center|right"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="--"/>
+
+            <TextView
+                android:id="@+id/applyAmt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"/>
+
+
+            <TextView
+                android:id="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0个月"/>
+
+            <TextView
+                android:id="@+id/s_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0-0"/>
+
+
+            <TextView
+                android:id="@+id/dayRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/repayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="--"/>
+            <TextView
+                android:id="@+id/repayBankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:text="--"/>
+
+            <TextView
+                android:id="@+id/payLoanBankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="--"/>
+            <TextView
+                android:id="@+id/check_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_66ff7920"
+                android:text="查看合同"/>
+
+            <TextView
+                android:id="@+id/loan_purpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_31c2ff"
+                android:text="@string/lifestr"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:paddingTop="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@mipmap/combined_shape1"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/choose_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginLeft="15dp"
+                android:text="收/还款银行卡"/>
+
+            <ImageView
+                android:id="@+id/array"
+                android:layout_width="wrap_content"
+                android:padding="5dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:scaleType="center"
+                android:src="@mipmap/enter"/>
+
+            <TextView
+                android:id="@+id/shoukuan_bank"
+                android:layout_toLeftOf="@id/array"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="选择银行"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sms_code"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:inputType="number"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/mYzmBtn"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/color_66ff7920"
+                android:text="获取验证码"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_666666"
+            android:text="我已阅读并同意"
+            android:drawablePadding="5dp"
+            android:checked="true"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_selector"
+            />
+
+        <TextView
+            android:id="@+id/applytable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_eb8311"
+            android:text="《贷款申请表》"/>
+
+        <TextView
+            android:id="@+id/contractProtocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_eb8311"
+            android:textSize="12sp"
+            android:text="、《贷款合同》"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_step"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/common_button_selector"
+        android:textColor="@color/color_ffffff"
+
+        android:gravity="center"
+        android:text="提交"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

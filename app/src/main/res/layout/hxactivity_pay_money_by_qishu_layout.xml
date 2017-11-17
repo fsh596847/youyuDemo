@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+   
+        <LinearLayout
+            android:layout_marginTop="6dip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/pay_money_pay_benjin_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_sum_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/loan_money_lixi_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_lixi_num_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                   
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:id="@+id/pay_money_pay_faxi_ll"
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+              
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/pay_money_not_pay_faxi_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_faxi_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                  
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/pay_money_pay_faxi_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:background="@color/color_e5e5e5"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/loan_money_shouxufei_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_shouxufei_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                 
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:background="@color/color_e5e5e5" />
+            
+              <LinearLayout
+                   android:id="@+id/pay_money_pay_weiyuejin_ll"
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+               
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/weiyuejin_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_weiyuejin_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                 
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/pay_money_pay_weiyuejin_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+               
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:background="@color/color_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/pay_money_pay_total_num_text"
+                    android:textColor="@color/color_000000"
+                    android:textSize="@dimen/T4" />
+
+                <TextView
+                    android:id="@+id/pay_money_pay_total_sum_tv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|right"
+                  
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_high"
+                android:background="@color/color_e5e5e5" />
+            </LinearLayout>/
+
+            <Button
+                android:id="@+id/pay_money_ok_pay_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_btn_height"
+      
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:layout_marginRight="@dimen/common_layout_margin"
+                android:layout_marginTop="60dip"
+                android:background="@drawable/hxcommon_btn_normal_bg"
+                android:gravity="center"
+                android:text="@string/pay_money_pay_ok_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T5" />
+       <LinearLayout 
+           android:layout_marginTop="15dip"
+           android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+            <TextView
+                   
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                   
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_money_pay_type_text"
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/T3" />
+            <TextView
+                   android:id="@+id/pay_money_yinhang_cardid_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_layout_margin"
+                    
+                    android:gravity="center_vertical"
+                    android:text="中信银行 储蓄卡 (0704)"
+                    android:textColor="@color/color_738cc4"
+                    android:textSize="@dimen/T3" />
+       </LinearLayout>
+   
+
+</LinearLayout>

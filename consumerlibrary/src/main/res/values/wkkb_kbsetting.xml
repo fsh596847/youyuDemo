@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="max_len">6</integer>
+    <bool name="is_password">true</bool>
+    <!--is number random-->
+    <bool name="is_random">false</bool>
+    <!--choose keyboard type 0:normal 1:number-->
+    <integer name="keyboard_type">1</integer>
+
+    <item type="id" name="keyboard_view_move_height" />
+</resources>

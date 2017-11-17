@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_pos_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff"
+     >
+
+    <LinearLayout
+        android:id="@+id/detection_step_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" > 
+
+        <ImageView
+            android:id="@+id/detection_step_image"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:src="@drawable/face_liveness_head" />
+          <TextView
+            android:id="@+id/detection_step_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginBottom="@dimen/common_layout_margin"
+            android:layout_marginTop="@dimen/common_layout_margin"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/T6"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/common_layout_margin_one"
+        android:layout_marginRight="@dimen/common_layout_margin_one"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/hxcommon_logo_layout" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/register_phone_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_phone_tip"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/register_line_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/register_phone_et"
+                    android:background="@color/color_d9d9d9" />
+
+                <EditText
+                    android:id="@+id/register_yzm_et"
+                    android:layout_width="160dip"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/register_line_one"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/input_yzm_tip"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <ImageView
+                    android:id="@+id/register_line_two"
+                    android:layout_width="@dimen/line_high"
+                    android:layout_height="30dip"
+                    android:layout_below="@id/register_line_one"
+                    android:layout_marginBottom="4dip"
+                    android:layout_marginTop="4dip"
+                    android:layout_toLeftOf="@+id/register_yzm_btn"
+                    android:background="@color/color_ff7920"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@id/register_yzm_btn"
+                    android:layout_width="80dip"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/register_line_one"
+
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="@string/yzm_btn_text"
+                    android:textColor="@color/color_ff7920"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/register_line_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/register_yzm_et"
+                    android:background="@color/color_d9d9d9" />
+
+                <EditText
+                    android:id="@+id/register_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/register_line_three"
+
+                    android:background="@null"
+                    android:hint="@string/input_pwd_tip"
+                    android:maxLength="20"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/color_d9d9d9"
+                    android:textSize="@dimen/T2" />
+
+                <View
+                    android:id="@+id/register_line_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_high"
+                    android:layout_below="@id/register_password_et"
+                    android:background="@color/color_d9d9d9" />
+
+                <TextView
+                    android:id="@+id/register_error_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/register_line_four"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@color/color_ff0000"
+                    android:textSize="@dimen/T0" />
+
+                <Button
+                    android:id="@+id/register_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_btn_height"
+                    android:layout_below="@id/register_error_tv"
+                    android:layout_marginTop="40dip"
+                    android:background="@drawable/hxcommon_btn_normal_bg"
+                    android:gravity="center"
+                    android:text="@string/register_text"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/T5" />
+
+                <Button
+                    android:id="@+id/register_go_login_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_below="@id/register_btn"
+                    android:layout_marginTop="10dip"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/m_icon_go_login"
+                    android:gravity="center"
+                    android:text="@string/register_go_login_text"
+                    android:textColor="@color/color_ff7920"
+                    android:textSize="@dimen/T0" />
+
+                <Button
+                    android:id="@+id/register_has_problem_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/common_edit_text_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/register_btn"
+                    android:layout_marginTop="10dip"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="@string/has_problem_text"
+                    android:textColor="@color/color_c2c2c2"
+                    android:textSize="@dimen/T0"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/register_go_login_btn"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="40dip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/register_tip_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_tip_text"
+                        android:textColor="@color/color_c2c2c2"
+                        android:textSize="@dimen/T0" />
+
+                    <TextView
+                        android:id="@+id/register_tip_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deal_tip_text"
+                        android:textColor="@color/color_ff7920"
+                        android:textSize="@dimen/T0" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

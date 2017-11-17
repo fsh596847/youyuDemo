@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <View 
+        android:id="@+id/line_one"
+        android:layout_width="match_parent"
+        android:layout_height="6dip"
+        android:background="@color/color_ededed"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/line_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_edit_text_height"
+        android:layout_gravity="center_horizontal"
+        android:text="征信查询授权"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_333333"
+       android:textSize="@dimen/T6" />
+       <View 
+        android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_e5e5e5"/>
+</LinearLayout>

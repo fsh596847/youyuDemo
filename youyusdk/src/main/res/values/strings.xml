@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">youyuSDK</string>
+
+    <array name="detect_type">
+        <item>眨眼</item>
+        <item>张嘴</item>
+        <item>摇头</item>
+    </array>
+    <array name="detect_result">
+        <item></item>
+        <item>LIVEPASS</item>
+        <item>人脸追踪失败</item>
+        <item>超时失败</item>
+        <item>LIVENOTPASS</item>
+    </array>
+
+    <string name="face_tip">请留意~按以下要求将提高通过率</string>
+    <string name="face_tip_one">免去帽子</string>
+    <string name="face_tip_two">摘下眼镜</string>
+    <string name="face_tip_three">调亮光线</string>
+    <string name="netowrk_parse_failed">解析服务器数据失败</string>
+    <string name="network_error">网络请求失败</string>
+    <string name="verify_error">很遗憾，未能通过人脸识别验证</string>
+    <string name="verify_success">恭喜你，通过人脸识别验证</string>
+</resources>

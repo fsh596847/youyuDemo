@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/shouye_list_iv"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_marginBottom="@dimen/common_layout_margin"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginTop="@dimen/common_layout_margin"
+        android:background="@drawable/list_pic_1"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/shouye_list_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginTop="13dip"
+        android:layout_toRightOf="@id/shouye_list_iv"
+        android:gravity="center_vertical"
+        android:text="中国银行"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/T5" />
+
+    <TextView
+        android:id="@+id/shouye_list_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shouye_list_tv1"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginTop="12dip"
+        android:layout_toRightOf="@id/shouye_list_iv"
+        android:gravity="center_vertical"
+        android:text="中国银行"
+        android:textColor="@color/color_b2b2b2"
+        android:textSize="@dimen/T3" />
+
+    <View
+        android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_below="@id/shouye_list_iv"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:background="@color/color_e5e5e5" />
+
+</RelativeLayout>

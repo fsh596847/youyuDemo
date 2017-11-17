@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/dialog_view"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center"
+              android:minHeight="60dp"
+              android:minWidth="180dp"
+              android:orientation="vertical"
+              android:background="@drawable/card_shape"
+              android:padding="10dp" >
+
+    <!--android:src="@mipmap/data_loading_bg"-->
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hxswipe_refresh_loding"
+        android:scaleType="center"/>
+
+
+    <TextView
+        android:id="@+id/tipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="正在加载..." />
+
+</LinearLayout>

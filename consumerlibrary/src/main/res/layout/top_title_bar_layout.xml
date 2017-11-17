@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="20dip"
+        android:background="@color/tab_bar_bg_color"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/tab_bar_bg_color"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/left_btn"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:background="@null"
+            android:drawableLeft="@mipmap/m_icon_back"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/right_btn"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_margin"
+            android:background="@null"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            tools:ignore="RtlHardcoded" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/driver_line_height"
+            android:layout_alignParentBottom="true"
+            android:background="@color/diver_line_color" />
+    </RelativeLayout>
+</LinearLayout>

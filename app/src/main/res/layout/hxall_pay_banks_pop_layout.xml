@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_66000000"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="425dip"
+        android:layout_gravity="bottom"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical">
+        <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <ImageView 
+                android:id="@+id/basic_all_banks_close"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/common_layout_margin"
+                android:src="@drawable/m_icon_closed"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/T6"
+                android:text="选择付款方式"
+                android:layout_gravity="center"
+                android:textColor="@color/color_000000"/>
+        </FrameLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="@dimen/line_high"
+            android:background="@color/color_d9d9d9"/>
+        <ListView
+          android:id="@+id/basic_all_banks_listview"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom"
+          android:cacheColorHint="#00000000"
+          android:divider="@null"
+          android:focusable="false"
+          android:listSelector="#00000000"
+          android:scrollbars="@null" 
+          android:background="@color/color_F0ffffff"/>
+    </LinearLayout>
+
+</FrameLayout>

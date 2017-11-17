@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    
+    android:background="@color/color_ffffff"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dip"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:background="@color/color_ffffff" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/pay_record_pay_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动扣款"
+                android:textColor="@color/color_000000"
+                android:textSize="@dimen/T6" />
+
+            <TextView
+                android:id="@+id/pay_record_pay_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:text="2017-03-14"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/T2" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pay_record_pay_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/common_layout_margin"
+            android:gravity="center_vertical"
+            android:text="¥10000"
+            android:textColor="@color/color_738cc4"
+            android:textSize="@dimen/T6" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line_one"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:background="@color/color_d9d9d9" />
+     <View
+         android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9" 
+        android:visibility="gone"/>
+
+</LinearLayout>

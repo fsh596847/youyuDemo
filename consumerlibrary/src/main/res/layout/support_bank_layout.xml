@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:text="支持银行"
+        android:textColor="@color/white"
+        android:background="@mipmap/card_bg"
+        android:textSize="15sp"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bank_listview"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:paddingTop="5dp"
+        android:layout_height="130dp"
+        android:cacheColorHint="#00000000"
+        android:background="@color/white"
+        android:divider="@null"
+        android:focusable="false"
+        android:listSelector="#00000000"
+        android:scrollbars="vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/bank_listview">
+
+        <View
+            android:id="@+id/divide"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dip"
+            android:layout_gravity="center"
+            android:background="@color/divide"/>
+
+        <TextView
+            android:id="@+id/close_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:background="@drawable/card_radius_bg"
+            android:text="关闭"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+

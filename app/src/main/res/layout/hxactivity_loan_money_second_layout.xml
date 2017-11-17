@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+        android:background="@color/color_ff7920">
+        <TextView
+                android:id="@+id/loan_money_pay_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_layout_margin"
+                android:layout_marginBottom="@dimen/common_layout_margin"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="等额本金"
+                android:padding="5dip"
+                android:textColor="@color/color_ff7920"
+                android:background="@drawable/hxcommon_btn_normal_bg_white"
+                android:textSize="@dimen/T1" />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="@string/loan_money_toatal_huankuane_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T0" />
+
+            <TextView
+                android:id="@+id/loan_money_total_huankuaie_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="10000"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T3" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/m_icon_loan_money_driver" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="@string/loan_money_toatal_daikuane_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T0" />
+
+            <TextView
+                android:id="@+id/loan_money_total_daikuaie_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="50000"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T3" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/m_icon_loan_money_driver" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="@string/loan_money_toatal_lixi_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T0" />
+
+            <TextView
+                android:id="@+id/loan_money_total_lixi_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="240"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T3" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/m_icon_loan_money_driver" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="@string/loan_money_toatal_shouxufei_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T0" />
+
+            <TextView
+                android:id="@+id/loan_money_total_shouxufei_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="48"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T3" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/m_icon_loan_money_driver" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="@string/loan_money_toatal_qishu_text"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T0" />
+
+            <TextView
+                android:id="@+id/loan_money_total_qishu_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/T3" />
+        </LinearLayout>
+    </LinearLayout>
+        
+   </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:weightSum="5.1" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="@dimen/common_layout_margin"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1.1"
+            android:gravity="center_vertical"
+            android:text="@string/loan_money_pay_date_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T1" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/loan_money_benjin_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T1" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/loan_money_lixi_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T1" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/loan_money_shouxufei_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T1" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/loan_money_huankuane_text"
+            android:textColor="@color/color_ff7920"
+            android:textSize="@dimen/T1" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/loan_money_pay_type_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_layout_margin"
+        
+        android:layout_marginTop="5dip"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:focusable="false"
+        android:listSelector="#00000000"
+        android:scrollbars="@null" />
+
+</LinearLayout>

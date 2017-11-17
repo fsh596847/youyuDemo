@@ -1,0 +1,180 @@
+package com.zhongan.demo.hxin.util;
+
+import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.megvii.livenessdetection.Detector;
+import com.megvii.livenessdetection.Detector.DetectionType;
+import com.zhongan.demo.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+/**
+ * 实体验证工具类
+ */
+public class IDetection {
+
+	private View rootView;
+	private Context mContext;
+
+	public View[] mAnimViews;
+	private int num = 3;// 动作数量
+	private HashMap<Integer, Drawable> mDrawableCache;
+	public int mCurShowIndex = -1;// 现在底部展示试图的索引值
+	public ArrayList<DetectionType> mDetectionSteps;// 活体检测动作列表
+
+	public IDetection(Context mContext, View view) {
+		this.mContext = mContext;
+		this.rootView = view;
+		mDrawableCache = new HashMap<Integer, Drawable>();
+	}
+
+	public void animationInit() {
+		int[] reses = { R.drawable.hxface_liveness_head_up_down, R.drawable.hxface_liveness_head_left_right,
+				R.drawable.hxface_liveness_mouth_open_closed};
+//				, R.drawable.face_liveness_eye_open_closed };
+		for (int oneRes : reses) {
+			mDrawableCache.put(oneRes, (mContext.getResources().getDrawable(oneRes)));
+		}
+	}
+
+	public void viewsInit() {
+		mAnimViews = new View[2];
+		mAnimViews[0] = (rootView.findViewById(R.id.face_main_detection_first_step_layout));
+		mAnimViews[1] = (rootView.findViewById(R.id.face_main_detection_secont_step_layout));
+		for (View tmpView : mAnimViews) {
+			tmpView.setVisibility(View.INVISIBLE);
+		}
+	}
+
+	public void changeType(final Detector.DetectionType detectiontype, long timeout) {
+		Animation animationIN = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_rightin);
+		Animation animationOut = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_leftout);
+
+		if (mCurShowIndex != -1) // 已经存在layout 需要移除之
+		{
+			mAnimViews[mCurShowIndex].setVisibility(View.INVISIBLE);
+			mAnimViews[mCurShowIndex].setAnimation(animationOut);
+		} else {
+			mAnimViews[0].setVisibility(View.INVISIBLE);
+			mAnimViews[0].startAnimation(animationOut);
+		}
+
+		mCurShowIndex = mCurShowIndex == -1 ? 0 : (mCurShowIndex == 0 ? 1 : 0);
+		initAnim(detectiontype, mAnimViews[mCurShowIndex]);
+		mAnimViews[mCurShowIndex].setVisibility(View.VISIBLE);
+		mAnimViews[mCurShowIndex].startAnimation(animationIN);
+	}
+
+	TextView detectionNameText;
+	String detectionNameStr;
+
+	private void initAnim(Detector.DetectionType detectiontype, View layoutView) {
+		ImageView tmpImageView = (ImageView) layoutView.findViewById(R.id.detection_step_image);
+		tmpImageView.setImageDrawable(getDrawRes(detectiontype));
+
+		((AnimationDrawable) tmpImageView.getDrawable()).start();
+		detectionNameText = (TextView) layoutView.findViewById(R.id.detection_step_name);
+		detectionNameStr = getDetectionName(detectiontype);
+		detectionNameText.setText(detectionNameStr);
+	}
+
+	public void checkFaceTooLarge(boolean isLarge) {
+		if (detectionNameStr != null && detectionNameText != null) {
+			if (isLarge && !detectionNameText.getText().toString().equals("请再离远一些")) {
+				detectionNameText.setText("请再离远一些");
+			} else if(!isLarge && detectionNameText.getText().toString().equals("请再离远一些")){
+				detectionNameText.setText(detectionNameStr);
+			}
+		}
+	}
+
+	private Drawable getDrawRes(Detector.DetectionType detectionType) {
+		int resID = -1;
+		switch (detectionType) {
+		case POS_PITCH:
+		case POS_PITCH_UP:
+		case POS_PITCH_DOWN:
+			resID = R.drawable.hxface_liveness_head_up_down;
+			break;
+		case POS_YAW_LEFT:
+		case POS_YAW_RIGHT:
+		case POS_YAW:
+			resID = R.drawable.hxface_liveness_head_left_right;
+			break;
+		case MOUTH:
+			resID = R.drawable.hxface_liveness_mouth_open_closed;
+			break;
+//		case BLINK:
+//			resID = R.drawable.hxface_liveness_eye_open_closed;
+//			break;
+		}
+		Drawable cachedDrawAble = mDrawableCache.get(resID);
+		if (cachedDrawAble != null)
+			return cachedDrawAble;
+		else {
+			Drawable drawable = mContext.getResources().getDrawable(resID);
+			mDrawableCache.put(resID, (drawable));
+			return drawable;
+		}
+	}
+
+	private String getDetectionName(Detector.DetectionType detectionType) {
+		String detectionName = null;
+		switch (detectionType) {
+		case POS_PITCH:
+			detectionName = "上下点头";
+			break;
+		case POS_YAW:
+			detectionName = "左右摇头";
+			break;
+		case MOUTH:
+			detectionName = " 张张嘴";
+			break;
+//		case BLINK:
+//			detectionName = "眨眼";
+//			break;
+		case POS_YAW_LEFT:
+			detectionName = "左转";
+			break;
+		case POS_YAW_RIGHT:
+			detectionName = "右转";
+			break;
+		}
+		return detectionName;
+	}
+
+	/**
+	 * 初始化检测动作
+	 */
+	public void detectionTypeInit() {
+		ArrayList<DetectionType> tmpTypes = new ArrayList<DetectionType>();
+		//tmpTypes.add(Detector.DetectionType.BLINK);// 眨眼
+		tmpTypes.add(Detector.DetectionType.MOUTH);// 张张嘴
+		tmpTypes.add(Detector.DetectionType.POS_PITCH);// 上下点头
+		tmpTypes.add(Detector.DetectionType.POS_YAW);// 左右摇头
+
+		Collections.shuffle(tmpTypes);// 打乱顺序
+
+		mDetectionSteps = new ArrayList<DetectionType>(num);
+		for (int i = 0; i < num; i++) {
+			mDetectionSteps.add(tmpTypes.get(i));
+		}
+	}
+
+	public void onDestroy() {
+		rootView = null;
+		mContext = null;
+		if (mDrawableCache != null) {
+			mDrawableCache.clear();
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/start_face_warring_bar_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/start_face_warring_bar"
+            android:layout_width="30dip"
+            android:layout_height="30dip" />
+
+        <TextView
+            android:id="@+id/start_face_warring_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:text="@string/linking_network"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/T5" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start_face_again_warring_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:layout_marginBottom="40dip"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginRight="@dimen/common_layout_margin"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/hxcommon_btn_normal_bg"
+        android:gravity="center"
+        android:text="@string/start_link_network"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/T5"
+        android:visibility="gone" />
+
+</LinearLayout>

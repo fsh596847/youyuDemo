@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="19dip"
+        android:src="@drawable/m_icon_logo" />
+
+    <TextView
+        android:id="@+id/version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="15dip"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/T6" />
+
+    <ListView
+        android:id="@+id/about_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:focusable="false"
+        android:listSelector="#00000000"
+        android:paddingBottom="20dip"
+        android:scrollbars="none" />
+    <TextView
+        
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dip"
+        android:text="@string/about_gongsi_text"
+        android:gravity="center_horizontal|bottom"
+        android:textColor="@color/color_808080"
+        android:textSize="@dimen/T0" />
+</LinearLayout>

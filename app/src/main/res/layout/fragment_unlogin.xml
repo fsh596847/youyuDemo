@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white0"
+    android:orientation="vertical">
+
+    <com.zhongan.demo.view.TopNavigationView
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:titleColor="@color/base_black"
+        app:titleText="首页"
+        app:titleSize="15sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/dark_gray"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:text="有余APP-安全、高效、便捷的\n新型金融服务生活平台"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/bg_gongxi">
+
+        <com.zhongan.demo.view.MarqueeView
+            android:id="@+id/marqueeView"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/transparent"
+            app:mvAnimDuration="1000"
+            app:mvInterval="3000"
+            app:mvSingleLine="true"
+            app:mvTextColor="@color/color_666666"
+            app:mvGravity="center"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/loan_money"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/button_background"
+        android:gravity="center"
+        android:text="我要借钱"
+        android:textColor="@color/textcolor_selector"
+        android:textSize="18sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_big1"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="在线申请"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_big2"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="额度高"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_big3"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="急速审批"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_big4"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="实时到账"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

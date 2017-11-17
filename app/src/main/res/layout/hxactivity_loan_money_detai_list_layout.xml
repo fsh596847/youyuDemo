@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e5e5e5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hxtop_title_bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.zhongan.demo.hxin.view.MyListView
+                android:id="@+id/pay_money_loan_money_detail_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:focusable="false"
+                android:listSelector="#00000000"
+                android:paddingBottom="20dip"
+                android:scrollbars="@null" />
+              <Button
+                    android:id="@+id/pay_money_all_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_btn_height"
+                    android:layout_marginTop="40dip"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginLeft="@dimen/common_layout_margin"
+                     android:layout_marginRight="@dimen/common_layout_margin"
+                    android:background="@drawable/hxcommon_btn_normal_bg"
+                    android:gravity="center"
+                    android:text="@string/pay_money_all_text"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/T5"
+                    android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

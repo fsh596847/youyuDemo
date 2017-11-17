@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+    <style name="custom_dialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+    <!--face++ 资源-->
+    <declare-styleable name="AutoRatioImageView">
+
+        <!-- -ratio 高/宽 -->
+        <attr name="ratio" format="float" />
+        <attr name="prefer" format="integer" />
+    </declare-styleable>
+    <!--自定义radio_button_style-->
+    <style name="radio_button_style">
+        <item name="android:layout_width">120dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/common_checkbox_btn_bg</item>
+        <item name="android:drawablePadding">5dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">15dip</item>
+        <item name="android:textColor">@color/color_000000</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <style name="left_text_tip_style">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">@dimen/common_edit_text_height</item>
+        <item name="android:layout_marginLeft">@dimen/common_margin</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="left_text_tip_style1">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">@dimen/common_edit_text_height</item>
+        <item name="android:layout_marginLeft">@dimen/common_margin</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="right_text_value_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_edit_text_height</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">@dimen/common_margin</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_000000</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColorHint">@color/color_c7c7cd</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:drawablePadding">20dip</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="colorControlActivated">@color/transparent</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="myDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item><!--除去title-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item><!--除去背景色-->
+    </style>
+
+    <style name="pickerview_dialogAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pickerview_dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/pickerview_dialog_scale_out</item>
+    </style>
+
+
+</resources>

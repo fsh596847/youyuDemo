@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/fragment_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/color_F0ffffff" >
+    
+       <View 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9"
+        android:layout_gravity="top"
+       />
+        <RadioGroup
+            android:id="@+id/bottom_group"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/tab1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/m_tab1selector"
+                android:gravity="center"
+                android:padding="0dip"
+                android:checked="true"
+                android:text="@string/tab_shouye"
+                android:textColor="@drawable/m_tabcolor_selector"
+                android:textSize="@dimen/menu_text_size" />
+
+
+
+            <RadioButton
+                android:id="@+id/tab2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:padding="0dip"
+                android:gravity="center"
+                android:drawableTop="@drawable/m_tab2selector"
+                android:text="金融超市"
+                android:textColor="@drawable/m_tabcolor_selector"
+                android:textSize="@dimen/menu_text_size" />
+
+
+            <RadioButton
+                android:id="@+id/tab3"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:padding="0dip"
+                android:gravity="center"
+                android:drawableTop="@drawable/m_tab2selector"
+                android:text="个人中心"
+                android:textColor="@drawable/m_tabcolor_selector"
+                android:textSize="@dimen/menu_text_size" />
+          
+        </RadioGroup>     
+</FrameLayout>

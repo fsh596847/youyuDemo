@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/rl_tittle"
+        layout="@layout/hxtop_title_bar_layout" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_below="@+id/rl_tittle"
+            android:layout_marginTop="70dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/shenpi_ing"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您的信息已提交，正在审核中"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/tttt"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我们的客户经理会马上联系您"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_below="@+id/tttt"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="如紧急可联系我们：400-888-888"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

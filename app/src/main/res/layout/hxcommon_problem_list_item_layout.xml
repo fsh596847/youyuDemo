@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/common_problem_tv"
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/common_edit_text_height"
+        android:drawableRight="@drawable/m_icon_enter"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:layout_marginRight="@dimen/common_layout_margin"
+        android:text="自动扣款"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_000000"
+        android:textSize="@dimen/T4" />
+
+    <View
+        android:id="@+id/line_one"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:layout_marginLeft="@dimen/common_layout_margin"
+        android:background="@color/color_d9d9d9" />
+
+    <View
+        android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_high"
+        android:background="@color/color_d9d9d9"
+        android:visibility="gone" />
+
+</LinearLayout>

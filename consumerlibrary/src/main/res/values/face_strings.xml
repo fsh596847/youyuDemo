@@ -1,0 +1,197 @@
+<resources>
+
+    <string name="map_notifyTitle">提示</string>
+    <string name="map_notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="map_setting">设置</string>
+    <string name="map_cancel">取消</string>
+    <string name="message_detail_text">消息详情</string>
+    <string name="get_money_10W_text">您有一笔获取10W的机会</string>
+    <string name="get_money_10W_some_minutes_text">只需几分钟，就能免费拥有10W的使用权</string>
+    <string name="apply_btn_text">立即申请</string>
+    <string name="self_info_check_text">银行卡实名认证</string>
+    <string name="submit_text">提交</string>
+    <string name="name_text">姓名</string>
+    <string name="idcard_text">身份证号</string>
+    <string name="bank_card_no_text">银行卡号</string>
+    <string name="input_bank_card_no_text">请输入银行卡号</string>
+    <string name="mobile_text">手机号码</string>
+    <string name="input_bank_mobile_text">请输入银行预留手机号</string>
+    <string name="yzm_tip_text">验证码</string>
+    <string name="yzm_btn_text">获取验证码</string>
+    <string name="input_yzm_tip_text">请输入手机验证码</string>
+
+    <string name="loan_money_toatal_huankuane_text">总还数额</string>
+    <string name="loan_money_toatal_daikuane_text">总贷数额</string>
+    <string name="loan_money_toatal_lixi_text">总利息</string>
+    <string name="loan_money_toatal_shouxufei_text">总手续费</string>
+    <string name="loan_money_toatal_qishu_text">总期数(月)</string>
+    <string name="loan_money_pay_date_text">还款时间</string>
+    <string name="loan_money_benjin_text">本金</string>
+    <string name="loan_money_lixi_text">利息</string>
+    <string name="loan_money_shouxufei_text">手续费</string>
+    <string name="loan_money_huankuane_text">还款额</string>
+    <string name="loan_money_loan_num_text">可借额度</string>
+    <string name="loan_money_loan_month_text">借款期限</string>
+    <string name="loan_money_pay_type_text">还款方式</string>
+    <string name="loan_money_pay_plan_text">还款计划</string>
+    <string name="loan_money_pay_yinhang_text">还款银行</string>
+    <string name="loan_money_loan_yinhang_text">放款银行</string>
+    <string name="loan_money_start_end_date_text">起止时间</string>
+    <string name="loan_money_daikuanqixian_text">贷款期限</string>
+    <string name="loan_money_daikuanjine_text">贷款金额</string>
+    <string name="loan_money_idcard_text">身份证号</string>
+    <string name="loan_money_day_lilv_text">日利率</string>
+    <string name="loan_money_nonth_lilv_text">月利率</string>
+    <string name="loan_money_hetong_text">借款合同</string>
+    <string name="loan_money_pay_day_text">每月还款日</string>
+    <string name="loan_money_loan_three_month_text">3期</string>
+    <string name="loan_money_loan_six_month_text">6期</string>
+    <string name="loan_money_loan_nine_month_text">9期</string>
+    <string name="loan_money_loan_twelve_month_text">12期</string>
+    <string name="next_step_text">下一步</string>
+    <string name="loan_money_toatal_lixi_text1">利息总额</string>
+    <string name="loan_money_choose_shoukuanyinhangka_text">收款银行卡</string>
+    <string name="submit_is_allowed_text">我已阅读并同意</string>
+    <string name="lines_zhanghu_weituoshu_text">《账户委托扣款授权书》</string>
+    <string name="lines_zhidong_huankuan_text">《个人信息使用授权书》</string>
+    <string name="lines_jiekuan_hetong_text">《借款合同》</string>
+    <string name="lines_person_info_zhengxin_text">《征信查询授权书》</string>
+    <string name="spilit_text">、</string>
+    <string name="lines_text">我已阅读并同意 《账户委托扣款授权书》、《个人信息使用授权书》、《征信查询授权书》</string>
+    <string name="input_loan_money_password_text">请输入支付密码</string>
+    <string name="loan_money_sure_text">确认借款</string>
+    <string name="loan_money_title_text">借款</string>
+    <string name="merchat_business_text">补充信息</string>
+    <string name="loan_money_frist_pay_text">首次还款</string>
+    <string name="loan_money_remain_month_pay_text">剩余每月还款</string>
+    <string name="input_ture_name_text">请输入真实姓名</string>
+    <string name="input_true_idcard_num_text">请输入真实身份证号</string>
+    <string name="idcard_back_text">拍摄身份证反面</string>
+    <string name="idcard_face_text">拍摄身份证正面</string>
+    <string name="upload_idcard_text">上传身份证</string>
+    <string name="name_tip_text">姓名：</string>
+    <string name="idcard_tip_text">身份证号：</string>
+    <string name="idcard_fazhengjiguan_text">发证机关：</string>
+    <string name="idcard_longtime_text">有效期：</string>
+    <string name="basic_family_address_tip_text">家庭住址</string>
+    <string name="basic_family_address_detail_tip_text">详细地址</string>
+    <string name="basic_family_detail_address_text">请输入详细地址</string>
+    <string name="basic_already_married_text">已婚</string>
+    <string name="basic_not_marry_text">未婚</string>
+    <string name="basic_link_name_text">联系人姓名</string>
+    <string name="basic_link_name_tip_text">请输入联系人姓名</string>
+    <string name="basic_link_mobile_text">联系人电话</string>
+    <string name="basic_link_mobile_tip_text">请输入联系人电话</string>
+    <string name="basic_link_relationship_text">联系人关系</string>
+    <string name="basic_link_relationship_tip_text">请选择联系人关系</string>
+    <string name="basic_info_text">基本信息</string>
+    <string name="loan_money_reviewing_text">信息审核</string>
+    <string name="loan_money_loan_success_text">放款中</string>
+    <string name="loan_money_loan_success_tip_one_text">您的信息已提交完成，我们正在努力放款中</string>
+    <string name="loan_money_loan_success_tip_two_text">请注意查看短信通知</string>
+    <string name="loan_money_reviewing_tip_text">您的信息已提交完成，我们正在努力审核中</string>
+    <string name="wfl_money_text">您的信息已提交完成，我们正在努力放款中</string>
+    <string name="pay_day_window_tip_text">还款日说明</string>
+    <string name="want_apply_text">我要申请</string>
+    <string name="anxin_yzm_window_title_text">安心签说明</string>
+    <string name="anxin_yzm_window_tip_text">安心签是CFCA中国金融认证中心成立了专门针对互联网金融行业的电子合同平台，点击验证码即表示你理解当前贷款操作，输入正确的验证码并提交即同意当前贷款申请并授权签订电子合同。</string>
+    <string name="input_anxin_yzm_tip_text">请输入安心签短信验证码</string>
+    <!--下拉选择框用-->
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">完成</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+
+    <!--  face++人脸识别资源-->
+    <string name="face_text">人脸识别</string>
+    <string name="steps">活体检测:</string>
+    <string name="pos_detection">POS</string>
+    <string name="mouth_detection">MOUTH</string>
+    <string name="blink_detection">BLINK</string>
+    <string name="start_face">开始检测</string>
+    <string name="start_face_again">重新检测</string>
+    <string name="finish_face">完成</string>
+    <string name="start_link_network">重新联网授权</string>
+    <string name="linking_network">正在联网授权中...</string>
+    <string name="link_network_error">联网授权失败,请检查网络或找服务商!</string>
+    <string name="keep_light_full">请在光线充足的情况下进行检测</string>
+    <string name="cancle_text">取消</string>
+    <string name="apply_now_text">马上申请</string>
+    <string name="loan_money_text">借钱去咯</string>
+    <string name="loan_money_not_allowed_text">很遗憾，您没有通过申请</string>
+    <string name="loan_money_refused_text">很遗憾，放款失败</string>
+    <string name="apply_again_text">重新借款</string>
+    <string name="loan_money_is_reviewing_text">申请正在审核中，请耐心等待哟</string>
+
+    <array name="detect_type">
+        <item>眨眼</item>
+        <item>张嘴</item>
+        <item>摇头</item>
+    </array>
+    <array name="detect_result">
+        <item></item>
+        <item>LIVEPASS</item>
+        <item>人脸追踪失败</item>
+        <item>超时失败</item>
+        <item>LIVENOTPASS</item>
+    </array>
+
+    <string name="face_tip">请留意~按以下要求将提高通过率</string>
+    <string name="face_tip_one">免去帽子</string>
+    <string name="face_tip_two">摘下眼镜</string>
+    <string name="face_tip_three">调亮光线</string>
+    <string name="netowrk_parse_failed">解析服务器数据失败</string>
+    <string name="network_error">网络请求失败</string>
+    <string name="verify_error">很遗憾，未能通过人脸识别验证</string>
+    <string name="verify_success">恭喜你，通过人脸识别验证</string>
+    <!--自定义Dialog-->
+    <string name="title_alert">提示</string>
+    <string name="ok">确定</string>
+    <string name="cancle">取消</string>
+    <string name="exit_tip">您确定要离开吗？</string>
+
+
+
+
+    <string name="meglive_prompt">请在光线充足的情况下进行检测</string>
+    <string name="meglive_detect_initfailed">检测器初始化失败</string>
+    <string name="meglive_camera_initfailed">打开前置摄像头失败</string>
+    <string name="meglive_getpermission_motion">请打开手机读取运动数据权限</string>
+    <string name="meglive_phone_vertical">请竖直握紧手机</string>
+    <string name="meglive_keep_eyes_open">请勿用手遮挡眼睛</string>
+    <string name="meglive_keep_mouth_open">请勿用手遮挡嘴巴</string>
+    <string name="face_not_found">请让我看到您的正脸</string>
+    <string name="face_too_dark">请让光线再亮点</string>
+    <string name="face_too_bright">请让光线再暗点</string>
+    <string name="face_too_small">请再靠近一些</string>
+    <string name="face_too_large">请再离远一些</string>
+    <string name="face_too_blurry">请避免侧光和背光</string>
+    <string name="face_out_of_rect">请保持脸在人脸框中</string>
+    <string name="meglive_pitch">缓慢点头</string>
+    <string name="meglive_yaw">左右摇头</string>
+    <string name="meglive_mouth_open_closed">张嘴</string>
+    <string name="meglive_eye_open_closed">眨眼</string>
+    <string name="meglive_pos_yaw_left">左转</string>
+    <string name="meglive_pos_yaw_right">右转</string>
+    <string name="tipsmouth">Open your mouth and close.</string>
+    <string name="tipblink">Do blink with your eyes.</string>
+    <string name="tippose">Rotate your pose vertically.</string>
+    <string name="facelost">Face Lost</string>
+    <string name="timeout">超时</string>
+    <string name="authok">Success</string>
+    <string name="aufail">Failed</string>
+
+
+    <string name="loading_text">使用说明：\n1、首先您需要输入姓名；\n2、之后您需要按照屏幕上的提示完成3个动作，以通过活体检测，同时软件会将您的人脸图像发送至服务器进行人脸验证；\n3、如果您没有通过活体检测或者人脸验证，则登录失败，反之则登录成功。</string>
+    <string name="loading_confirm">OK,I Know</string>
+    <string name="liveness_detection_failed">活体检测失败</string>
+    <string name="liveness_detection_failed_timeout">活体检测超时失败</string>
+    <string name="liveness_detection_failed_action_blend">活体检测动作错误</string>
+    <string name="liveness_detection_failed_not_video">活体检测连续性检测失败</string>
+    <string name="novalidframe">没有合适的图像用于人脸识别</string>
+
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/light_gray"
+	android:orientation="vertical">
+
+	<com.zhongan.demo.view.TopNavigationView
+		android:id="@+id/topbar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:titleColor="@color/color_000000"
+		app:titleText="加载中..."
+		app:titleSize="12sp"
+		app:leftDrawable="@drawable/m_icon_back"
+		 />
+
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+		android:visibility="visible"
+        android:background="@color/divide"/>
+    
+    <ProgressBar
+        android:id="@+id/activity_load_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/progress_shape_bg"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_show_layer" />
+    
+    
+    <WebView 
+        android:id="@+id/activity_webView"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+		android:visibility="gone"
+        android:orientation="horizontal">
+	    <TextView
+	        android:id="@+id/activity_sendEmail"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:textSize="18sp"
+	        android:text="获取资料"
+			android:background="@color/green"
+	        android:gravity="center"/>
+			    
+        <TextView
+            android:id="@+id/activity_pointMent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="预约"
+			android:background="@color/colorAccent"
+			/>
+    </LinearLayout>
+
+</LinearLayout>
