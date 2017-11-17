@@ -122,9 +122,6 @@
     <activity
         android:name=".hxin.activitys.HXLoginActivity"
         android:screenOrientation="portrait"/>
-    <activity
-        android:name=".hxin.activitys.HXMainActivity"
-        android:screenOrientation="portrait"/>
 
     <activity
         android:name=".hxin.activitys.HXAboutActivity"

@@ -88,10 +88,7 @@ public class HXPayMoneyResultActivity extends HXBaseActivity implements OnClickL
 		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (payType.equals("all") && resultFlag.equals("true")) {
-				// ActivityStackManagerUtils.getInstance().finishAllActivity();
-				Intent intent = new Intent(HXPayMoneyResultActivity.this,
-						HXMainActivity.class);
-				startActivity(intent);
+
 			} else {
 				HXPayMoneyResultActivity.this.finish();
 			}

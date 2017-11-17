@@ -15,12 +15,6 @@ public class HXGuideActivity extends HXBaseActivity {
 
 			switch (msg.what){
 			case 0:
-				
-				Intent intent = new Intent(HXGuideActivity.this,HXMainActivity.class);
-				startActivity(intent);
-				
-				finish();
-				
 				break;
 
 			default:

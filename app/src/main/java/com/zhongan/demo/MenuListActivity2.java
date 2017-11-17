@@ -1,43 +1,29 @@
 package com.zhongan.demo;
 
 import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.fragments.FinacalFragment15;
 import com.zhongan.demo.fragments.HenXFragment;
 import com.zhongan.demo.fragments.PersonCenterFragment;
 import com.zhongan.demo.fragments.RightFragment;
 import com.zhongan.demo.fragments.UnLoginFragment;
-import com.zhongan.demo.fragments.XiaoJFragment;
 import com.zhongan.demo.fragments.YouYUFragment;
-import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.HXBaseActivity;
 import com.zhongan.demo.hxin.activitys.HXBasicSelfInfoActivity;
 import com.zhongan.demo.hxin.activitys.HXDealBankCardActivity;
@@ -45,33 +31,18 @@ import com.zhongan.demo.hxin.activitys.HXFaceIDCardInfoUploadActivity;
 import com.zhongan.demo.hxin.activitys.HXFaceStartActivity;
 import com.zhongan.demo.hxin.activitys.HXResultActivity;
 import com.zhongan.demo.hxin.activitys.HXResultingActivity;
-import com.zhongan.demo.hxin.fragments.HXShopFragment;
 import com.zhongan.demo.hxin.impl.ResultCallBack;
 import com.zhongan.demo.hxin.util.ActivityStackManagerUtils;
 import com.zhongan.demo.hxin.util.Contants;
 import com.zhongan.demo.hxin.util.LoggerUtil;
 import com.zhongan.demo.hxin.util.Util;
-import com.zhongan.demo.impl.ReqCallBack;
-import com.zhongan.demo.module.BannerItem;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.ToastUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-
 import com.zhongan.demo.view.FragmentTabHost;
 import com.zhongan.demo.view.Tab;
+import java.util.ArrayList;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -89,9 +60,9 @@ public class MenuListActivity2 extends HXBaseActivity  {
     private Dialog mDialog;
     private LayoutInflater mInflater;
     private FragmentTabHost mTabHost;
-    private ArrayList<Tab> mTabs = new ArrayList<Tab>(); ;
+  private ArrayList<Tab> mTabs = new ArrayList<Tab>();
 
-    private String idCard = "" ,userName = "";
+  private String idCard = "", userName = "";
 
 //    private Dialog updateDialog;//更新提示框
 //    private String fileUrl;//文件下载路径

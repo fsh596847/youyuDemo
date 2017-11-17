@@ -106,9 +106,7 @@ public class HXLoanMoneyResultActivity extends HXBaseActivity implements OnClick
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			Intent intent = new Intent(HXLoanMoneyResultActivity.this,
-					HXMainActivity.class);
-			startActivity(intent);
+
 		}
 		return super.onKeyDown(keyCode, event);
 

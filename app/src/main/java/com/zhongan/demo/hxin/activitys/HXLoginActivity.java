@@ -77,8 +77,7 @@ public class HXLoginActivity extends HXBaseActivity implements OnClickListener {
                     ToastUtils.showCenterToast("登录成功!",HXLoginActivity.this);
 //				nextStep(userStateInfo);
                     //登录
-                    Intent loginIntent = new Intent(HXLoginActivity.this, HXMainActivity.class);
-                    startActivity(loginIntent);
+
                     break;
                 case Contants.MSG_LOGIN_FAILURE:
                     //Toast.makeText(HXLoginActivity.this, "登录失败!", 1).show();

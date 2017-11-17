@@ -16,7 +16,6 @@ import com.zhongan.demo.LoginActivity;
 import com.zhongan.demo.MyApplication;
 import com.zhongan.demo.hxin.impl.ResultCallBack;
 import com.zhongan.demo.hxin.util.LoggerUtil;
-import com.zhongan.demo.hxin.xjactivitys.XJSetPayPassWordActivity2;
 import com.zhongan.demo.util.SharedPreferenceUtils;
 import com.zhongan.demo.util.ToastUtils;
 

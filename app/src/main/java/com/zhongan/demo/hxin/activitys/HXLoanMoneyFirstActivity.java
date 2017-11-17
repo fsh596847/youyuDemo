@@ -137,11 +137,6 @@ public class HXLoanMoneyFirstActivity extends HXBaseActivity implements OnClickL
 								public void onClick(DialogInterface dialog,
 										int which) {
 									dialog.dismiss();
-									// 设置你的操作事项
-//									ActivityStackManagerUtils.getInstance().finishAllActivity();
-									Intent intent = new Intent(HXLoanMoneyFirstActivity.this,HXMainActivity.class);
-									//intent.putExtra("flag", value);
-									startActivity(intent);
 								}
 							});
 					builder.create().show();
@@ -730,7 +725,7 @@ public class HXLoanMoneyFirstActivity extends HXBaseActivity implements OnClickL
 	}
 	private void initAllPayTypePopWindow() {
 		// 得到弹出菜单的view，login_setting_popup是弹出菜单的布局文件
-		LayoutInflater inflater = (LayoutInflater) LayoutInflater.from(this);
+		LayoutInflater inflater = LayoutInflater.from(this);
 		View contentView = inflater
 				.inflate(R.layout.hxall_lines_pop_layout, null);
 		mLoanTypePopWindow = new PopupWindow(contentView,

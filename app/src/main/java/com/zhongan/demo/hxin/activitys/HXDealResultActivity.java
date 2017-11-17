@@ -88,20 +88,13 @@ public class HXDealResultActivity extends HXBaseActivity implements OnClickListe
 				HXDealResultActivity.this.finish();
 			}else
 			{
-				//成功返回首页
-//				ActivityStackManagerUtils.getInstance().finishAllActivity();
-				Intent intent = new Intent(HXDealResultActivity.this,HXMainActivity.class);
-//				intent.putExtra("flag",0);//0：返回首页 2：返回我的账户
-				startActivity(intent);
+
 			}
 			
 			break;
 		case R.id.result_sucess_go_shouye_btn:
 		case R.id.result_failure_go_shouye_btn:
 			//返回首页
-//			ActivityStackManagerUtils.getInstance().finishAllActivity();
-			Intent intent = new Intent(HXDealResultActivity.this,HXMainActivity.class);
-			startActivity(intent);
 			break;
 		case R.id.result_failure_check_three_btn:
 			//开启验三
@@ -126,10 +119,6 @@ public class HXDealResultActivity extends HXBaseActivity implements OnClickListe
 			}else
 			{
 				//成功返回首页
-//				ActivityStackManagerUtils.getInstance().finishAllActivity();
-				Intent intent = new Intent(HXDealResultActivity.this,HXMainActivity.class);
-//				intent.putExtra("flag",0);//0：返回首页 2：返回我的账户
-				startActivity(intent);
 			}
     	}
     	return super.onKeyDown(keyCode, event);
