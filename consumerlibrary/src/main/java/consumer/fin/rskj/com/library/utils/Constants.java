@@ -105,7 +105,28 @@ public class Constants {
    * 全额还款
    */
   public static final String TRANS_CODE_M100800 = "M100800";
+  /**
+   * 资金方产品进件信息  进件页面
+   */
+  public static final String TRANS_CODE_M000191 = "M000191";
+  /**
+   * 短信验证码验证
+   */
+  public static final String TRANS_CODE_M000015 = "M000015";
+  public static final String TRANS_CODE_CFCA0003 = "CFCA0003";
+  /**
+   * 获取短信验证码接口
+   */
+  public static final String TRANS_CODE_M090904 = "M090904";
 
+  /**
+   * 生产借款借据
+   */
+  public static final String TRANS_CODE_M100300 = "M100300";
+  /**
+   * 借款确认接口
+   */
+  public static final String TRANS_CODE_M090902 = "M090902";
 
 
 }

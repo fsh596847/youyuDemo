@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import consumer.fin.rskj.com.library.utils.Constant;
 import org.greenrobot.eventbus.EventBus;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -96,8 +97,11 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
   /**
    * 获取验证码
    */
-  private TextView mYzmBtn;//获取验证码
-  private String contractUrl;//合同url
+  private TextView mYzmBtn;
+  /**
+   * 合同url
+   */
+  private String contractUrl;
   private TextView check_contact;
   private CheckBox checkbox;
 
@@ -141,15 +145,12 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_loancredit);
-
     data = getIntent().getStringExtra("data");
     LogUtils.d(TAG, "data = " + data);
     if (TextUtils.isEmpty(data)) {
       return;
     }
     generateCredit();
-    //m000191();
-    //M000171();
   }
 
   @Override public void init() {
@@ -222,10 +223,6 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     }
 
     if (v.getId() == R.id.contractProtocol) {
-      //            if(TextUtils.isEmpty(contractProtocolUrl)){
-      //                Toast.makeText(this,"借款协议为空",Toast.LENGTH_SHORT).show();
-      //                return;
-      //            }
       intent = new Intent(this, HtmlActivity2.class);
       intent.putExtra("url", Constants.BASE_URL + contractUrl);
       intent.putExtra("title", "借款合同");
@@ -243,19 +240,6 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
       intent.putExtra("title", "贷款申请表");
       startActivity(intent);
     }
-
-    //            if(v.getId() == R.id.loan_purpose){
-    //
-    //                if(arrayList.isEmpty()|| arrayList.size() < 2){
-    //                    return;
-    //                }
-    //
-    //                if(null == mLinesPopWindow){
-    //                    initAllLinesPopWindow();
-    //                }
-    //                mLinesPopWindow.showAtLocation(v, 0, 0, 0);
-    //            }
-
   }
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -271,11 +255,12 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     }
   }
 
-  // 获取短信验证码接口
-
+  /**
+   * 获取短信验证码接口
+   */
   private void getMsmCode() {
     requestParams.clear();
-    requestParams.put("transCode", "M090904");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M090904);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("cell", sharePrefer.getPhone());//手机号码
@@ -315,7 +300,9 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     });
   }
 
-  //初始化倒计时控件
+  /**
+   * 初始化倒计时控件
+   */
   private void instantiationTime(Long time) {
     LogUtils.d("debug", "time------>" + time + "");
     timer = new CountDownTimer(time, 1000) {
@@ -337,50 +324,39 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     };
   }
 
-  //生产借款借据
+  /**
+   * 生产借款借据
+   */
   private void generateCredit() {
-
-    requestParams.clear();
-    requestParams.put("transCode", "M100300");//接口标识
-    requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
-    requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-
     try {
+      requestParams.clear();
+      requestParams.put("transCode", Constants.TRANS_CODE_M100300);//接口标识
+      requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
+      requestParams.put("clientToken", sharePrefer.getToken());//登录后token
       JSONObject jsonObject = new JSONObject(data);
-
       requestParams.put("prodNum", jsonObject.getString("prodNum"));
       requestParams.put("applyAmt", jsonObject.getString("applyAmt"));
-
       loanterm = jsonObject.getInt("period") + "";
       requestParams.put("period", loanterm);
       requestParams.put("repayMode", jsonObject.getString("repayMode"));
       requestParams.put("repayName", jsonObject.getString("repayName"));
-
       repayWayId = jsonObject.getString("repayWayId");
       requestParams.put("repayWayId", repayWayId);
-
       applyAmt_String = jsonObject.getString("applyAmt");
-
       fundId = jsonObject.getString("fundId");
       productId = jsonObject.getString("productId");
-
       purpose = jsonObject.getString("purpose");
       loan_purpose.setText(purpose);
       requestParams.put("purpose", purpose);//借款用途
-    } catch (JSONException e) {
-      e.printStackTrace();
     } catch (Exception e) {
-
+      e.printStackTrace();
     }
-
-    showLoading("正在加载...");
-
+    showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "生成借据: requestParams--->" + requestParams.toString());
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
         dismissLoading();
         LogUtils.d(TAG, "生成借据: data--->" + data);
-
         updateUi(data);
       }
 
@@ -396,10 +372,12 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     });
   }
 
-  // 借款确认接口
+  /**
+   * 借款确认接口
+   */
   private void confirmLoan() {
     requestParams.clear();
-    requestParams.put("transCode", "M090902");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M090902);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
@@ -407,17 +385,15 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     requestParams.put("productId", productId);
     requestParams.put("fundId", fundId);
     requestParams.put("applyAmt", applyAmt_String);
-    //requestParams.put("custNum", "custNum");
     requestParams.put("cell", sharePrefer.getPhone());
     requestParams.put("purpose", /*loan_purpose.getText().toString()*/purpose);
     requestParams.put("repayWayId", repayWayId);
     requestParams.put("smsCode", sms_code.getText().toString());
     requestParams.put("loanterm", loanterm);
-
     requestParams.put("projectCode", projectCode);
     requestParams.put("cfcaUId", userId);
 
-    showLoading("正在加载...");
+    showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "借款确认: requestParams--->" + requestParams.toString());
 
     sendPostRequest(requestParams, new ResultCallBack() {
@@ -430,26 +406,13 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
           JSONObject jsonObject = new JSONObject(data);
           if ("000000".equals(jsonObject.getString("returnCode")) && "00".equals(
               jsonObject.getString("flag"))) {
-
-            //                        mainMessage.setUrl(Constants.BASE_URL + sharePrefer.getLoanStatus()+
-            //                                "?loanStatus=" + jsonObject.getString("loanStatus") +
-            //                                "&applyAmt=" + jsonObject.getString("applyAmt") +
-            //                                "&bankInfo = " + jsonObject.getString("bankInfo")+
-            //                                "&firstPayDate = " + jsonObject.getString("firstRePayData")
-            //
-            //                        );
-
             mainMessage.setUrl(Constants.BASE_URL
                 + sharePrefer.getPayingStatus()
                 + "?projectId="
                 + jsonObject.getString("projectId"));
             mainMessage.setTitle("借款中");
             EventBus.getDefault().post(mainMessage);
-
             Intent intent = new Intent(LoanCredentialsActivity.this, WebViewActivity.class);
-            //                        intent.putExtra("title","借款中");
-            //                        intent.putExtra("url",Constants.BASE_URL + sharePrefer.getPayingStatus()+
-            //                                "?projectId=" + jsonObject.getString("projectId"));
             startActivity(intent);
           }
         } catch (JSONException e) {
@@ -496,10 +459,8 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
 
       contractUrl = jsonObject.getString("contractUrl");
       LogUtils.d(TAG, "-----contractUrl == " + contractUrl);
-
       shoukuan_bank.setText(
           jsonObject.getString("repayBankName") + jsonObject.getString("repayBankId"));
-
       //contractProtocolUrl = jsonObject.getString("contractUrl");
       contractUrl1 = jsonObject.getString("contractUrl1");
       LogUtils.d(TAG, "contractUrl1 == " + contractUrl1);
@@ -508,21 +469,20 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     }
   }
 
+  /**
+   * 资金方产品进件信息  进件页面
+   */
   private void m000191() {
-    //M000191 资金方产品进件信息  进件页面
-
     requestParams.clear();
-    requestParams.put("transCode", "M000191");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M000191);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
-
     requestParams.put("productId", productId);
     requestParams.put("fundId", fundId);
 
-    showLoading("正在加载...");
+    showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "m000191: requestParams--->" + requestParams.toString());
-
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
         dismissLoading();
@@ -548,30 +508,28 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     });
   }
 
-  //验证码检查
+  /**
+   * 验证码检查
+   */
   private void checkSMSCode(String smsCode) {
-    //M000015 短信验证码验证
     requestParams.clear();
-    requestParams.put("transCode", "CFCA0003");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_CFCA0003);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
-
     requestParams.put("checkCode", smsCode);
     requestParams.put("cfcauid", userId);
     requestParams.put("projectCode", projectCode);
 
-    showLoading("正在加载...");
+    showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "CFCA0003: requestParams--->" + requestParams.toString());
 
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
-        dismissLoading();
-        LogUtils.d(TAG, "CFCA0003: onSuccess--->" + data);
-
         try {
+          dismissLoading();
+          LogUtils.d(TAG, "CFCA0003: onSuccess--->" + data);
           JSONObject jsonObject = new JSONObject(data);
-
           if ("000000".equals(jsonObject.getString("returnCode"))) {
             showPWDDialog(new FinishCallBackImpl() {
               @Override public void finishCallBack(String data) {
@@ -601,10 +559,12 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     });
   }
 
-  //M000192 支付密码验证
+  /**
+   * M000192 支付密码验证
+   */
   public void checkPayPwd(String paymentPassword) {
     requestParams.clear();
-    requestParams.put("transCode", "M000192");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M000192);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
@@ -648,7 +608,9 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
     });
   }
 
-  //借款用途
+  /**
+   * 借款用途
+   */
   private void M000171() {
     requestParams.clear();
     requestParams.put("transCode", "M000171");//接口标识
@@ -738,7 +700,6 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
   }
 
   @Override public boolean onTouchEvent(MotionEvent event) {
-    // TODO Auto-generated method stub
     if (mLinesPopWindow != null && mLinesPopWindow.isShowing()) {
       mLinesPopWindow.dismiss();
       mLinesPopWindow = null;
