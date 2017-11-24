@@ -80,4 +80,13 @@ public class Constants {
    * 获取支持银行卡列表
    */
   public static final String TRANS_CODE_M108104 = "M108104";
+
+  /**
+   * 客户还款列表
+   */
+  public static final String TRANS_CODE_M100607 = "M100607";
+  /**
+   * 客户借款列表
+   */
+  public static final String TRANS_CODE_M100602 = "M100602";
 }

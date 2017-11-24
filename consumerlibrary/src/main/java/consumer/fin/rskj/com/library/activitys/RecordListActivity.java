@@ -10,6 +10,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ public class RecordListActivity extends BaseActivity {
 
   private static final String TAG = "RecordListActivity";
 
-  private ArrayList<Fragment> fragments = new ArrayList<>();
   private TopNavigationView2 topbar;
   private ViewPager viewPager;
   private TextView loan_record;
@@ -38,8 +38,6 @@ public class RecordListActivity extends BaseActivity {
   private MyAdapter pageAdapter;
   private int mPosition = 0;//位置
   private String data;
-  //M100607 客户还款列表
-  //M100602 客户借款列表
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -155,15 +153,16 @@ public class RecordListActivity extends BaseActivity {
     }
   }
 
-  //M100602 app借款结果接口
+  /**
+   * 客户借款列表
+   */
+
   public void getCurrentRecordList(final PLFragment.DataCallBack dataCallBack) {
     requestParams.clear();
-    requestParams.put("transCode", "M100602");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M100602);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
-    //        requestParams.put("fundId", sharePrefer.getXJFundId());
-    //        requestParams.put("productId", sharePrefer.getXJProductId());
     requestParams.put("indexNo", "0");
     requestParams.put("pageSize", "10");
     requestParams.put("productId", data);
@@ -189,15 +188,16 @@ public class RecordListActivity extends BaseActivity {
     });
   }
 
-  //M100607 app借款结果接口
+  /**
+   * 客户还款列表
+   */
+
   public void getPayRecordList(final PLFragment.DataCallBack dataCallBack) {
     requestParams.clear();
-    requestParams.put("transCode", "M100607");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_M100607);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("legalPerNum", "00001");
-    //        requestParams.put("fundId", sharePrefer.getXJFundId());
-    //        requestParams.put("productId", sharePrefer.getXJProductId());
     requestParams.put("indexNo", "0");
     requestParams.put("pageSize", "10");
     requestParams.put("productId", data);
