@@ -105,8 +105,17 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
   private TextView mLinkRelationshipTv;
   private Button mSubmitBtn;
   private OptionsPickerView mOptionView;
+  /**
+   * 省
+   */
   private ArrayList<KVItem> options1Items = new ArrayList<>();
+  /**
+   * 市
+   */
   private ArrayList<ArrayList<KVItem>> options2Items = new ArrayList<>();
+  /**
+   * 区
+   */
   private ArrayList<ArrayList<ArrayList<KVItem>>> options3Items = new ArrayList<>();
   private OptionsPickerView mRegitionOptionView;
   private Thread thread;
