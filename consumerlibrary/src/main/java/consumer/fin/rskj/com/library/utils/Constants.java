@@ -73,4 +73,14 @@ public class Constants {
    * 银行卡号验证三接口
    */
   public static final String TRANS_CODE_BANK_CARD_CHECK_THREE = "M100109";
+  /**
+   * 银行卡验证4接口
+   */
+  public static final String TRANS_CODE_M100106 = "M100106";
+  /**
+   * 获取支持银行卡列表
+   */
+  public static final String TRANS_CODE_M108104 = "M108104";
+
+
 }
