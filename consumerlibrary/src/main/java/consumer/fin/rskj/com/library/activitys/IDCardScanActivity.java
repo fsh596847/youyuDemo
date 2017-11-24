@@ -122,18 +122,6 @@ public class IDCardScanActivity extends Activity
       mNewIndicatorView.setCardSideAndOrientation(mIsVertical, mSide);
       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
-
-		/*
-        if (mSide == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT) {
-			mNewIndicatorView.setRightImage(true);
-			idCardText.setText("请将身份证正面置于框内");
-			idCardImage.setImageResource(R.drawable.sfz_front);
-		} else if (mSide == IDCardAttr.IDCardSide.IDCARD_SIDE_BACK) {
-			mNewIndicatorView.setRightImage(false);
-			idCardImage.setImageResource(R.drawable.sfz_back);
-			idCardText.setText("请将身份证反面置于框内");
-		}
-		*/
   }
 
   private void launchDebugMode() {
@@ -180,15 +168,6 @@ public class IDCardScanActivity extends Activity
       mIsIDCard = idCardQualityAssessment.mIsIdcard;
     }
   }
-
-  @Override protected void onResume() {
-    super.onResume();
-  }
-
-  @Override protected void onPause() {
-    super.onPause();
-  }
-
   @Override protected void onDestroy() {
     super.onDestroy();
     mDialogUtil.onDestory();
@@ -250,12 +229,10 @@ public class IDCardScanActivity extends Activity
   }
 
   private BlockingQueue<byte[]> mFrameDataQueue;
-
   private class DecodeThread extends Thread {
     boolean mHasSuccess = false;
     int mCount = 0;
     int mTimSum = 0;
-    private IDCardQualityResult.IDCardFailedType mLstErrType;
 
     @Override public void run() {
       byte[] imgData = null;
@@ -371,17 +348,11 @@ public class IDCardScanActivity extends Activity
                   if (failTypes != null) {
                     StringBuilder stringBuilder = new StringBuilder();
                     IDCardQualityResult.IDCardFailedType errType = failTypes.get(0);
-                    // if (errType != mLstErrType) {
                     if (mIsVertical) {
                       verticalTitle.setText(Util.errorType2HumanStr(failTypes.get(0), mSide));
                     } else {
                       horizontalTitle.setText(Util.errorType2HumanStr(failTypes.get(0), mSide));
                     }
-                    // Util.showToast(IDCardScanActivity.this,
-                    // Util.errorType2HumanStr(result.fails.get(0),
-                    // mSide));
-                    mLstErrType = errType;
-                    // }
                     errorType.setText(stringBuilder.toString());
                   } else {
                     verticalTitle.setText("");
@@ -415,14 +386,6 @@ public class IDCardScanActivity extends Activity
       finish();
     }
   }
-
-  public static void startMe(Context context, IDCardAttr.IDCardSide side) {
-    if (side == null || context == null) return;
-    Intent intent = new Intent(context, IDCardScanActivity.class);
-    intent.putExtra("side", side == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT ? 0 : 1);
-    context.startActivity(intent);
-  }
-
   /**
    * 用取余运算
    */

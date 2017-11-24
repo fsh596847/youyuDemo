@@ -150,7 +150,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
         handler.removeCallbacksAndMessages(null);
         sureBtn.setText("确认无误");
         sureBtn.setEnabled(true);
-
       } else {
         countDown--;
         sureBtn.setText(countDown + "s");
@@ -339,12 +338,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
       }
 
       showCountDownDialog();
-
-      //            Intent intent = new Intent(FaceIDCardInfoUploadActivity.this, DealSelfInfoActivity.class);
-      //            intent.putExtra("modifyName", name);
-      //            intent.putExtra("idcardNum", idcardNum);
-      //            intent.putExtra("bankcardId", bankCardNum);
-      //            startActivity(intent);
     }
   }
 
@@ -367,7 +360,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
         backPhotoStr = Base64Util.bitmapToBase64(backBitmap);
         upLoadBackPictrue(backPhotoStr);
       }
-
       //获取身份证正面右侧头像
       if (data.getIntExtra("side", 0) == 0) {
         byte[] portraitImg = data.getByteArrayExtra("portraitImg");
@@ -511,7 +503,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
   /**
    * 上传身份证背面照接口
-   * @param backPic
    */
   private void upLoadBackPictrue(final String backPic) {
     showLoading(getResources().getString(R.string.dialog_showloading));
