@@ -101,10 +101,25 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
   private CheckBox mLinesCheckbox;
   private long surplusTime = 0;
   private long allsurplusTime = 120000;
+  /**
+   * 姓名
+   */
   private String openName;
+  /**
+   * 身份证号
+   */
   private String openIdcard;
+  /**
+   * 银行卡号
+   */
   private String openBankCardId;
+  /**
+   * 手机号
+   */
   private String openMobile;
+  /**
+   * 验证码
+   */
   private String openYzm;
   private CountDownTimer timer;
 
