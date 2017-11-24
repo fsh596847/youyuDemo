@@ -422,8 +422,7 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
       linkMoblie = mLinkPhoneTv.getText().toString().trim();
       //判断手机号是否合法
       if (Util.isMobile(linkMoblie)) {
-        String houseAddress = familyAddress + familyDetailAddress;
-        submitBasicInfo(houseAddress, marryState, linkName, linkMoblie, linkRelationship);
+        submitBasicInfo(marryState, linkName, linkMoblie, linkRelationship);
       } else {
         showToast("请输入或选择11位合法手机号码!", Constants.TOAST_SHOW_POSITION);
       }
@@ -596,9 +595,11 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
     return list;
   }
 
-  // 提交基本信息接口
-  private void submitBasicInfo(String custHouseAddr, String custMarriage, String contactName,
-      String contactPhone, String familyFriendType) {
+  /**
+   * 提交基本信息接口
+   */
+  private void submitBasicInfo(String custMarriage, String contactName, String contactPhone,
+      String familyFriendType) {
     if (TextUtils.isEmpty(email_ed.getText())) {
       showToast("邮箱不能为空", Constants.TOAST_SHOW_POSITION);
       return;
@@ -617,10 +618,7 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
 
     requestParams.put("fundId", sharePrefer.getXJFundId());
     requestParams.put("productId", sharePrefer.getXJProductId());
-
-    //        requestParams.put("custName","张三999");//客户名称
     requestParams.put("credType", "1");//证件类型
-    //        requestParams.put("credNo","123456789123456789");//身份证号
     requestParams.put("custMobile", sharePrefer.getPhone());
     requestParams.put("custHouseAddr", familyAddress);//家庭地址
     requestParams.put("detailAddr", familyDetailAddress);//家庭地址
@@ -644,32 +642,14 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
         if (!TextUtils.isEmpty(sharePrefer.getReplenisherPages())) {
           mainMessage.setTitle("补充信息");
           mainMessage.setUrl(BASE_URL + sharePrefer.getReplenisherPages());
-          //                    intent.putExtra("url",BASE_URL + sharePrefer.getReplenisherPages());
-          //                    intent.putExtra("title","补充信息");
         } else {
           mainMessage.setTitle("审核中");
           mainMessage.setUrl(BASE_URL + sharePrefer.getCedStatus());
-          //                    intent.putExtra("url",BASE_URL + sharePrefer.getCedStatus());
-          //                    intent.putExtra("title","审核中");
         }
 
         EventBus.getDefault().post(mainMessage);
         startActivity(intent);
         finish();
-
-        //                JSONObject jsonObject = null;
-        //                try {
-        //                    jsonObject = new JSONObject(data);
-        //                    String merchantName = jsonObject.getString("merchantName");// 商户名称
-        //                    sharePrefer.setMerchantName(merchantName);
-        //                    getMerchantURL("0");
-
-        //                } catch (JSONException e) {
-        //                    LogUtils.e("error", "数据解析有误" + e.toString());
-        //                    showToast("数据格式有误!", Constants.TOAST_SHOW_POSITION);
-        //                    mSubmitBtn.setClickable(true);
-        //                    mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
-        //                }
       }
 
       @Override public void onError(String retrunCode, String errorMsg) {
