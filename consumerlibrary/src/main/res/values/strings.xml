@@ -13,4 +13,5 @@
 
   <!-- 网络请求提示语-->
   <string name="dialog_showloading">信息上传中，请稍后...</string>
+  <string name="dialog_loading">正在加载...</string>
 </resources>
