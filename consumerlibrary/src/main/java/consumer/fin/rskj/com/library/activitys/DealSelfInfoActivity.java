@@ -67,14 +67,37 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
   private View mStatusView;
   private Button mBackBtn;
   private Button mYzmBtn;
+  /**
+   * 下一步
+   */
   private Button mSubmitBtn;
+  /**
+   * 标题
+   */
   private TextView mTitleView;
+  /**
+   * 账户委托扣款书
+   */
   private TextView mLinesWeituoshuTv;
+  /**
+   * 自动还款协议
+   */
   private TextView mLinesHaunkuanTv;
+  /**
+   * 借款合同
+   */
   private TextView mLinesJiekuanTv;
+  /**
+   * 个人信息及征信查询授权书
+   */
   private TextView mLinesSelfInfoZhengxinTv;
-
+  /**
+   * 姓名
+   */
   private EditText mOpenNameTv;
+  /**
+   * 身份证号
+   */
   private EditText mOpenIdCardTv;
   /**
    * 支持银行卡
@@ -415,7 +438,10 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
     };
   }
 
-  //信息输入监听
+  /**
+   * 信息输入监听
+   */
+
   private TextWatcher textWacher = new TextWatcher() {
 
     @Override public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
