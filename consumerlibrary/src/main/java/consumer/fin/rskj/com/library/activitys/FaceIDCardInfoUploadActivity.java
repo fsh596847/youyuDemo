@@ -530,7 +530,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
    * @param backPic
    */
   private void upLoadBackPictrue(final String backPic) {
-    showLoading("信息上传中，请稍后...");
+    showLoading(getResources().getString(R.string.dialog_showloading));
     Map<String, String> requestParams = new HashMap<>();
     requestParams.put("transCode", TRANS_CODE_UPLOAD_BACK_PICTURE);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
