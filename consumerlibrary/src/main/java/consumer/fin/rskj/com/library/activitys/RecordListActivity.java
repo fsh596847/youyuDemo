@@ -83,17 +83,13 @@ public class RecordListActivity extends BaseActivity {
         viewPager.setCurrentItem(0, false);
       }
     });
-
     payment_record.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         viewPager.setCurrentItem(1, false);
       }
     });
-
     pageAdapter = new MyAdapter(getSupportFragmentManager());
-
     viewPager.setAdapter(pageAdapter);
-
     viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
       @Override public void onPageSelected(int arg0) {
@@ -114,11 +110,8 @@ public class RecordListActivity extends BaseActivity {
       }
 
       @Override public void onPageScrolled(int arg0, float arg1, int arg2) {
-
       }
-
       @Override public void onPageScrollStateChanged(int arg0) {
-
       }
     });
   }
