@@ -1,18 +1,16 @@
 <resources>
-    <string name="app_name">ConsumerLibrary</string>
+  <string name="app_name">ConsumerLibrary</string>
 
-    <string name="do_register"><u>立即注册</u></string>
-    <string name="do_forgetpwd"><u>忘记密码</u></string>
+  <string name="do_register"><u>立即注册</u></string>
+  <string name="do_forgetpwd"><u>忘记密码</u></string>
 
-    <string name="delete_bank">
+  <string name="delete_bank">
         <Data><![CDATA[删除尾号为 <font color="#ff7920">(%1$s)</font> 的银行卡]]></Data>
     </string>
+  <string name="totalPay"><Data><![CDATA[还款金额：<font color="#ff7920">%1$s</font>]]></Data></string>
+  <string name="weixin_focus">微信搜索并关注"融数有余"公众号,福利放送中</string>
+  <string name="lifestr"><u>生活开销</u></string>
 
-    <string name="totalPay"><Data><![CDATA[还款金额：<font color="#ff7920">%1$s</font>]]></Data></string>
-
-
-    <string name="weixin_focus">微信搜索并关注"融数有余"公众号,福利放送中</string>
-
-
-    <string name="lifestr"><u>生活开销</u></string>
+  <!-- 网络请求提示语-->
+  <string name="dialog_showloading">信息上传中，请稍后...</string>
 </resources>

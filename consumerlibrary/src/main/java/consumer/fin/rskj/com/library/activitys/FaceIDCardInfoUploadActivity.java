@@ -268,7 +268,9 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
     });
   }
 
-  //face++ sdk可用性检测
+  /**
+   * face++ sdk可用性检测
+   */
   private void authState(boolean isSuccess) {
     if (isSuccess) {
       mIdcardInfoSubmitBtn.setVisibility(View.VISIBLE);
@@ -377,10 +379,12 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
     }
   }
 
-  // 身份信息更新接口
+  /**
+   * 身份信息更新接口
+   */
   private void upLoadIdCardInfo() {
 
-    showLoading("信息上传中，请稍后...");
+    showLoading(getResources().getString(R.string.dialog_showloading));
     mIdcardInfoSubmitBtn.setClickable(false);
     mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_selected_bg);
     requestParams.clear();
@@ -465,9 +469,11 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
     });
   }
 
-  // 上传身份证正面照接口
+  /**
+   * 上传身份证正面照接口
+   */
   private void upLoadFrontPictrue(final String facePic) {
-    showLoading("信息上传中，请稍后...");
+    showLoading(getResources().getString(R.string.dialog_showloading));
     Map<String, String> requestParams = new HashMap<>();
     requestParams.put("transCode", TRANS_CODE_UPLOAD_FRONT_PICTURE);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
@@ -519,7 +525,10 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
     });
   }
 
-  // 上传身份证背面照接口
+  /**
+   * 上传身份证背面照接口
+   * @param backPic
+   */
   private void upLoadBackPictrue(final String backPic) {
     showLoading("信息上传中，请稍后...");
     Map<String, String> requestParams = new HashMap<>();
