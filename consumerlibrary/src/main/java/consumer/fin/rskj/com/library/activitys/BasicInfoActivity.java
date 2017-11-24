@@ -149,11 +149,29 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
    * 联系人关系
    */
   private ArrayList<KVItem> relatipnships;
+  /**
+   * 家庭住址
+   */
   private String familyAddress = "";
+  /**
+   * 详细信息
+   */
   private String familyDetailAddress = "";
+  /**
+   * 是否已婚
+   */
   private String marryState = "20";
+  /**
+   * 联系人姓名
+   */
   private String linkName = "";
+  /**
+   * 联系人电话
+   */
   private String linkMoblie = "";
+  /**
+   * 联系人关系
+   */
   private String linkRelationship = "1";
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
