@@ -19,6 +19,7 @@ public class SharedPreferenceUtils {
 
     private final String firstUse = "firstUse";//是否是第一次使用
     private final String TOKEN = "token";//用户Token
+  private final String MENBERID = "memberId";
     private final String cropImagePath = "cropImagePath";
     private final String deviceId = "deviceId";//设备Id
     private final String canUsedSum = "canUsedSum";//可借金额
@@ -261,9 +262,19 @@ public class SharedPreferenceUtils {
         return sharedPreferences.getString(TOKEN, "");
     }
 
+  /**
+   * 保存memid
+   */
+  public void setMemId(String data) {
+    editor.putString(MENBERID, data);
+    editor.commit();
+  }
 
+  public String getMemId() {
+    return sharedPreferences.getString(MENBERID, "");
+  }
 
-    public void setXJProductId(String data) {
+  public void setXJProductId(String data) {
         editor.putString("XJProductId", data);
         editor.commit();
     }
@@ -317,7 +328,7 @@ public class SharedPreferenceUtils {
         return sharedPreferences.getLong("idCard", 0);
     }
 
-    /**
+  /**
      * 保存身份信息验证当前系统时间
      */
     public void setTimeIdcardSys(Long time) {

@@ -24,7 +24,7 @@ public class Constants {
     public static final String BASE_URL = BASE_URL_STRAT+"/quickloan";
 
     public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
-
+  public static final String LOGIN_URL = "http://test.rskj99.com/rskj-core-api/member/login";
     public static final String SHAREDPREFERENCES_NAME = "xm_preference";
     public static final String CHANNEL_NO = "3";// 渠道标识
 

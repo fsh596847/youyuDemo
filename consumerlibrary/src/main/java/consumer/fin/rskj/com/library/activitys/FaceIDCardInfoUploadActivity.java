@@ -104,7 +104,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements
             }
 
         }
-    };;
+    };
 
 
     @Override
@@ -122,7 +122,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements
         bankCardNum = getIntent().getStringExtra("bankcardId");//银行卡号
         mWarringBarLL = (LinearLayout) findViewById(R.id.start_face_warring_bar_ll);
         mWarringTv = (TextView) findViewById(R.id.start_face_warring_tv);
-        ;//网络检测提示
+      //网络检测提示
         mWarrantyBar = (ProgressBar) findViewById(R.id.start_face_warring_bar);//网络检测进度
         againWarringBtn = (Button) findViewById(R.id.start_face_again_warring_btn);//网络检测按钮
         mIdcardFaceLl = (LinearLayout) findViewById(R.id.upload_idcard_face_ll);//身份证正面识别控件

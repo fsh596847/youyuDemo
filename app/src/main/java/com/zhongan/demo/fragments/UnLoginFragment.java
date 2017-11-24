@@ -61,8 +61,6 @@ public class UnLoginFragment extends HXBaseFragment {
     });
   }
 
-
-
   private void initData() {
     list.add("恭喜！150****4520成功借款14000元");
     list.add("恭喜！136****4562成功借款12000元");

@@ -85,6 +85,7 @@ public class CurrentBillActivity extends BaseActivity {
         getDetail();
         getBillDetail();
 
+      //非逾期的时候使用
         if(!currentStatus){
             //计算还款金额,只有全额还款才需要 执行此操作
             M100712();
