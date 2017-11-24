@@ -148,11 +148,8 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
       if (countDown <= 0) {
         handler.removeCallbacksAndMessages(null);
-        //timeDialog.dismiss();
         sureBtn.setText("确认无误");
         sureBtn.setEnabled(true);
-        //倒计时结束后 自动点击
-        //upLoadIdCardInfo();
 
       } else {
         countDown--;
@@ -166,7 +163,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_face_idcard_info_upload_layout);
-
     LogUtils.d("FaceIDCardInfoUploadActivity", "数组 = " + SysUtil.stepMap);
   }
 
@@ -413,16 +409,11 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
         dismissLoading();
         mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
         mIdcardInfoSubmitBtn.setClickable(true);
-        JSONObject jsonObject = null;
         try {
-          jsonObject = new JSONObject(data);
-
+          JSONObject jsonObject = new JSONObject(data);
           sharePrefer.setCustName(modifyName);
           sharePrefer.setIdCardNum(idcardNum);
           sharePrefer.setBankCardNumber(bankCardNum);
-
-          //String currentPKG = Util.getAppPackageName(FaceIDCardInfoUploadActivity.this);
-
           String currentPKG = FaceIDCardInfoUploadActivity.class.getSimpleName();
           LogUtils.d("currentPKG", "currentPKG->" + currentPKG);
           LogUtils.d("currentPKG", "stepMap->" + SysUtil.stepMap);
@@ -439,10 +430,6 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
             }
           }
           LogUtils.d("currentPKG", "currerntIndex->" + currerntIndex);
-          //                    Intent intent = new Intent(FaceIDCardInfoUploadActivity.this, DealSelfInfoActivity.class);
-                    /*intent.putExtra("modifyName", modifyName);
-                    intent.putExtra("idcardNum", idcardNum);
-                    intent.putExtra("bankcardId", bankCardNum);*/
           Intent intent = new Intent();
           intent.setAction(SysUtil.stepMap[currerntIndex]);
           startActivity(intent);
@@ -486,12 +473,9 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
     LogUtils.d("debug", "身份证正面照上传: requestParams--->" + requestParams.toString());
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
-
         LogUtils.d("debug", "身份证正面返回值: data--->" + data);
-
-        JSONObject jsonObject = null;
         try {
-          jsonObject = new JSONObject(data);
+          JSONObject jsonObject = new JSONObject(data);
           address = jsonObject.getString("address");// 地址
           birthday = jsonObject.getString("birthday");// 生日
           idcardNum = jsonObject.getString("idnumber");// 身份证号
@@ -545,10 +529,8 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
       @Override public void onSuccess(String data) {
 
         LogUtils.d("debug", "身份证返面返回值: data--->" + data);
-
-        JSONObject jsonObject = null;
         try {
-          jsonObject = new JSONObject(data);
+          JSONObject jsonObject = new JSONObject(data);
           issue_authority = jsonObject.getString("issue_authority");// 签发单位
           validity = jsonObject.getString("validity");// 身份证有效期
           mIdcardBackLl.setVisibility(View.GONE);
