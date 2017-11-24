@@ -89,4 +89,23 @@ public class Constants {
    * 客户借款列表
    */
   public static final String TRANS_CODE_M100602 = "M100602";
+  /**
+   * 客户借款列表
+   */
+  public static final String TRANS_CODE_M100724 = "M100724";
+  /**
+   * 支付密码验证
+   */
+  public static final String TRANS_CODE_M000192 = "M000192";
+  /**
+   * 全额还款
+   */
+  public static final String TRANS_CODE_M100710 = "M100710";
+  /**
+   * 全额还款
+   */
+  public static final String TRANS_CODE_M100800 = "M100800";
+
+
+
 }
