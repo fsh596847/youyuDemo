@@ -221,10 +221,8 @@ public class FaceActivity extends BaseActivity
 
   private void initDetecteSession() {
     if (mICamera.mCamera == null) return;
-
     mProgressBar.setVisibility(View.INVISIBLE);
     mIDetection.detectionTypeInit();
-
     mCurStep = 0;
     mDetector.reset();
     mDetector.changeDetectionType(mIDetection.mDetectionSteps.get(0));
@@ -247,18 +245,14 @@ public class FaceActivity extends BaseActivity
     mIMediaPlayer.reset();
     mCurStep++;
     mFaceMask.setFaceInfo(null);
-
     if (mCurStep == mIDetection.mDetectionSteps.size()) {
       mProgressBar.setVisibility(View.VISIBLE);
       //将获取到的最好的一张图上传到服务器
       getLivenessData();
-
       //handleResult(R.string.verify_success);
-
     } else {
       changeType(mIDetection.mDetectionSteps.get(mCurStep), 10);
     }
-
     // 检测器返回值：如果不希望检测器检测则返回DetectionType.DONE，如果希望检测器检测动作则返回要检测的动作
     return mCurStep >= mIDetection.mDetectionSteps.size() ? DetectionType.DONE
         : mIDetection.mDetectionSteps.get(mCurStep);
@@ -304,14 +298,10 @@ public class FaceActivity extends BaseActivity
     requestParams.put("cell", sharePrefer.getPhone());//手机号码
     requestParams.put("delta", delta);//face++ delta
     requestParams.put("faceimage", faceimage);//face++人脸识别最好的一张图片
-
     requestParams.put("fundId", sharePrefer.getXJFundId());//资金方Id
     requestParams.put("productId", sharePrefer.getXJProductId());//产品Id
-
     LogUtils.d("debug", "活体检测: cell--->" + phone);
-
     //        LogUtils.d("debug", "活体检测: requestParams--->" + requestParams.toString());
-
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
         LogUtils.d(TAG, "活体检测: data--->" + data);
