@@ -57,7 +57,7 @@ public class FaceActivity extends BaseActivity
     implements PreviewCallback, DetectionListener, TextureView.SurfaceTextureListener,
     OnClickListener {
 
-  private static final String TAG = "FaceActivity01";
+  private static final String TAG = FaceActivity.class.getSimpleName();
 
   private TextureView camerapreview;
   /**
@@ -264,7 +264,9 @@ public class FaceActivity extends BaseActivity
         : mIDetection.mDetectionSteps.get(mCurStep);
   }
 
-  //活体检测结果信息获取
+  /**
+   * 活体检测结果信息获取
+   */
   private void getLivenessData() {
     new Thread(new Runnable() {
       @Override public void run() {
