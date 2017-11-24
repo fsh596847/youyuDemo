@@ -58,6 +58,9 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
   private static final String TAG = BasicInfoActivity.class.getSimpleName();
 
   private Button mBackBtn;
+  /**
+   * 设置标题
+   */
   private TextView mTitleTv;
   /**
    * 家庭住址（省市区）显示控件
@@ -103,6 +106,9 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
    * 联系人关系显示控件
    */
   private TextView mLinkRelationshipTv;
+  /**
+   * 信息提交按钮
+   */
   private Button mSubmitBtn;
   private OptionsPickerView mOptionView;
   /**
@@ -117,8 +123,14 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
    * 区
    */
   private ArrayList<ArrayList<ArrayList<KVItem>>> options3Items = new ArrayList<>();
+  /**
+   * 省市区选择器
+   */
   private OptionsPickerView mRegitionOptionView;
   private Thread thread;
+  /**
+   * 联系人
+   */
   private ArrayList<LinkmanItemBean> allContactsInfo;
   private Handler handler = new Handler() {
     @Override public void handleMessage(android.os.Message msg) {
@@ -151,9 +163,8 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
     LogUtils.d("BasicInfoActivity", "数组 = " + SysUtil.stepMap);
   }
 
-  private void initJsonData() {//解析数据
-
-    /** 从assert文件夹中读取省市区的json文件，然后转化为json对象 */
+  /** 从assert文件夹中读取省市区的json文件，然后转化为json对象 */
+  private void initJsonData() {
     try {
       String JsonData = new GetJsonDataUtil().getJson(getApplicationContext(),
           "province.json");//获取assets目录下的json文件数据
@@ -168,7 +179,6 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
           JSONObject jsonC = jsonCs.getJSONObject(j);// 获取每个市的Json对象
           String city = jsonC.getString("name");
           options2Items_01.add(new KVItem("" + j, city));// 添加市数据
-
           ArrayList<KVItem> options3Items_01_01 = new ArrayList<KVItem>();
           JSONArray jsonAs = jsonC.getJSONArray("area");
           for (int k = 0; k < jsonAs.length(); k++) {
@@ -187,7 +197,6 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
       LogUtils.d("debug", "citys size" + options2Items.size());
       LogUtils.d("debug", "areas size" + options3Items.size());
       handler.sendEmptyMessage(0x123);
-      mJsonArr = null;
     } catch (Exception e) {
       LogUtils.d("debug", "获取数据失败");
     }
@@ -298,10 +307,7 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
   /**
    * 省市区信息选择控件
    */
-
   private void initRegionChoose(final String title) {
-
-    // 省市区选择器
     mRegitionOptionView =
         new OptionsPickerView.Builder(this, new OptionsPickerView.OnOptionsSelectListener() {
           @Override public void onOptionsSelect(int options1, int options2, int options3, View v) {
@@ -668,6 +674,60 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
     });
   }
 
+  @Override protected void onDestroy() {
+    super.onDestroy();
+  }
+
+  /**
+   * 提交所有联系人信息接口
+   */
+  private void submitConstantsInfo(ArrayList<LinkmanItemBean> allContactsInfo) {
+
+    Map<String, String> requestParams = new HashMap<>();
+    requestParams.put("transCode", Constants.TRANS_CODE_UPLOAD_ALL_CONTANTS_INFO);//接口标识
+    requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
+    requestParams.put("clientToken", sharePrefer.getToken());//登录后token
+    requestParams.put("rowsCount", allContactsInfo.size() + "");//联系人信息条数
+    requestParams.put("mailJson", new Gson().toJson(allContactsInfo));//所有联系人信息
+    LogUtils.d("debug", "联系人信息上传: requestParams--->" + requestParams.toString());
+    HttpInfo httpInfo = HttpInfo.Builder().setUrl(Constants.REQUEST_URL)//请求URL
+        .addParams(requestParams).build();
+    OkHttpUtil.getDefault(this).doPostAsync(httpInfo, new Callback() {
+      @Override public void onSuccess(HttpInfo info) throws IOException {
+        String result = info.getRetDetail().toString();
+        try {
+          JSONObject jsonObject = new JSONObject(result);
+          String returnCode = jsonObject.getString("returnCode");
+          String returnMsg = jsonObject.getString("returnMsg");
+          if ("000000".equals(returnCode)) {
+            LogUtils.d("debug", "联系人信息上传 Success result------------->" + result);
+          } else if ("E999985".equals(returnCode) || "ES00000303".equals(returnCode)) {
+            dismissLoading();
+            LogUtils.d("debug", "--------------token失效，或者用户未登录-------------");
+          }
+        } catch (JSONException e) {
+          LogUtils.e("error", "数据解析有误" + e.toString());
+        }
+      }
+
+      @Override public void onFailure(HttpInfo info) throws IOException {
+        String result = info.getRetDetail().toString();
+        LogUtils.d("debug", "-联系人信息上传------------>" + result);
+      }
+    });
+  }
+
+  //    @Override
+  //    public boolean onKeyDown(int keyCode, KeyEvent event) {
+  //        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+  //
+  //            Intent backIntent = new Intent(BasicInfoActivity.this, LoanStateDealActivity.class);
+  //            startActivity(backIntent);
+  //            return true;
+  //        }
+  //        return super.onKeyDown(keyCode, event);
+  //    }
+
   //查询补充信息h5地址
   //    private void getMerchantURL(String type) {
   //        Map<String, String> requestParams = new HashMap<>();
@@ -708,73 +768,5 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
   //                dismissLoading();
   //            }
   //        });
-  //    }
-
-  /**
-   * 提交所有联系人信息接口
-   */
-  private void submitConstantsInfo(ArrayList<LinkmanItemBean> allContactsInfo) {
-
-    Map<String, String> requestParams = new HashMap<>();
-    requestParams.put("transCode", Constants.TRANS_CODE_UPLOAD_ALL_CONTANTS_INFO);//接口标识
-    requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
-    requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("rowsCount", allContactsInfo.size() + "");//联系人信息条数
-    requestParams.put("mailJson", new Gson().toJson(allContactsInfo));//所有联系人信息
-    LogUtils.d("debug", "联系人信息上传: requestParams--->" + requestParams.toString());
-    HttpInfo httpInfo = HttpInfo.Builder().setUrl(Constants.REQUEST_URL)//请求URL
-        .addParams(requestParams).build();
-    OkHttpUtil.getDefault(this).doPostAsync(httpInfo, new Callback() {
-      @Override public void onSuccess(HttpInfo info) throws IOException {
-        String result = info.getRetDetail().toString();
-        try {
-          JSONObject jsonObject = new JSONObject(result);
-          String returnCode = jsonObject.getString("returnCode");
-          String returnMsg = jsonObject.getString("returnMsg");
-          if ("000000".equals(returnCode)) {
-            LogUtils.d("debug", "联系人信息上传 Success result------------->" + result);
-          } else if ("E999985".equals(returnCode) || "ES00000303".equals(returnCode)) {
-            dismissLoading();
-            LogUtils.d("debug", "--------------token失效，或者用户未登录-------------");
-            //                        sharePrefer.setLogin(false);
-            //                        showToast(returnMsg,Constants.TOAST_SHOW_POSITION);
-            //                        if(!sharePrefer.iSLogin())
-            //                        {
-            //                            //重新获取token
-            ////                            registerLogin(sharePrefer.getMerchantId(),sharePrefer.getPhone());
-            //                            Intent intent = new Intent(BaseActivity.this,LoanStateDealActivity.class);
-            //                            startActivity(intent);
-            //                        }
-          } else {
-            //                        showToast(returnMsg,Constants.TOAST_SHOW_POSITION);
-            //                        callBack.onError(returnCode,returnMsg);
-          }
-        } catch (JSONException e) {
-          LogUtils.e("error", "数据解析有误" + e.toString());
-          //                    showToast("数据格式有误!", Constants.TOAST_SHOW_POSITION);
-        }
-      }
-
-      @Override public void onFailure(HttpInfo info) throws IOException {
-        String result = info.getRetDetail().toString();
-        LogUtils.d("debug", "-联系人信息上传------------>" + result);
-        //showToast(result,Constants.TOAST_SHOW_POSITION);
-      }
-    });
-  }
-
-  @Override protected void onDestroy() {
-    super.onDestroy();
-  }
-
-  //    @Override
-  //    public boolean onKeyDown(int keyCode, KeyEvent event) {
-  //        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-  //
-  //            Intent backIntent = new Intent(BasicInfoActivity.this, LoanStateDealActivity.class);
-  //            startActivity(backIntent);
-  //            return true;
-  //        }
-  //        return super.onKeyDown(keyCode, event);
   //    }
 }
