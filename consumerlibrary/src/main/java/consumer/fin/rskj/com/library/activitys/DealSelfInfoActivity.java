@@ -169,15 +169,6 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
   }
 
   @Override public void init() {
-
-    //        openName = getIntent().getStringExtra("modifyName");//获取姓名
-    //        openIdcard = getIntent().getStringExtra("idcardNum");//获取身份证号
-    //        openBankCardId = getIntent().getStringExtra("bankcardId");//获取银行卡号
-
-        /*openName = sharePrefer.getCustName();
-        openIdcard = sharePrefer.getIdCardNum();
-        openBankCardId = sharePrefer.getBankCardNumber();*/
-
     mStatusView = findViewById(R.id.status_bar_view);
     int statusHeight = SysUtil.getStatusBarHeight(this);
     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mStatusView.getLayoutParams();
@@ -216,14 +207,6 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
         }
       }
     });
-    //        }else {
-    //
-    //            mOpenNameTv.setText(openName);
-    //            mOpenNameTv.setEnabled(false);
-    //
-    //            mOpenIdCardTv.setText(openIdcard);
-    //            mOpenIdCardTv.setEnabled(false);
-    //        }
 
     mOpenBankCardIdEt = (EditText) findViewById(R.id.open_card_no_value_tv);// 银行卡号
     mOpenBankCardIdEt.setText(openBankCardId);

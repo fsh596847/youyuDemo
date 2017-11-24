@@ -18,12 +18,11 @@ public class Constants {
   public static String cacheCampareImage = "livenessDemo_campareimage";
   public static String dirName =
       Environment.getExternalStorageDirectory().getAbsolutePath() + "/faceapp";
-
   public static String PICTURE_SAVE_PATH = "/photo.png";
 
-  //    public static final String BASE_URL_STRAT = "http://47.93.6.6:9090";//9090  开发测试环境地址
+  //public static final String BASE_URL_STRAT = "http://47.93.6.6:9090";//9090  开发测试环境地址
   public static final String BASE_URL_STRAT = "http://120.55.174.179:8070";
-  //    public static final String BASE_URL_STRAT = "http://10.2.11.174:8090";
+  //public static final String BASE_URL_STRAT = "http://10.2.11.174:8090";
   public static final String BASE_URL = BASE_URL_STRAT + "/quickloan";
 
   public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
@@ -81,6 +80,4 @@ public class Constants {
    * 获取支持银行卡列表
    */
   public static final String TRANS_CODE_M108104 = "M108104";
-
-
 }
