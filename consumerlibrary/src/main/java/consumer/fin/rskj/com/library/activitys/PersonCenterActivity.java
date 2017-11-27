@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -114,10 +115,10 @@ public class PersonCenterActivity extends  BaseActivity implements View.OnClickL
     //获取产品额度
     private void getQuota(){
         requestParams.clear();
-        requestParams.put("transCode", "M110701");//接口标识
+      requestParams.put("transCode", Constants.TRANS_CODE_M110701);//接口标识
         requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
         requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-        requestParams.put("legalPerNum", "00001");
+      requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
         requestParams.put("indexNo","0");
         requestParams.put("pageSize","1");
 

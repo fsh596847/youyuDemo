@@ -140,4 +140,18 @@ public class Constants {
    * 贷款应还款信息查询
    */
   public static final String TRANS_CODE_M100705 = "M100705";
+  /**
+   * 贷款应还款信息查询
+   */
+  public static final String TRANS_CODE_M110701 = "M110701";
+  /**
+   * 本月账单接口
+   */
+  public static final String TRANS_CODE_M100611 = "M100611";
+  /**
+   * 本月账单接口
+   */
+  public static final String TRANS_CODE_MM100132 = "M100132";
+
+
 }
