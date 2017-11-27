@@ -166,12 +166,12 @@ public class PaymentConfirmActivity extends BaseActivity {
    */
   private void getMsmCode() {
     requestParams.clear();
-    requestParams.put("transCode", /*Constants.TRANS_CODE_YZM*/"M000010");//接口标识
+    requestParams.put("transCode", Constants.TRANS_CODE_YZM);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
     requestParams.put("isNo", "15");
     requestParams.put("mobile", sharePrefer.getPhone());//手机号码
-    showLoading("正在加载...");
+    showLoading(getResources().getString(R.string.dialog_loading));
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
         dismissLoading();
@@ -218,13 +218,11 @@ public class PaymentConfirmActivity extends BaseActivity {
     payModule.setRows(rows);
     payModule.setChannelNo(Constants.CHANNEL_NO);
     payModule.setClientToken(sharePrefer.getToken());
-    payModule.setTransCode("M100800");
-    payModule.setLegalPerNum("00001");
+    payModule.setTransCode(Constants.TRANS_CODE_M100800);
+    payModule.setLegalPerNum(Constants.LEGALPER_NUM);
     payModule.setVersion(BuildConfig.VERSION_NAME);
-
     String json = new Gson().toJson(payModule);
     LogUtils.d(TAG, "json = " + json);
-
     //申明给服务端传递一个json串
     //创建一个OkHttpClient对象
     OkHttpClient okHttpClient = new OkHttpClient();
@@ -259,13 +257,9 @@ public class PaymentConfirmActivity extends BaseActivity {
       if ("000000".equals(jsonObject.getString("returnCode"))) {
         mainMessage.setTitle("还款成功");
         mainMessage.setUrl(Constants.BASE_URL + sharePrefer.getPaymentStatus() + "?result=success");
-        //intent.putExtra("title","还款成功");
-        //intent.putExtra("url", Constants.BASE_URL + sharePrefer.getPaymentStatus()+ "?result=success");
       } else {
         mainMessage.setTitle("还款失败");
         mainMessage.setUrl(Constants.BASE_URL + sharePrefer.getPaymentStatus() + "?result=fail");
-        //intent.putExtra("title","还款失败");
-        //intent.putExtra("url",Constants.BASE_URL + sharePrefer.getPaymentStatus()+ "?result=failure");
       }
       EventBus.getDefault().post(mainMessage);
       startActivity(intent);
@@ -280,7 +274,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M100800);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("rows", rows.toString());
     showLoading("正在加载...");
 
@@ -322,7 +316,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M100710);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("loanId", loanId);
     requestParams.put("perRepayDate", currentData);
     requestParams.put("prepaymentType", "1");
@@ -374,7 +368,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M100724);//M100724 手机逾期还款
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("loanId", loanId);
     requestParams.put("actualRepayAmt", totalAmount);
     requestParams.put("repayingDetailIds", arrayList.toString());
