@@ -9,6 +9,7 @@ import android.os.Environment;
 public class Constants {
   public static final int TOAST_SHOW_POSITION = 1;//Toast 显示位置：0：顶部 1：中间 2：底部
 
+  public static final String LEGALPER_NUM = "00001";
   /**
    * face++ 人脸识别
    */
@@ -127,6 +128,20 @@ public class Constants {
    * 借款确认接口
    */
   public static final String TRANS_CODE_M090902 = "M090902";
+  /**
+   * 全额还款试算
+   */
+  public static final String TRANS_CODE_M100712 = "M100712";
+  /**
+   * 贷款简略信息 新增
+   */
+  public static final String TRANS_CODE_M100721 = "M100721";
+  /**
+   * 贷款应还款信息查询
+   */
+  public static final String TRANS_CODE_M100705 = "M100705";
+
+
 
 
 }
