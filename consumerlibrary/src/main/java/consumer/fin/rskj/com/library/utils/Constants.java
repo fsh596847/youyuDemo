@@ -140,8 +140,4 @@ public class Constants {
    * 贷款应还款信息查询
    */
   public static final String TRANS_CODE_M100705 = "M100705";
-
-
-
-
 }
