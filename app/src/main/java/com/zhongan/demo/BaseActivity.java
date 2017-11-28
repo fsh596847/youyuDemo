@@ -61,11 +61,8 @@ public class BaseActivity extends ParentActivity implements OnBqsDFListener {
         if(null == okHttpRequestManager){
             okHttpRequestManager = OkHttpRequestManager.getInstance(this);
         }
-
-
         DisplayMetrics outMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
-
         screenHeight = outMetrics.heightPixels;
         screenWidth = outMetrics.widthPixels;
     }
