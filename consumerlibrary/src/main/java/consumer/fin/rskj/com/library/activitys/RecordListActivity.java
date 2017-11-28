@@ -29,7 +29,7 @@ import consumer.fin.rskj.com.library.views.TopNavigationView2;
 
 public class RecordListActivity extends BaseActivity {
 
-  private static final String TAG = "RecordListActivity";
+  private static final String TAG = RecordListActivity.class.getSimpleName();
 
   private TopNavigationView2 topbar;
   private ViewPager viewPager;
@@ -111,6 +111,7 @@ public class RecordListActivity extends BaseActivity {
 
       @Override public void onPageScrolled(int arg0, float arg1, int arg2) {
       }
+
       @Override public void onPageScrollStateChanged(int arg0) {
       }
     });
@@ -155,7 +156,7 @@ public class RecordListActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M100602);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("indexNo", "0");
     requestParams.put("pageSize", "10");
     requestParams.put("productId", data);
@@ -190,7 +191,7 @@ public class RecordListActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M100607);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("indexNo", "0");
     requestParams.put("pageSize", "10");
     requestParams.put("productId", data);
