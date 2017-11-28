@@ -82,9 +82,7 @@ import static android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 public abstract class BaseActivity extends AppCompatActivity
     implements ActivityCompat.OnRequestPermissionsResultCallback {
 
-  private static final String TAG = "BaseActivity";
-
-  //    public HashMap<String,String> stepMap = new HashMap<String, String>();
+  private static final String TAG = BaseActivity.class.getSimpleName();
   protected Map<String, String> requestParams = new HashMap<>();
 
   protected View dialogView;
@@ -128,30 +126,6 @@ public abstract class BaseActivity extends AppCompatActivity
   protected static Location location;
   protected String locationProvider;
   protected boolean flag = false;
-
-  /**
-   * LocationListern监听器
-   * 参数：地理位置提供器、监听位置变化的时间间隔、位置变化的距离间隔、LocationListener监听器
-   */
-  LocationListener locationListener = new LocationListener() {
-
-    @Override public void onStatusChanged(String provider, int status, Bundle arg2) {
-
-    }
-
-    @Override public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override public void onProviderDisabled(String provider) {
-
-    }
-
-    @Override public void onLocationChanged(Location location) {
-      //如果位置发生变化,重新显示
-      getCity(location);
-    }
-  };
 
   @Override public void onStart() {
     super.onStart();
@@ -431,15 +405,6 @@ public abstract class BaseActivity extends AppCompatActivity
     return typedValue.data;
   }
 
-  /**
-   * 获取深主题色
-   */
-  public int getDarkColorPrimary() {
-    TypedValue typedValue = new TypedValue();
-    getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
-    return typedValue.data;
-  }
-
   private MyDialog dialog;
 
   /**
@@ -626,15 +591,11 @@ public abstract class BaseActivity extends AppCompatActivity
 
   /** 定位 */
   protected String getLocation() {
-
     //获取地理位置管理器
     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
     //获取所有可用的位置提供器
     List<String> providers = locationManager.getProviders(true);
-
     if (providers.contains(LocationManager.GPS_PROVIDER)) {
-
       //如果是GPS
       locationProvider = LocationManager.GPS_PROVIDER;
     } else if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
@@ -659,7 +620,6 @@ public abstract class BaseActivity extends AppCompatActivity
     //可查看是否授权获取定位信息
     flag =
         Settings.Secure.getInt(getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION, 0) != 0;
-
     //在更新检测后，才去获取地理位置
     if (location != null) {
       //不为空,获取地理位置经纬度
@@ -667,8 +627,6 @@ public abstract class BaseActivity extends AppCompatActivity
     } else {
       return "";
     }
-    //监视地理位置变化 --不需要用到
-    //        locationManager.requestLocationUpdates(locationProvider, 3000, 1, locationListener);
   }
 
   /**
@@ -877,20 +835,6 @@ public abstract class BaseActivity extends AppCompatActivity
   protected LinearLayout layout;
   protected View netView;
   private WebViewActivity.BackCallBack backCallBack;
-
-  protected void showNetDialog(WebViewActivity.BackCallBack backCallBack) {
-    this.backCallBack = backCallBack;
-    if (netDialog == null) {
-      initNetDialog();
-    }
-    try {
-      netDialog.setCanceledOnTouchOutside(false);
-      netDialog.setCancelable(false);
-      netDialog.show();
-    } catch (Exception e) {
-      // TODO: handle exception
-    }
-  }
 
   private void initNetDialog() {
     netView = inflater.inflate(R.layout.net_dialog, null);// 得到加载view

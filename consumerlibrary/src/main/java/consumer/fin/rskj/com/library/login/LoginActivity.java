@@ -104,8 +104,6 @@ public class LoginActivity extends BaseActivity {
 
             Log.d(TAG, "onReqSuccess memberId = " + memberId);
             Log.d(TAG, "onReqSuccess token = " + token);
-            //IDCardScanActivity.setToken(token);
-            //                                MyApplication.getSP(getApplicationContext()).setLogin(true);
             sharePrefer.setToken(token);
             sharePrefer.setMemId(memberId);
             sharePrefer.setPhone(phone);
