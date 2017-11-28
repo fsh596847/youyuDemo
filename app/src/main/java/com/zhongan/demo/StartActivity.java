@@ -5,23 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.widget.Toast;
 
 import com.bqs.risk.df.android.BqsDF;
-import com.google.gson.GsonBuilder;
 import com.umeng.analytics.MobclickAgent;
-import com.zhongan.demo.contant.HttpContent;
-import com.zhongan.demo.http.OkHttpRequestManager;
-import com.zhongan.demo.impl.ReqCallBack;
-import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.Global;
-import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.PermissionUtils;
-import com.zhongan.demo.util.RegexUtils;
-import com.zhongan.demo.util.ToastUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by HP on 2017/5/24.

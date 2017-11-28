@@ -47,6 +47,7 @@ import android.widget.Toast;
 
 import com.wknight.keyboard.WKnightKeyboard;
 
+import consumer.fin.rskj.com.library.login.OkHttpRequestManager;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,6 +91,7 @@ public abstract class BaseActivity extends AppCompatActivity
   private MultiEditText editPwd;
   protected LayoutInflater inflater;
   FinishCallBackImpl callBack;
+  protected OkHttpRequestManager okHttpRequestManager;
   /**
    * 需要进行检测的权限数组
    */
@@ -119,8 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity
   protected SharedPreferenceUtils sharePrefer;
   public static String sessionId;
 
-  //网络请求表单参数
-  protected HashMap<String, String> paramsMap;
+
 
   protected LocationManager locationManager;
   protected static Location location;
@@ -140,13 +141,15 @@ public abstract class BaseActivity extends AppCompatActivity
     getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
     screenHeight = outMetrics.heightPixels;
     screenWidth = outMetrics.widthPixels;
+    if (null == okHttpRequestManager) {
+      okHttpRequestManager = OkHttpRequestManager.getInstance(this);
+    }
 
     //隐藏标题栏
     // getSupportActionBar().hide();
     //requestWindowFeature(Window.FEATURE_NO_TITLE);
     sharePrefer = new SharedPreferenceUtils(this.getApplicationContext());
 
-    paramsMap = new HashMap<String, String>();
   }
 
   @Override public void setContentView(@LayoutRes int layoutResID) {
@@ -557,22 +560,9 @@ public abstract class BaseActivity extends AppCompatActivity
     params.put("version", BuildConfig.VERSION_NAME);
 
     LogUtils.d(TAG, "requestParams--->" + params.toString());
-    Log.d("debug", "sharePrefer.getSessionID() = " + sharePrefer.getSessionID());
-    HttpInfo httpInfo = HttpInfo.Builder()
-        .setUrl(Constants.LOGIN_URL)//请求URL
-        .addParams(params)
-        .addHead("Connection", "keep-alive")
-        .addHead("channel", "android")
-        .addHead("phoneType", "phoneType")
-        .addHead("deviceCode", "deviceCode")
-        .addHead("deviceType", "android")
-        .addHead("phoneModel", Build.MODEL)
-        .addHead("systemVersion", Build.VERSION.RELEASE)
-        .addHead("X-Requested-With", "XMLHttpRequest")
-        .addHead("token", sharePrefer.getToken())
-        .addHead("Content-Type", "application/json")
-        .addHead("version", /*SystemTool.getVersionName(context)*/BuildConfig.VERSION_NAME)
-        .build();
+    Log.d(TAG, "sharePrefer.getSessionID() = " + sharePrefer.getSessionID());
+    HttpInfo httpInfo = HttpInfo.Builder().setUrl(Constants.LOGIN_URL)//请求URL
+        .addParams(params).build();
 
     OkHttpUtil.getDefault(this).doPostAsync(httpInfo, new Callback() {
       @Override public void onSuccess(HttpInfo info) throws IOException {

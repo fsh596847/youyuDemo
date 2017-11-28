@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.ActivityStackManagerUtils;
-import com.zhongan.demo.impl.ReqCallBack;
+import consumer.fin.rskj.com.library.login.ReqCallBack;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.ToastUtils;
 import com.zhongan.demo.view.TopNavigationView;

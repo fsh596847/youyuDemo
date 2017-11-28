@@ -20,14 +20,12 @@ import android.widget.Toast;
 import com.google.gson.GsonBuilder;
 import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.http.OkHttpRequestManager;
-import com.zhongan.demo.hxin.util.ActivityStackManagerUtils;
 import com.zhongan.demo.hxin.util.Util;
-import com.zhongan.demo.impl.ReqCallBack;
+import consumer.fin.rskj.com.library.login.ReqCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;
 import com.zhongan.demo.util.ToastUtils;
-import com.zhongan.demo.view.TopNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,9 +33,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Map;
 
-import consumer.fin.rskj.com.consumerlibrary.*;
 import consumer.fin.rskj.com.consumerlibrary.BuildConfig;
-import consumer.fin.rskj.com.library.activitys.WebViewActivity;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
 import consumer.fin.rskj.com.library.okhttp.HttpInfo;
 import consumer.fin.rskj.com.library.okhttp.OkHttpUtil;
@@ -140,7 +136,6 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
             try {
               requestResult = gson.fromJson(result, CommonResponse.class);
               if (null != requestResult && "success".equals(requestResult.getCode())) {
-                //ToastUtils.showCenterToast("登录成功",LoginActivity.this);
                 String memberId = (String) requestResult.getData().get("memberId");
                 String token = (String) requestResult.getData().get("token");
                 LogUtils.Log(TAG, "onReqSuccess memberId = " + memberId);

@@ -6,21 +6,16 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.Util;
-import com.zhongan.demo.impl.ReqCallBack;
+import consumer.fin.rskj.com.library.login.ReqCallBack;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;
 import com.zhongan.demo.util.ToastUtils;
 import com.zhongan.demo.view.TopNavigationView;
 
 import org.json.JSONObject;
-
-import java.util.Timer;
-
 
 /**
  * Created by HP on 2017/6/21.

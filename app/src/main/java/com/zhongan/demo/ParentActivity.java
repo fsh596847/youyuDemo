@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import com.zhongan.demo.hxin.HXBaseActivity;
 import com.zhongan.demo.util.LogUtils;
+import consumer.fin.rskj.com.library.login.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +59,6 @@ public class ParentActivity extends AppCompatActivity {
         //                checkPermissions(needPermissions);
       }
     }
-
   }
 
   /**

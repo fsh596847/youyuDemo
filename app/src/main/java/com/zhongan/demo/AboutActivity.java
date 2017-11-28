@@ -4,16 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.zhongan.demo.http.OkHttpRequestManager;
-import com.zhongan.demo.impl.ReqCallBack;
-import com.zhongan.demo.util.LogUtils;
-import com.zhongan.demo.util.ToastUtils;
 import com.zhongan.demo.view.TopNavigationView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by HP on 2017/10/17.

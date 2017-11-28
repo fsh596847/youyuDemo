@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.zhongan.demo.BuildConfig;
 import com.zhongan.demo.LoginActivity;
 import com.zhongan.demo.contant.HttpContent;
-import com.zhongan.demo.impl.ReqCallBack;
+import consumer.fin.rskj.com.library.login.ReqCallBack;
 import com.zhongan.demo.impl.UploadProgressCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;
@@ -22,9 +21,7 @@ import com.zhongan.demo.util.SystemTool;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URLEncoder;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -350,7 +347,7 @@ public class OkHttpRequestManager {
 
             Iterator<Map.Entry<String, String>> iter = paramsMap.entrySet().iterator();
             while (iter.hasNext()) {
-                HashMap.Entry<String, String> entry = (HashMap.Entry) iter.next();
+              HashMap.Entry<String, String> entry = iter.next();
 
                 jsonObj.put(entry.getKey(), entry.getValue());
             }
@@ -480,7 +477,7 @@ public class OkHttpRequestManager {
 
             Iterator<Map.Entry<String, String>> iter = paramsMap.entrySet().iterator();
             while (iter.hasNext()) {
-                HashMap.Entry<String, String> entry = (HashMap.Entry) iter.next();
+              HashMap.Entry<String, String> entry = iter.next();
 
                 jsonObj.put(entry.getKey(), entry.getValue());
             }
@@ -541,7 +538,7 @@ public class OkHttpRequestManager {
 
             Iterator<Map.Entry<String, String>> iter = paramsMap.entrySet().iterator();
             while (iter.hasNext()) {
-                HashMap.Entry<String, String> entry = (HashMap.Entry) iter.next();
+              HashMap.Entry<String, String> entry = iter.next();
 
                 jsonObj.put(entry.getKey(), entry.getValue());
             }

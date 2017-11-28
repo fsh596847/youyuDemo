@@ -1,11 +1,9 @@
 package com.zhongan.demo;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -17,18 +15,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.GsonBuilder;
 import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.Util;
-import com.zhongan.demo.impl.ReqCallBack;
+import consumer.fin.rskj.com.library.login.ReqCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;
 import com.zhongan.demo.util.ToastUtils;
-import com.zhongan.demo.view.TopNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;

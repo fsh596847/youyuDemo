@@ -25,14 +25,15 @@ public class Constants {
   public static final String BASE_URL_STRAT = "http://120.55.174.179:8070";
   //public static final String BASE_URL_STRAT = "http://10.2.11.174:8090";
   public static final String BASE_URL = BASE_URL_STRAT + "/quickloan";
-
+  public static String BASE_LOGIN_URL = "http://test.rskj99.com/rskj-core-api";//测试
   public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
-  public static final String LOGIN_URL = "http://test.rskj99.com/rskj-core-api/member/login";
+  public static final String LOGIN_URL = "member/login";
   public static final String SHAREDPREFERENCES_NAME = "xm_preference";
   /**
    * 渠道标识
    */
   public static final String CHANNEL_NO = "3";
+  public static final String PROJECTTYPE = "suixindai2.0";
   /**
    * 获取验证码接口标识
    */
@@ -152,6 +153,9 @@ public class Constants {
    * 本月账单接口
    */
   public static final String TRANS_CODE_MM100132 = "M100132";
-
+  /**
+   * 获取页面连接
+   */
+  public static final String TRANS_CODE_M107102 = "M107102";
 
 }

@@ -547,4 +547,22 @@ public class SharedPreferenceUtils {
         return sharedPreferences.getString("tokenKey","000000");
     }
 
+  public void setIdentity(String data) {
+    editor.putString("identity", data);
+    editor.commit();
+  }
+
+  public String getIdentity() {
+    return sharedPreferences.getString("identity", "");
+  }
+
+  public void setShowTab(boolean showTab) {
+    editor.putBoolean("showTab", showTab);
+    editor.commit();
+  }
+
+  public boolean isShowTab() {
+    return sharedPreferences.getBoolean("showTab", false);
+  }
+
 }
