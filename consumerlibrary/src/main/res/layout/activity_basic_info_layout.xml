@@ -111,8 +111,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
-                android:textSize="@dimen/text_size_15"
-                android:drawablePadding="5dip"
+                android:textSize="@dimen/text_size_14"
+                android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/common_checkbox_btn_bg"
                 android:text="@string/basic_already_married_text"/>
             <RadioButton
@@ -121,8 +121,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dip"
                 android:button="@null"
-                android:textSize="@dimen/text_size_15"
-                android:drawablePadding="5dip"
+                android:textSize="@dimen/text_size_14"
+                android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/common_checkbox_btn_bg"
                 android:text="@string/basic_not_marry_text"/>
         </RadioGroup>

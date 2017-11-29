@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/big"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="40dp"
+      android:layout_marginLeft="20dp"
+      android:textColor="@color/white"
+      android:textSize="32sp"
+      android:gravity="center"
+      android:text="登录"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:layout_marginLeft="20dp"
+      android:textColor="@color/white"
+      android:textSize="14sp"
+      android:gravity="center"
+      android:text="手机号"
+      />
+
+  <EditText
+      android:id="@+id/user_phone"
+      android:layout_width="match_parent"
+      android:layout_height="45dp"
+      android:gravity="center|left"
+      android:padding="5dp"
+      android:maxLength="11"
+      android:inputType="phone"
+      android:textColor="@color/white"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:theme="@style/MyEditText"
+      android:cursorVisible="true"
+      android:textCursorDrawable="@null"
+      android:text=""
+      android:textSize="24sp"
+      />
+
+  <View
+      android:layout_width="match_parent"
+      android:background="@color/divide"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:layout_height="0.6dp"
+      />
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="25dp"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="密  码"
+        />
+
+    <CheckBox
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:button="@null"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:text="显示"
+        />
+  </RelativeLayout>
+
+  <EditText
+      android:id="@+id/user_password"
+      android:layout_width="match_parent"
+      android:layout_height="45dp"
+      android:gravity="center|left"
+      android:padding="5dp"
+      android:maxLength="20"
+      android:textColor="@color/white"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:theme="@style/MyEditText"
+      android:drawablePadding="15dp"
+      android:inputType="textPassword"
+      android:cursorVisible="true"
+      android:textCursorDrawable="@null"
+      android:text=""
+      android:paddingLeft="15dp"
+      android:textSize="24sp"
+      />
+
+  <View
+      android:layout_width="match_parent"
+      android:background="@color/divide"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:layout_height="0.6dp"
+      />
+
+  <Button
+      android:id="@+id/activity_login_btn"
+      android:layout_width="match_parent"
+      android:layout_height="45dp"
+      android:layout_marginLeft="15dp"
+      android:layout_marginRight="15dp"
+      android:layout_marginTop="20dp"
+      android:gravity="center"
+      android:textColor="@color/login_selector"
+      android:text="登录"
+      android:textSize="18sp"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      >
+
+    <TextView
+        android:id="@+id/register_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="@string/do_register"
+        />
+
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="@string/do_forgetpwd"
+        />
+  </RelativeLayout>
+
+</LinearLayout>

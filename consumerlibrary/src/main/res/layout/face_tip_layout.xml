@@ -32,7 +32,8 @@
         android:gravity="center"
         android:text="@string/face_tip"
         android:textColor="@color/color_666666"
-        android:textSize="@dimen/text_size_15" />
+        android:textSize="@dimen/text_size_10"
+        />
 
     <LinearLayout
         android:id="@+id/face_tip_ll_one"
@@ -41,6 +42,8 @@
         android:layout_gravity="center_vertical"
         android:layout_marginTop="25dip"
         android:orientation="horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:weightSum="3" >
 
         <TextView
@@ -48,36 +51,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:drawablePadding="2dip"
+            android:drawablePadding="5dp"
             android:drawableTop="@mipmap/face_icon_hap"
             android:gravity="center"
             android:text="@string/face_tip_one"
             android:textColor="@color/color_666666"
-            android:textSize="@dimen/text_size_15" />
+            android:textSize="@dimen/text_size_10"
+            />
 
         <TextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:drawablePadding="2dip"
+            android:drawablePadding="5dp"
             android:drawableTop="@mipmap/face_icon_glasses"
             android:gravity="center"
             android:text="@string/face_tip_two"
             android:textColor="@color/color_666666"
-            android:textSize="@dimen/text_size_15" />
+            android:textSize="@dimen/text_size_10"
+            />
 
         <TextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:drawablePadding="2dip"
+            android:drawablePadding="5dp"
             android:drawableTop="@mipmap/face_icon_light"
             android:gravity="center"
             android:text="@string/face_tip_three"
             android:textColor="@color/color_666666"
-            android:textSize="@dimen/text_size_15" />
+            android:textSize="@dimen/text_size_10"
+            />
     </LinearLayout>
 
 </LinearLayout>
