@@ -110,6 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:gravity="center"
+                android:textSize="@dimen/text_size_12"
                 android:text="获取验证码"
                 android:textColor="@color/color_66ff7920"
                 />
