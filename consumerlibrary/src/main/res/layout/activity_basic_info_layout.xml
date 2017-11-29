@@ -73,7 +73,7 @@
             android:id="@+id/email_title"
             style="@style/left_text_tip_style"
             android:layout_below="@id/basic_line_two"
-            android:text="邮箱"
+            android:text="@string/mailbox"
             />
         <EditText
             android:id="@+id/email_ed"
