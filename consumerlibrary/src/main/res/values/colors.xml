@@ -47,7 +47,7 @@
     <color name="color_f7f7f7">#f7f7f7</color>
     <color name="color_c7c7cd">#c7c7cd</color>
     <color name="color_eb8311">#eb8311</color>
-
+  <color name="color_cccccc">#CCCCCC</color>
     <color name="color_31c2ff">#31c2ff</color>
     <color name="pickerview_time_btn_nor">#31c2ff</color>
     <color name="pickerview_timebtn_pre">#31c2ff</color>
