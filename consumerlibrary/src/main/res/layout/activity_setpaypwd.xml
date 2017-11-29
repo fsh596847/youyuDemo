@@ -25,6 +25,8 @@
         android:layout_marginTop="50dp"
         android:text="请设置交易密码"
         android:gravity="center"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black"
         />
 
     <consumer.fin.rskj.com.library.views.MultiEditText
