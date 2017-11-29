@@ -30,6 +30,7 @@
             android:gravity="center"
             android:layout_margin="15dp"
             android:padding="15dp"
+            android:textSize="@dimen/text_size_17"
             android:layout_height="match_parent"
             android:text="借款记录"/>
 
@@ -42,6 +43,8 @@
             android:padding="15dp"
             android:layout_height="match_parent"
             android:background="@mipmap/pop"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black"
             android:text="还款记录"/>
 
     </LinearLayout>

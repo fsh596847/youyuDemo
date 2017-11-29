@@ -96,11 +96,15 @@ public class RecordListActivity extends BaseActivity {
         switch (arg0) {
           case 0:
             loan_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+            loan_record.setTextColor(getResources().getColor(R.color.black));
             payment_record.setBackgroundColor(getResources().getColor(R.color.white));
+            payment_record.setTextColor(getResources().getColor(R.color.color_666666));
             break;
           case 1:
             loan_record.setBackgroundColor(getResources().getColor(R.color.white));
             payment_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+            loan_record.setTextColor(getResources().getColor(R.color.color_666666));
+            payment_record.setTextColor(getResources().getColor(R.color.black));
             break;
           default:
             loan_record.setBackground(getResources().getDrawable(R.mipmap.pop));
