@@ -10,7 +10,7 @@
     <string name="apply_btn_text">立即申请</string>
     <string name="self_info_check_text">银行卡实名认证</string>
     <string name="submit_text">提交</string>
-    <string name="name_text">姓名</string>
+  <string name="name_text">真实姓名</string>
     <string name="idcard_text">身份证号</string>
     <string name="bank_card_no_text">银行卡号</string>
     <string name="input_bank_card_no_text">请输入银行卡号</string>

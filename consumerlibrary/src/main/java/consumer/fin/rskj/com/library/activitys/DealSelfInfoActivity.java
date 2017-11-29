@@ -177,8 +177,8 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
     mBackBtn = (Button) findViewById(R.id.left_btn);
     mTitleView = (TextView) findViewById(R.id.center_title);
     mTitleView.setText("身份信息验证");
-    mBackBtn.setOnClickListener(this);
     mOpenNameTv = (EditText) findViewById(R.id.open_card_name_value_tv);// 姓名
+    mBackBtn.setOnClickListener(this);
     mOpenIdCardTv = (EditText) findViewById(R.id.open_card_idcard_value_tv);// 身份证号
 
     //        mOpenNameTv.setText(openName);
