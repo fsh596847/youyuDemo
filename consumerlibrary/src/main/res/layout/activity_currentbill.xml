@@ -35,6 +35,7 @@
             android:layout_height="20dp"
             android:gravity="center|left"
             android:textSize="12sp"
+            android:textColor="@color/color_666666"
             android:text="当月应还金额"/>
 
         <TextView
@@ -43,7 +44,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="7dp"
             android:gravity="center|left"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textColor="@color/color_ff7920"
             android:textStyle="bold"
             android:text="0.00"/>
@@ -51,15 +52,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/loanStartData"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:gravity="center|left"
+                android:textColor="@color/color_999999"
                 android:text="--"/>
 
             <TextView
@@ -67,8 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:gravity="center|left"
+                android:textColor="@color/color_999999"
                 android:text="借款金额:0.00"/>
 
         </LinearLayout>
@@ -76,15 +79,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/interest"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:gravity="center|left"
+                android:textColor="@color/color_999999"
                 android:text="利息:0.00"/>
 
             <TextView
@@ -92,8 +96,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:gravity="center|left"
+                android:textColor="@color/color_999999"
                 android:text="贷款期数:0"/>
 
         </LinearLayout>
@@ -102,9 +107,10 @@
             android:id="@+id/bankCardMsg"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
             android:gravity="center|left"
+            android:textColor="@color/color_999999"
             android:text="到款账户:--"/>
 
 
