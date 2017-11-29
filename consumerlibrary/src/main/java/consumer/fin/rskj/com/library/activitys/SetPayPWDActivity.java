@@ -117,7 +117,7 @@ public class SetPayPWDActivity extends BaseActivity   {
         requestParams.put("transCode", "M000166");//接口标识
         requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
         requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-        requestParams.put("legalPerNum", "00001");
+      requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
 
         requestParams.put("paymentPassword", paymentPassword);
         requestParams.put("repaymentPassword", repaymentPassword);
