@@ -28,6 +28,8 @@ public class Constants {
   public static String BASE_LOGIN_URL = "http://test.rskj99.com/rskj-core-api";//测试
   public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
   public static final String LOGIN_URL = "member/login";
+  public static final String HTTP_REGIST = "member/regist";//注册
+  public static final String HTTP_REGISTER_CODE = "verificacode/createtext/regist/";//注册验证码
   public static final String SHAREDPREFERENCES_NAME = "xm_preference";
   /**
    * 渠道标识
@@ -157,5 +159,4 @@ public class Constants {
    * 获取页面连接
    */
   public static final String TRANS_CODE_M107102 = "M107102";
-
 }

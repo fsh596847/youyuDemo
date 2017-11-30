@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -84,6 +86,12 @@ public class LoginActivity extends BaseActivity {
         Log.d(TAG, "phoneNum = " + phoneNum.toString());
         Log.d(TAG, "password = " + password.toString());
         login(phoneNum.toString(), password.toString());
+      }
+    });
+    register_btn.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View view) {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivityForResult(intent, REQUST_REGIST);
       }
     });
   }

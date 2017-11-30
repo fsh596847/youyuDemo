@@ -22,55 +22,55 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="30dp"
       android:layout_marginLeft="20dp"
-      android:textColor="@color/white"
-      android:textSize="14sp"
+      android:layout_marginTop="30dp"
       android:gravity="center"
       android:text="手机号"
+      android:textColor="@color/white"
+      android:textSize="14sp"
       />
 
   <EditText
       android:id="@+id/edit_phone"
       android:layout_width="match_parent"
       android:layout_height="45dp"
-      android:gravity="center|left"
-      android:padding="5dp"
-      android:maxLength="11"
-      android:inputType="phone"
-      android:textColor="@color/white"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:theme="@style/MyEditText"
       android:cursorVisible="true"
+      android:gravity="center|left"
+      android:inputType="phone"
+      android:maxLength="11"
+      android:padding="5dp"
+      android:textColor="@color/white"
       android:textCursorDrawable="@null"
       android:textSize="24sp"
+      android:theme="@style/MyEditText"
       />
 
   <View
       android:layout_width="match_parent"
-      android:background="@color/divide"
+      android:layout_height="0.6dp"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:layout_height="0.6dp"
+      android:background="@color/divide"
       />
 
 
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:gravity="center"
       android:layout_marginTop="15dp"
+      android:gravity="center"
       >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:textColor="@color/white"
-        android:textSize="14sp"
         android:gravity="center"
         android:text="验证码"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         />
 
     <!--<Button-->
@@ -91,13 +91,13 @@
         android:id="@+id/get_code"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:textColor="@color/login_selector"
         android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="20dp"
         android:gravity="center"
-        android:layout_gravity="center_vertical"
         android:padding="5dp"
         android:text="获取验证码"
+        android:textColor="@color/login_selector"
         android:textSize="12sp"
         />
 
@@ -108,27 +108,27 @@
       android:id="@+id/edit_code"
       android:layout_width="match_parent"
       android:layout_height="45dp"
-      android:gravity="center|left"
-      android:padding="5dp"
-      android:maxLength="11"
-      android:textColor="@color/white"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:theme="@style/MyEditText"
       android:cursorVisible="true"
-      android:textCursorDrawable="@null"
       android:drawablePadding="15dp"
+      android:gravity="center|left"
       android:inputType="number"
+      android:maxLength="11"
+      android:padding="5dp"
       android:paddingLeft="15dp"
+      android:textColor="@color/white"
+      android:textCursorDrawable="@null"
       android:textSize="24sp"
+      android:theme="@style/MyEditText"
       />
 
   <View
       android:layout_width="match_parent"
-      android:background="@color/divide"
+      android:layout_height="0.6dp"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:layout_height="0.6dp"
+      android:background="@color/divide"
       />
 
 
@@ -142,10 +142,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:textColor="@color/white"
-        android:textSize="14sp"
         android:gravity="center"
         android:text="密  码"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         />
 
     <CheckBox
@@ -154,11 +154,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
         android:button="@null"
-        android:textSize="12sp"
         android:gravity="center"
         android:text="显示"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         />
   </RelativeLayout>
 
@@ -167,72 +167,72 @@
       android:id="@+id/register_password"
       android:layout_width="match_parent"
       android:layout_height="45dp"
-      android:gravity="center|left"
-      android:padding="5dp"
-      android:maxLength="11"
-      android:textColor="@color/white"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:theme="@style/MyEditText"
-      android:inputType="textPassword"
       android:cursorVisible="true"
-      android:textCursorDrawable="@null"
+      android:gravity="center|left"
+      android:inputType="textPassword"
+      android:maxLength="11"
+      android:padding="5dp"
       android:paddingLeft="15dp"
+      android:textColor="@color/white"
+      android:textCursorDrawable="@null"
       android:textSize="24sp"
+      android:theme="@style/MyEditText"
       />
 
   <View
       android:layout_width="match_parent"
-      android:background="@color/divide"
+      android:layout_height="0.6dp"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:layout_height="0.6dp"
+      android:background="@color/divide"
       />
 
   <TextView
-      android:visibility="gone"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="15dp"
       android:layout_marginLeft="20dp"
-      android:textColor="@color/white"
-      android:textSize="14sp"
+      android:layout_marginTop="15dp"
       android:gravity="center"
       android:text="渠道号(选填)"
+      android:textColor="@color/white"
+      android:textSize="14sp"
+      android:visibility="gone"
       />
 
   <EditText
-      android:visibility="gone"
       android:id="@+id/recommend_code"
       android:layout_width="match_parent"
       android:layout_height="45dp"
-      android:gravity="center|left"
-      android:padding="5dp"
-      android:maxLength="11"
-      android:inputType="text"
-      android:textColor="@color/white"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:theme="@style/MyEditText"
       android:cursorVisible="true"
+      android:gravity="center|left"
+      android:inputType="text"
+      android:maxLength="11"
+      android:padding="5dp"
+      android:textColor="@color/white"
       android:textCursorDrawable="@null"
       android:textSize="24sp"
+      android:theme="@style/MyEditText"
+      android:visibility="gone"
       />
 
   <View
-      android:visibility="gone"
       android:layout_width="match_parent"
-      android:background="@color/divide"
+      android:layout_height="0.6dp"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:layout_height="0.6dp"
+      android:background="@color/divide"
+      android:visibility="gone"
       />
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="15dp"
       android:layout_marginLeft="15dp"
+      android:layout_marginTop="15dp"
       android:orientation="horizontal"
       >
 
@@ -240,20 +240,21 @@
         android:id="@+id/checkall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:textSize="12sp"
-        android:textColor="@color/white"
+        android:button="@null"
         android:drawablePadding="5dp"
+        android:scaleType="centerCrop"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         />
 
     <TextView
         android:id="@+id/link_protocol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
         android:text="我已阅读并完全同意《注册服务协议》"
+        android:textSize="12sp"
         />
 
   </LinearLayout>
@@ -266,8 +267,8 @@
       android:layout_marginRight="15dp"
       android:layout_marginTop="20dp"
       android:gravity="center"
-      android:textColor="@color/login_selector"
       android:text="注册"
+      android:textColor="@color/login_selector"
       android:textSize="18sp"
       />
 
