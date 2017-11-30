@@ -59,6 +59,14 @@
         android:name="consumer.fin.rskj.com.library.login.RegisterActivity"
         android:screenOrientation="portrait"
         />
+
+    <!--忘记密码-->
+    <activity
+        android:name="consumer.fin.rskj.com.library.login.GetPasswordActivity"
+        android:screenOrientation="portrait"
+        />
+
+
     <!--绑定身份证页面-->
     <activity
         android:name="consumer.fin.rskj.com.library.activitys.FaceIDCardInfoUploadActivity"

@@ -94,6 +94,12 @@ public class LoginActivity extends BaseActivity {
         startActivityForResult(intent, REQUST_REGIST);
       }
     });
+    forgetPass.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View view) {
+        Intent intent = new Intent(LoginActivity.this, GetPasswordActivity.class);
+        startActivity(intent);
+      }
+    });
   }
 
   @Override protected void onActivityResult(int arg0, int arg1, Intent arg2) {
