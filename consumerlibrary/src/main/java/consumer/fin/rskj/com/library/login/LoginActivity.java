@@ -296,7 +296,6 @@ public class LoginActivity extends BaseActivity {
             dismissLoading();
             Log.d(TAG, "--------------token失效，或者用户未登录-------------");
             showToast(returnMsg, Constants.TOAST_SHOW_POSITION);
-
           } else {
             showToast(returnMsg, Constants.TOAST_SHOW_POSITION);
             callBack.onError(returnCode, returnMsg);
@@ -318,12 +317,12 @@ public class LoginActivity extends BaseActivity {
 
   private void m100660() {
     requestParams.clear();
-    requestParams.put("transCode", "M100660");
+    requestParams.put("transCode", Constants.TRANS_CODE_M100660);
     requestParams.put("channelNo", "3");
     requestParams.put("version", BuildConfig.VERSION_NAME);
     requestParams.put("clientToken", sharePrefer.getToken());
     requestParams.put("productType", "1");
-    requestParams.put("legalPerNum", "00001");// 法人编号
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);// 法人编号
     okHttpRequestManager.requestAsyn(Constants.FOUNDID_URL,
         OkHttpRequestManager.TYPE_POST_JSON_URL, requestParams, new ReqCallBack<String>() {
           @Override public void onReqSuccess(String result) {

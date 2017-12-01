@@ -177,4 +177,8 @@ public class Constants {
    * 获取页面连接
    */
   public static final String TRANS_CODE_M107102 = "M107102";
+  /**
+   * 立即借款
+   */
+  public static final String TRANS_CODE_M100660 = "M100660";
 }
