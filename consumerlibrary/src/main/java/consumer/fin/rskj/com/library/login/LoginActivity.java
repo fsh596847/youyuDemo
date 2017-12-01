@@ -1,6 +1,5 @@
 package consumer.fin.rskj.com.library.login;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -20,15 +19,17 @@ import com.google.gson.Gson;
 import consumer.fin.rskj.com.consumerlibrary.BuildConfig;
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.activitys.BaseActivity;
+import consumer.fin.rskj.com.library.activitys.WebViewActivity;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
 import consumer.fin.rskj.com.library.okhttp.HttpInfo;
 import consumer.fin.rskj.com.library.okhttp.OkHttpUtil;
 import consumer.fin.rskj.com.library.okhttp.callback.Callback;
-import consumer.fin.rskj.com.library.utils.Constant;
 import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
+import consumer.fin.rskj.com.library.utils.ToastUtils;
 import java.io.IOException;
 import java.util.Map;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +38,6 @@ import static consumer.fin.rskj.com.library.utils.Constants.BASE_URL;
 public class LoginActivity extends BaseActivity {
 
   private static final String TAG = LoginActivity.class.getSimpleName();
-  final public static int REQUEST_CODE_ASK_CALL_PHONE = 123;
   /**
    * 忘记密码
    */
@@ -98,6 +98,17 @@ public class LoginActivity extends BaseActivity {
       @Override public void onClick(View view) {
         Intent intent = new Intent(LoginActivity.this, GetPasswordActivity.class);
         startActivity(intent);
+      }
+    });
+    show.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View view) {
+        if (show.isChecked()) {
+          //显示密码
+          user_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        } else {
+          //隐藏密码
+          user_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        }
       }
     });
   }
@@ -245,6 +256,7 @@ public class LoginActivity extends BaseActivity {
           //intent = new Intent(LoginActivity.this, MenuListActivity2.class);
           //startActivity(intent);
           //LoginActivity.this.finish();
+          m100660();
         } catch (JSONException e) {
           dismissLoading();
           e.printStackTrace();
@@ -284,6 +296,7 @@ public class LoginActivity extends BaseActivity {
             dismissLoading();
             Log.d(TAG, "--------------token失效，或者用户未登录-------------");
             showToast(returnMsg, Constants.TOAST_SHOW_POSITION);
+
           } else {
             showToast(returnMsg, Constants.TOAST_SHOW_POSITION);
             callBack.onError(returnCode, returnMsg);
@@ -301,6 +314,50 @@ public class LoginActivity extends BaseActivity {
         callBack.onFailure(result);
       }
     });
+  }
+
+  private void m100660() {
+    requestParams.clear();
+    requestParams.put("transCode", "M100660");
+    requestParams.put("channelNo", "3");
+    requestParams.put("version", BuildConfig.VERSION_NAME);
+    requestParams.put("clientToken", sharePrefer.getToken());
+    requestParams.put("productType", "1");
+    requestParams.put("legalPerNum", "00001");// 法人编号
+    okHttpRequestManager.requestAsyn(Constants.FOUNDID_URL,
+        OkHttpRequestManager.TYPE_POST_JSON_URL, requestParams, new ReqCallBack<String>() {
+          @Override public void onReqSuccess(String result) {
+            dismissLoading();
+            LogUtils.d(TAG, "onReqSuccess result = " + result);
+            try {
+              JSONObject jsonObject = new JSONObject(result);
+              String returnCode = jsonObject.getString("returnCode");
+              if ("000000".equals(returnCode)) {
+                JSONArray array = jsonObject.getJSONArray("rows");
+
+                if (null != array && array.length() > 0) {
+                  String id = array.getJSONObject(0).getString("id");
+                  String fundId = array.getJSONObject(0).getString("fundId");
+                  Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
+                  intent.putExtra("url", Constants.BASE_URL + sharePrefer.getApplyLoan());
+                  intent.putExtra("title", "贷款");
+                  intent.putExtra("id", id);
+                  intent.putExtra("fundId", fundId);
+                  startActivity(intent);
+                }
+              } else {
+                ToastUtils.showCenterToast(jsonObject.getString("returnMsg"), LoginActivity.this);
+              }
+            } catch (Exception e) {
+              e.printStackTrace();
+            }
+          }
+
+          @Override public void onReqFailed(String errorMsg) {
+            dismissLoading();
+            LogUtils.d(TAG, "onReqFailed result = " + errorMsg);
+          }
+        });
   }
 }
 

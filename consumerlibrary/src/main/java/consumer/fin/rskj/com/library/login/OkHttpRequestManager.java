@@ -70,6 +70,7 @@ public class OkHttpRequestManager {
   public static final int TYPE_DELETE = 6;// DELETE请求
 
   public static final int TYPE_COMMON_GET = 7;// 普通get请求
+  public static final int TYPE_POST_JSON_URL = 8;
 
   public OkHttpClient mOkHttpClient;//okHttpClient 实例
   private Handler okHttpHandler;//全局处理子线程和M主线程通信
@@ -208,6 +209,10 @@ public class OkHttpRequestManager {
       case TYPE_OTHER:
         call = urlPostWithForm(actionUrl, paramsMap, callBack);
         break;
+      case TYPE_POST_JSON_URL:
+        call = requestPostJsonTronsformUrl(actionUrl, paramsMap, callBack);
+        break;
+
     }
     return call;
   }
@@ -438,6 +443,50 @@ public class OkHttpRequestManager {
       LogUtils.d(TAG, "------- RequestBody = " + jsonObj.toString());
       RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, jsonObj.toString());
       String requestUrl = String.format("%s/%s", Constants.BASE_LOGIN_URL, actionUrl);
+
+      LogUtils.d(TAG, "------- requestUrl = " + requestUrl);
+
+      final Request request = addHeaders().url(requestUrl).post(body).build();
+      final Call call = mOkHttpClient.newCall(request);
+      call.enqueue(new Callback() {
+        @Override public void onFailure(Call call, IOException e) {
+          failedCallBack("网络异常:" + e.getMessage(), callBack);
+          Log.e(TAG, e.toString());
+        }
+
+        @Override public void onResponse(Call call, Response response) throws IOException {
+
+          if (response.isSuccessful()) {
+            String string = response.body().string();
+
+            Log.e(TAG, "response ----->" + string);
+            successCallBack((T) string, callBack);
+          } else {
+            failedCallBack("数据请求失败", callBack);
+          }
+        }
+      });
+      return call;
+    } catch (Exception e) {
+      Log.e(TAG, e.toString());
+    }
+    return null;
+  }
+
+  private <T> Call requestPostJsonTronsformUrl(String actionUrl, Map<String, String> paramsMap,
+      final ReqCallBack<T> callBack) {
+    try {
+      JSONObject jsonObj = new JSONObject();
+
+      Iterator<Map.Entry<String, String>> iter = paramsMap.entrySet().iterator();
+      while (iter.hasNext()) {
+        HashMap.Entry<String, String> entry = iter.next();
+
+        jsonObj.put(entry.getKey(), entry.getValue());
+      }
+      LogUtils.d(TAG, "------- RequestBody = " + jsonObj.toString());
+      RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, jsonObj.toString());
+      String requestUrl = String.format("%s/%s", Constants.BASE_URL_STRAT, actionUrl);
 
       LogUtils.d(TAG, "------- requestUrl = " + requestUrl);
 

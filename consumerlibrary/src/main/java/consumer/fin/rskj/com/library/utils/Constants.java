@@ -29,6 +29,10 @@ public class Constants {
   public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
   public static final String LOGIN_URL = "member/login";
   /**
+   * 立即借款
+   */
+  public static final String FOUNDID_URL = "/quickloan/jsonHttpServlet";
+  /**
    * 注册
    */
   public static final String HTTP_REGIST = "member/regist";
