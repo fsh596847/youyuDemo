@@ -6,16 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-
-import consumer.fin.rskj.com.library.utils.Constant;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.adapters.BankCardAdapter;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
@@ -23,6 +14,11 @@ import consumer.fin.rskj.com.library.module.BankCardItem;
 import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.views.TopNavigationView2;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by HP on 2017/7/24.
