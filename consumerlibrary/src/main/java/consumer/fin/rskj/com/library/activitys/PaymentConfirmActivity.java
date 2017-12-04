@@ -45,7 +45,7 @@ import static consumer.fin.rskj.com.library.utils.Constants.REQUEST_URL;
 
 public class PaymentConfirmActivity extends BaseActivity {
 
-  private static final String TAG = "PaymentConfirmActivity";
+  private static final String TAG = PaymentConfirmActivity.class.getSimpleName();
   public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
   private long surplusTime = 0;
   private long allsurplusTime = 120000;
