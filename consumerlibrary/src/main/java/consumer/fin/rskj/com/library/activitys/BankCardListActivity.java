@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,157 +24,134 @@ import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.views.TopNavigationView2;
 
-
 /**
  * Created by HP on 2017/7/24.
  * 银行卡列表
  */
 
-public class BankCardListActivity extends  BaseActivity {
+public class BankCardListActivity extends BaseActivity {
 
-    private static final String TAG = "BankCardListActivity";
+  private static final String TAG = BankCardListActivity.class.getSimpleName();
 
-    private TopNavigationView2 topbar;
-    private RecyclerView mRecyclerView;
-    private List<BankCardItem> mDatas = new ArrayList<BankCardItem>();
-    private BankCardAdapter mAdapter;
-    private boolean status = false;//判断加载成功还是失败
-    private View footView; //添加按钮
-    private LayoutInflater layoutInflater;
+  private TopNavigationView2 topbar;
+  private RecyclerView mRecyclerView;
+  private List<BankCardItem> mDatas = new ArrayList<>();
+  private BankCardAdapter mAdapter;
 
-    private boolean isRefresh = true;
-    private int pageNum = 1;
+  private Intent intent;
 
-    private Intent intent;
+  @Override
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_banklist);
+    getBankList();
+  }
 
+  @Override
+  public void init() {
+    topbar = (TopNavigationView2) findViewById(R.id.topbar);
+    topbar.setClickListener(new TopNavigationView2.NavigationViewClickListener() {
+      @Override
+      public void onLeftClick() {
+        finish();
+      }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_banklist);
+      @Override
+      public void onRightClick() {
 
-        layoutInflater =  LayoutInflater.from(this);
+      }
+    });
+    mRecyclerView = (RecyclerView) findViewById(R.id.pull_refresh_list);
 
-        getBankList();
-    }
+    mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-    @Override
-    public void init() {
-        topbar = (TopNavigationView2) findViewById(R.id.topbar);
-        topbar.setClickListener(new TopNavigationView2.NavigationViewClickListener() {
-            @Override
-            public void onLeftClick() {
-                finish();
-            }
+    mAdapter = new BankCardAdapter(this, mDatas);
+    mAdapter.setOnItemClickListener(new BankCardAdapter.OnItemClickListener() {
 
-            @Override
-            public void onRightClick() {
+      @Override
+      public void OnItemClick(View view, RecyclerView.ViewHolder holder, int position) {
 
-            }
-        });
-        mRecyclerView = (RecyclerView) findViewById(R.id.pull_refresh_list);
+        showToast("普通点击", Constants.TOAST_SHOW_POSITION);
+        intent = new Intent(BankCardListActivity.this, CardDetailActivity.class);
+        startActivity(intent);
+      }
+    });
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+    mAdapter.setAddListener(new BankCardAdapter.OnItemClickListener() {
 
+      @Override
+      public void OnItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+        showToast("添加点击", Constants.TOAST_SHOW_POSITION);
+        intent = new Intent(BankCardListActivity.this, AddBankCardActivity.class);
+        startActivity(intent);
+      }
+    });
 
-        mAdapter = new BankCardAdapter(this ,mDatas);
-        mAdapter.setOnItemClickListener(new BankCardAdapter.OnItemClickListener(){
+    mRecyclerView.setAdapter(mAdapter);
+  }
 
-            @Override
-            public void OnItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+  private void getBankList() {
+    requestParams.clear();
+    requestParams.put("transCode", Constants.TRANS_CODE_MM100132);//接口标识
+    requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
+    requestParams.put("clientToken", sharePrefer.getToken());//登录后token
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
+    requestParams.put("fundId", sharePrefer.getXJFundId());
+    requestParams.put("productId", sharePrefer.getXJProductId());
+    showLoading(getResources().getString(R.string.dialog_loading));
+    LogUtils.d(TAG, "银行卡列表: requestParams--->" + requestParams.toString());
+    sendPostRequest(requestParams, new ResultCallBack() {
+      @Override
+      public void onSuccess(String data) {
+        dismissLoading();
+        LogUtils.d(TAG, "银行卡列表: data--->" + data);
+        /**
+         * bankList	银行列表
+         bankCode	银行卡号
+         bankName	银行名称
+         phone	手机号
+         userName	用户名称
+         isMain	是否为主还款银行卡
+         acctId	银行卡主键
+         isAutoRepay	是否允许自动扣款
+         */
+        try {
+          JSONObject jsonObject = new JSONObject(data);
 
-                showToast("普通点击" , Constants.TOAST_SHOW_POSITION);
-                intent = new Intent(BankCardListActivity.this,CardDetailActivity.class);
-                startActivity(intent);
+          JSONArray mJsonArr = jsonObject.getJSONArray("bankList");
+          for (int a = 0; a < mJsonArr.length(); a++) {
 
-            }
-        });
+            JSONObject object = mJsonArr.getJSONObject(a);
+            BankCardItem bankCardItem = new BankCardItem();
+            bankCardItem.setBankName(object.getString("bankName"));
+            bankCardItem.setBankCode(object.getString("bankCode"));
+            bankCardItem.setPhone(object.getString("phone"));
+            bankCardItem.setAcctId(object.getString("acctId"));
+            bankCardItem.setIsMain(object.getString("isMain"));
+            bankCardItem.setUserName(object.getString("userName"));
 
+            LogUtils.d(TAG, "银行卡列表: bankCardItem--->" + bankCardItem.toString());
 
-        mAdapter.setAddListener(new BankCardAdapter.OnItemClickListener(){
+            mDatas.add(bankCardItem);
+            mAdapter.notifyDataSetChanged();
+          }
+        } catch (JSONException e) {
+          e.printStackTrace();
+        }
+      }
 
-            @Override
-            public void OnItemClick(View view, RecyclerView.ViewHolder holder, int position) {
-                showToast("添加点击" , Constants.TOAST_SHOW_POSITION);
-                intent = new Intent(BankCardListActivity.this,AddBankCardActivity.class);
-                startActivity(intent);
-            }
-        });
+      @Override
+      public void onError(String retrunCode, String errorMsg) {
+        dismissLoading();
+        LogUtils.d(TAG, "银行卡列表: errorMsg--->" + errorMsg);
+      }
 
-
-        mRecyclerView.setAdapter(mAdapter );
-
-    }
-
-
-    private  void getBankList(){
-        requestParams.clear();
-        requestParams.put("transCode", "M100132");//接口标识
-        requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
-        requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-        requestParams.put("legalPerNum", "00001");
-        requestParams.put("fundId", sharePrefer.getXJFundId());
-        requestParams.put("productId", sharePrefer.getXJProductId());
-
-        showLoading("正在加载...");
-
-        LogUtils.d(TAG, "银行卡列表: requestParams--->" + requestParams.toString());
-        sendPostRequest(requestParams, new ResultCallBack() {
-            @Override
-            public void onSuccess(String data) {
-                dismissLoading();
-                LogUtils.d(TAG, "银行卡列表: data--->" + data);
-                /**
-                 * bankList	银行列表
-                 bankCode	银行卡号
-                 bankName	银行名称
-                 phone	手机号
-                 userName	用户名称
-                 isMain	是否为主还款银行卡
-                 acctId	银行卡主键
-                 isAutoRepay	是否允许自动扣款
-                 */
-                try {
-                    JSONObject jsonObject = new JSONObject(data);
-
-                    JSONArray mJsonArr = jsonObject.getJSONArray("bankList");
-                    for (int a = 0;a < mJsonArr.length(); a ++){
-
-                        JSONObject object =  mJsonArr.getJSONObject(a);
-                        BankCardItem bankCardItem = new BankCardItem();
-                        bankCardItem.setBankName(object.getString("bankName"));
-                        bankCardItem.setBankCode(object.getString("bankCode"));
-                        bankCardItem.setPhone(object.getString("phone"));
-                        bankCardItem.setAcctId(object.getString("acctId"));
-                        bankCardItem.setIsMain(object.getString("isMain"));
-                        bankCardItem.setUserName(object.getString("userName"));
-
-                        LogUtils.d(TAG, "银行卡列表: bankCardItem--->" + bankCardItem.toString());
-
-                        mDatas.add(bankCardItem);
-                        mAdapter.notifyDataSetChanged();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onError(String retrunCode, String errorMsg) {
-                dismissLoading();
-                LogUtils.d(TAG, "银行卡列表: errorMsg--->" + errorMsg);
-            }
-
-            @Override
-            public void onFailure(String errorMsg) {
-                dismissLoading();
-                LogUtils.d(TAG, "银行卡列表: errorMsg--->" + errorMsg);
-            }
-        });
-
-
-    }
-
+      @Override
+      public void onFailure(String errorMsg) {
+        dismissLoading();
+        LogUtils.d(TAG, "银行卡列表: errorMsg--->" + errorMsg);
+      }
+    });
+  }
 }
