@@ -199,6 +199,14 @@ public class Constants {
    * 重置支付密码
    */
   public static final String TRANS_CODE_M000167 = "M000167";
+  /**
+   * 新增银行卡
+   */
+  public static final String TRANS_CODE_M100141 = "M100141";
+  /**
+   * 协议查询
+   */
+  public static final String TRANS_CODE_M000139 = "M000139";
 
 
 

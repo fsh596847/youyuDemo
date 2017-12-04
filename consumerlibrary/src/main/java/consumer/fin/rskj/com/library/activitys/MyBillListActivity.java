@@ -37,7 +37,7 @@ import me.leefeng.lfrecyclerview.LFRecyclerView;
 
 public class MyBillListActivity extends BaseActivity {
 
-  private static final String TAG = "MyBillListActivity";
+  private static final String TAG = MyBillListActivity.class.getSimpleName();
 
   private TopNavigationView2 topbar;
   private CheckBox checkAll;
