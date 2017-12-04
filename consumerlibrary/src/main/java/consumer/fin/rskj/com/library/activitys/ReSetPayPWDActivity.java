@@ -36,12 +36,31 @@ public class ReSetPayPWDActivity extends BaseActivity {
   private static final String TAG = ReSetPayPWDActivity.class.getSimpleName();
 
   private TopNavigationView2 topbar;
-  private AppCompatEditText password1, password2;
+  /**
+   * 交易密码
+   */
+  private AppCompatEditText password1;
+  /**
+   * 再次输入交易密码
+   */
+  private AppCompatEditText password2;
   private TextView getCode;
-  private WKnightKeyboard keyboard1, keyboard2;
+  private WKnightKeyboard keyboard1;
+  private WKnightKeyboard keyboard2;
 
   private TextView phone;
-  private EditText smsCode, userName, certNo;
+  /**
+   * 短信验证码
+   */
+  private EditText smsCode;
+  /**
+   * 联系人姓名
+   */
+  private EditText userName;
+  /**
+   * 身份证号
+   */
+  private EditText certNo;
 
   private long surplusTime = 0;
   private long allsurplusTime = 120000;
