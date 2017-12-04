@@ -20,13 +20,19 @@ public class Constants {
   public static String dirName =
       Environment.getExternalStorageDirectory().getAbsolutePath() + "/faceapp";
   public static String PICTURE_SAVE_PATH = "/photo.png";
-
-  //public static final String BASE_URL_STRAT = "http://47.93.6.6:9090";//9090  开发测试环境地址
+  /**
+   * 开发测试环境地址
+   */
+  //public static final String BASE_URL_STRAT = "http://47.93.6.6:9090";//9090
   public static final String BASE_URL_STRAT = "http://120.55.174.179:8070";
   //public static final String BASE_URL_STRAT = "http://10.2.11.174:8090";
+  public static String BASE_LOGIN_URL = "http://test.rskj99.com/rskj-core-api";
+
   public static final String BASE_URL = BASE_URL_STRAT + "/quickloan";
-  public static String BASE_LOGIN_URL = "http://test.rskj99.com/rskj-core-api";//测试
   public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
+  /**
+   * 登录
+   */
   public static final String LOGIN_URL = "member/login";
   /**
    * 立即借款
