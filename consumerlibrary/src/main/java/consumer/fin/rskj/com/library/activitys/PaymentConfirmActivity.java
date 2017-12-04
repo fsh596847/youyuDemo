@@ -36,6 +36,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+import static consumer.fin.rskj.com.library.utils.Constants.LEGALPER_NUM;
 import static consumer.fin.rskj.com.library.utils.Constants.REQUEST_URL;
 
 /**
@@ -268,7 +269,9 @@ public class PaymentConfirmActivity extends BaseActivity {
     }
   }
 
-  //账单还款
+  /**
+   * 账单还款
+   */
   private void payBill() {
     requestParams.clear();
     requestParams.put("transCode", Constants.TRANS_CODE_M100800);//接口标识
@@ -322,7 +325,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     requestParams.put("prepaymentType", "1");
     requestParams.put("repayAmt", totalAmount);
     requestParams.put("perRepaymentReasons", "app");
-    showLoading("正在加载...");
+    showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "全部还款: requestParams--->" + requestParams.toString());
     sendPostRequest(requestParams, new ResultCallBack() {
       @Override public void onSuccess(String data) {
@@ -419,7 +422,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     requestParams.put("transCode", Constants.TRANS_CODE_M000192);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
     requestParams.put("clientToken", sharePrefer.getToken());//登录后token
-    requestParams.put("legalPerNum", "00001");
+    requestParams.put("legalPerNum", Constants.LEGALPER_NUM);
     requestParams.put("paymentPassword", "0");
     showLoading(getResources().getString(R.string.dialog_loading));
     LogUtils.d(TAG, "支付密码验证: requestParams--->" + requestParams.toString());

@@ -187,4 +187,10 @@ public class Constants {
    * 立即借款
    */
   public static final String TRANS_CODE_M100660 = "M100660";
+  /**
+   * 客户状态
+   */
+  public static final String TRANS_CODE_M000812 = "M000812";
+
+
 }
