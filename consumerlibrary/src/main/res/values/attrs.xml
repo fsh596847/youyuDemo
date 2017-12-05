@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="TopNavigationView2">
-        <attr name="titleText" format="string|reference" />
-        <attr name="titleSize" format="dimension" />
-        <attr name="titleColor" format="color|reference" />
+  <declare-styleable name="TopNavigationView2">
+    <attr format="string|reference" name="titleText"/>
+    <attr format="dimension" name="titleSize"/>
+    <attr format="color|reference" name="titleColor"/>
 
-        <attr name="leftDrawable" format="reference"/>
-        <attr name="leftText" format="string|reference"/>
+    <attr format="reference" name="leftDrawable"/>
+    <attr format="string|reference" name="leftText"/>
 
-        <attr name="rightDrawable" format="reference"/>
-        <attr name="rightText" format="string|reference"/>
+    <attr format="reference" name="rightDrawable"/>
+    <attr format="string|reference" name="rightText"/>
 
-    </declare-styleable>
+  </declare-styleable>
 
 
-    <declare-styleable name="pickerview">
-        <attr name="pickerview_gravity">
-            <enum name="center" value="17"/>
-            <enum name="left" value="3"/>
-            <enum name="right" value="5"/>
-        </attr>
-        <attr name="pickerview_textSize" format="dimension"/>
-        <attr name="pickerview_textColorOut" format="color"/>
-        <attr name="pickerview_textColorCenter" format="color"/>
-        <attr name="pickerview_dividerColor" format="color"/>
-        <attr name="pickerview_lineSpacingMultiplier" format="float"/>
-    </declare-styleable>
+  <declare-styleable name="pickerview">
+    <attr name="pickerview_gravity">
+      <enum name="center" value="17"/>
+      <enum name="left" value="3"/>
+      <enum name="right" value="5"/>
+    </attr>
+    <attr format="dimension" name="pickerview_textSize"/>
+    <attr format="color" name="pickerview_textColorOut"/>
+    <attr format="color" name="pickerview_textColorCenter"/>
+    <attr format="color" name="pickerview_dividerColor"/>
+    <attr format="float" name="pickerview_lineSpacingMultiplier"/>
+  </declare-styleable>
 
-    <declare-styleable name="MultiEditText">
-        <attr name="borderWidth" format="dimension" />
-        <attr name="borderColor" format="color" />
-        <attr name="borderRadius" format="dimension" />
-        <attr name="multiLength" format="integer" />
-        <attr name="multiWidth" format="dimension" />
-        <attr name="multiColor" format="color" />
-        <attr name="multiRadius" format="dimension" />
-        <attr name="multiTextVisible" format="boolean" />
-    </declare-styleable>
+  <declare-styleable name="MultiEditText">
+    <attr format="dimension" name="borderWidth"/>
+    <attr format="color" name="borderColor"/>
+    <attr format="dimension" name="borderRadius"/>
+    <attr format="integer" name="multiLength"/>
+    <attr format="dimension" name="multiWidth"/>
+    <attr format="color" name="multiColor"/>
+    <attr format="dimension" name="multiRadius"/>
+    <attr format="boolean" name="multiTextVisible"/>
+  </declare-styleable>
+  <declare-styleable name="SwitchButton">
+    <attr format="reference|dimension" name="sb_shadow_radius"/>
+    <attr format="reference|dimension" name="sb_shadow_offset"/>
+    <attr format="reference|color" name="sb_shadow_color"/>
+    <attr format="reference|color" name="sb_uncheck_color"/>
+    <attr format="reference|color" name="sb_checked_color"/>
+
+    <attr format="reference|dimension" name="sb_border_width"/>
+    <attr format="reference|color" name="sb_checkline_color"/>
+    <attr format="reference|dimension" name="sb_checkline_width"/>
+    <attr format="reference|color" name="sb_uncheckcircle_color"/>
+    <attr format="reference|dimension" name="sb_uncheckcircle_width"/>
+    <attr format="reference|dimension" name="sb_uncheckcircle_radius"/>
+
+    <attr format="reference|boolean" name="sb_checked"/>
+    <attr format="reference|boolean" name="sb_shadow_effect"/>
+    <attr format="reference|integer" name="sb_effect_duration"/>
+    <attr format="reference|color" name="sb_button_color"/>
+    <attr format="reference|boolean" name="sb_show_indicator"/>
+    <attr format="reference|color" name="sb_background"/>
+    <attr format="reference|boolean" name="sb_enable_effect"/>
+  </declare-styleable>
 
 </resources>

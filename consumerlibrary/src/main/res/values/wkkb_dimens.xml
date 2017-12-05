@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="wknightkb_key_height">50.0dip</dimen>
-    <dimen name="wknightkb_key_height_qwerty">40dip</dimen>
-</resources>

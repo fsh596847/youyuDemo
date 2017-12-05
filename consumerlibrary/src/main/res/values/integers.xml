@@ -2,4 +2,5 @@
 <resources>
 
   <integer name="animation_default_duration">300</integer>
+  <integer name="default_ev_multi_length">6</integer>
 </resources>
