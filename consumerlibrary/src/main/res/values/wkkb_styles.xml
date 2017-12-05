@@ -1,7 +1,7 @@
 <resources>
 	<style name="wKnightAnimBottom" parent="@android:style/Animation">
-    	<item name="android:windowEnterAnimation">@anim/wkkb_push_bottom_in</item>
-        <item name="android:windowExitAnimation">@anim/wkkb_push_bottom_out</item>
+    <item name="android:windowEnterAnimation">@anim/rskj_wkkb_push_bottom_in</item>
+    <item name="android:windowExitAnimation">@anim/rskj_wkkb_push_bottom_out</item>
 	</style>
 	
 	

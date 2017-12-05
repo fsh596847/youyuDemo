@@ -16,7 +16,7 @@
         android:padding="15dp"
         android:button="@null"
         android:enabled="true"
-        android:drawableLeft="@drawable/check_selector"
+        android:drawableLeft="@drawable/rskj_check_selector"
         />
 
     <LinearLayout

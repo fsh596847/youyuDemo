@@ -15,7 +15,7 @@
         app:titleColor="@android:color/white"
         app:titleText="关于"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <LinearLayout

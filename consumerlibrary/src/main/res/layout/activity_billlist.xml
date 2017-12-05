@@ -15,7 +15,8 @@
         app:titleColor="@color/black"
         app:titleText="我的账单"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"/>
+        app:leftDrawable="@mipmap/rskj_back_b"
+        />
 
     <LinearLayout
         android:id="@+id/header"
@@ -92,7 +93,7 @@
             android:text="全选"
             android:drawablePadding="5dp"
             android:button="@null"
-            android:drawableLeft="@drawable/check_selector"
+            android:drawableLeft="@drawable/rskj_check_selector"
             />
 
         <TextView
@@ -103,7 +104,7 @@
             android:textSize="18sp"
             android:textColor="@color/white"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/bbg"
+            android:background="@mipmap/rskj_bbg"
             android:text="还款"/>
 
 

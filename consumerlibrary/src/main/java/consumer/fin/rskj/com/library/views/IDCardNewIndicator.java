@@ -68,10 +68,10 @@ public class IDCardNewIndicator extends View {
 	public void setRightImage(boolean isFront) {
 		if (isFront) {
 			rightText = "请将身份证正";
-			rightBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.sfz_front);
+			rightBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.rskj_sfz_front);
 		} else {
 			rightText = "请将身份证背";
-			rightBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.sfz_back);
+			rightBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.rskj_sfz_back);
 		}
 	}
 
@@ -188,10 +188,11 @@ public class IDCardNewIndicator extends View {
 				mDrawPaint);
 
 		int bitmapId = 0;
-		if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT)
-			bitmapId = R.mipmap.sfz_front;
-		else if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_BACK)
-			bitmapId = R.mipmap.sfz_back;
+		if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT) {
+			bitmapId = R.mipmap.rskj_sfz_front;
+		} else if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_BACK) {
+			bitmapId = R.mipmap.rskj_sfz_back;
+		}
 		Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), bitmapId);
 		Rect mSrcRect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
 		Rect mDesRect = new Rect(mShowDrawRect.left, mShowDrawRect.top, mShowDrawRect.left + mShowDrawRect.width(), mShowDrawRect.top + mShowDrawRect.height());

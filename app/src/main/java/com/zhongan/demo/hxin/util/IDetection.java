@@ -56,8 +56,10 @@ public class IDetection {
 	}
 
 	public void changeType(final Detector.DetectionType detectiontype, long timeout) {
-		Animation animationIN = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_rightin);
-		Animation animationOut = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_leftout);
+		Animation animationIN =
+				AnimationUtils.loadAnimation(mContext, R.anim.rskj_face_liveness_rightin);
+		Animation animationOut =
+				AnimationUtils.loadAnimation(mContext, R.anim.rskj_face_liveness_leftout);
 
 		if (mCurShowIndex != -1) // 已经存在layout 需要移除之
 		{

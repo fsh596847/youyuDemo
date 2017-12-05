@@ -5,7 +5,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:focusableInTouchMode="true"
-                android:background="@mipmap/home">
+    android:background="@mipmap/rskj_home"
+    >
 
     <Button
         android:id="@+id/apply_now"
@@ -15,7 +16,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/login_bg_white_shape"
+        android:background="@drawable/rskj_login_bg_white_shape"
         android:textColor="@color/green"
         android:gravity="center"
         android:text="马上申请"

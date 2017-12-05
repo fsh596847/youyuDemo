@@ -15,7 +15,7 @@
         app:titleColor="@android:color/black"
         app:titleText="借还款记录"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <LinearLayout

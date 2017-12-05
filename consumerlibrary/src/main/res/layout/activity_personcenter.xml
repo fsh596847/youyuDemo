@@ -15,7 +15,7 @@
         app:titleColor="@color/black"
         app:titleText="设置交易密码"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <LinearLayout
@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/radio_shape"
+                    android:background="@drawable/rskj_radio_shape"
                     android:padding="3dp"
                     android:text="已经实名"
                     android:textColor="@color/white"

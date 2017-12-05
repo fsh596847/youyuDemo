@@ -188,9 +188,9 @@ public class FaceActivity extends BaseActivity
     isHandleStart = true;
     // 开始动画
     Animation animationIN =
-        AnimationUtils.loadAnimation(FaceActivity.this, R.anim.face_liveness_rightin);
+        AnimationUtils.loadAnimation(FaceActivity.this, R.anim.rskj_face_liveness_rightin);
     Animation animationOut =
-        AnimationUtils.loadAnimation(FaceActivity.this, R.anim.face_liveness_leftout);
+        AnimationUtils.loadAnimation(FaceActivity.this, R.anim.rskj_face_liveness_leftout);
     headViewLinear.startAnimation(animationOut);
     mIDetection.mAnimViews[0].setVisibility(View.VISIBLE);
     mIDetection.mAnimViews[0].startAnimation(animationIN);

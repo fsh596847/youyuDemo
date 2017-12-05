@@ -7,7 +7,7 @@
     android:minHeight="60dp"
     android:minWidth="180dp"
     android:orientation="vertical"
-    android:background="@drawable/card_shape"
+    android:background="@drawable/rskj_card_shape"
     android:padding="10dp" >
 
      <ImageView

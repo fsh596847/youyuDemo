@@ -16,7 +16,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/login_bg_white_shape"
+        android:background="@drawable/rskj_login_bg_white_shape"
         android:textColor="@color/color_ff9286"
         android:gravity="center"
         android:text="我要借款"

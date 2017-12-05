@@ -14,7 +14,7 @@
 		app:titleColor="@color/color_000000"
 		app:titleText="加载中..."
 		app:titleSize="12sp"
-		app:leftDrawable="@mipmap/back_b"
+			app:leftDrawable="@mipmap/rskj_back_b"
 		 />
 
     <View 
@@ -29,7 +29,8 @@
 		android:layout_height="wrap_content"
 		android:indeterminate="false"
 		android:minHeight="2dip"
-		android:progressDrawable="@drawable/progress_bar_states"/>
+			android:progressDrawable="@drawable/rskj_progress_bar_states"
+			/>
     
     
     <WebView 

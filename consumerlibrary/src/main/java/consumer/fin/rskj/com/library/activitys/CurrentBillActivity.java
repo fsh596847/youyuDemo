@@ -348,7 +348,7 @@ public class CurrentBillActivity extends BaseActivity {
           total_lixi.setText("(含利息:" + object.getString("cuInt") + ")");
           LogUtils.d(TAG, "全额还款试算: totalAmount--->" + totalAmount);
           payment.setEnabled(true);
-          payment.setBackgroundResource(R.mipmap.bbg);
+          payment.setBackgroundResource(R.mipmap.rskj_bbg);
         } catch (JSONException e) {
           e.printStackTrace();
         }
@@ -358,14 +358,14 @@ public class CurrentBillActivity extends BaseActivity {
         dismissLoading();
         LogUtils.d(TAG, "全额还款试算: errorMsg--->" + errorMsg);
         payment.setEnabled(false);
-        payment.setBackgroundResource(R.mipmap.disable_button);
+        payment.setBackgroundResource(R.mipmap.rskj_disable_button);
       }
 
       @Override public void onFailure(String errorMsg) {
         dismissLoading();
         LogUtils.d(TAG, "全额还款试算: onFailure--->" + errorMsg);
         payment.setEnabled(false);
-        payment.setBackgroundResource(R.mipmap.disable_button);
+        payment.setBackgroundResource(R.mipmap.rskj_disable_button);
       }
     });
   }

@@ -15,7 +15,7 @@
         app:titleColor="@android:color/black"
         app:titleText="银行卡信息"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <LinearLayout
@@ -23,7 +23,7 @@
         android:layout_height="75dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:background="@drawable/jbshape"
+        android:background="@drawable/rskj_jbshape"
         android:orientation="horizontal">
 
         <ImageView

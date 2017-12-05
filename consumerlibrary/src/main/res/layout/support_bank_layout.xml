@@ -50,7 +50,7 @@
             android:layout_height="50dp"
             android:textSize="16sp"
             android:gravity="center"
-            android:background="@drawable/card_radius_bg"
+            android:background="@drawable/rskj_card_radius_bg"
             android:text="关闭"/>
 
     </LinearLayout>

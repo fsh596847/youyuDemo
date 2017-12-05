@@ -102,7 +102,7 @@
         android:background="@mipmap/button_background"
         android:gravity="center"
         android:text="退出登录"
-        android:textColor="@color/textcolor_selector"
+        android:textColor="@color/rskj_textcolor_selector"
         android:textSize="18sp"/>
 
 

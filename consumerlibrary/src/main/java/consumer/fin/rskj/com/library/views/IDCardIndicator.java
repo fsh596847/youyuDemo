@@ -280,10 +280,11 @@ public class IDCardIndicator extends View {
                 mDrawPaint);
 
         int bitmapId = 0;
-        if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT)
-            bitmapId = R.mipmap.sfz_front;
-        else if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_BACK)
-            bitmapId = R.mipmap.sfz_back;
+        if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_FRONT) {
+            bitmapId = R.mipmap.rskj_sfz_front;
+        } else if (mIdCardSide == IDCardAttr.IDCardSide.IDCARD_SIDE_BACK) {
+            bitmapId = R.mipmap.rskj_sfz_back;
+        }
         Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), bitmapId);
         Rect mSrcRect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
         Rect mDesRect = new Rect(mShowRect.left, mShowRect.top, mShowRect.left + mShowRect.width(), mShowRect.top + mShowRect.height());

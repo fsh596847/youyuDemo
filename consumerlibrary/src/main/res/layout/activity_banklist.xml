@@ -15,7 +15,7 @@
         app:titleColor="@color/black"
         app:titleText="银行卡"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <android.support.v7.widget.RecyclerView

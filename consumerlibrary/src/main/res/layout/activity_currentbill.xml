@@ -15,7 +15,8 @@
         app:titleColor="@color/black"
         app:titleText="还款详情"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"/>
+        app:leftDrawable="@mipmap/rskj_back_b"
+        />
 
     <LinearLayout
         android:id="@+id/header"
@@ -144,7 +145,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:button="@null"
-            android:drawableLeft="@drawable/check_selector"
+            android:drawableLeft="@drawable/rskj_check_selector"
             android:drawablePadding="5dp"
             android:scaleType="centerCrop"
             android:text="全选"
@@ -208,7 +209,7 @@
                 android:id="@+id/repayment"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/bbg"
+                android:background="@mipmap/rskj_bbg"
                 android:layout_marginLeft="5dp"
                 android:gravity="center"
                 android:text="全额还款"

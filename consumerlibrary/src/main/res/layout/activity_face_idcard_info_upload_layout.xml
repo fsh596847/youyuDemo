@@ -88,7 +88,7 @@
                     android:drawableRight="@mipmap/rskj_m_icon_edit"
                     android:gravity="center"
                     android:textColor="@color/color_000000"
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textCursorDrawable="@drawable/rskj_color_cursor"
                     android:textSize="@dimen/text_size_14"
                     />
 
@@ -120,7 +120,7 @@
             android:layout_height="@dimen/driver_line_height"
             android:layout_marginLeft="30dip"
             android:layout_marginRight="30dip"
-            android:background="@drawable/dash_line"
+            android:background="@drawable/rskj_dash_line"
             android:layerType="software" />
 
         <LinearLayout
@@ -233,7 +233,7 @@
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
         android:layout_marginTop="40dip"
-        android:background="@drawable/common_button_selector"
+        android:background="@drawable/rskj_common_button_selector"
         android:gravity="center"
         android:text="@string/next_step_text"
         android:textColor="@color/color_ffffff"

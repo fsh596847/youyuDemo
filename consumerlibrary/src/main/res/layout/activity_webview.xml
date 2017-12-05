@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:minHeight="2dip"
-        android:progressDrawable="@drawable/progress_bar_states"/>
+        android:progressDrawable="@drawable/rskj_progress_bar_states"
+        />
     <!--<WebView-->
         <!--android:id="@+id/webview"-->
         <!--android:layout_width="match_parent"-->

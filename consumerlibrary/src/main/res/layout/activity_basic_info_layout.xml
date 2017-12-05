@@ -114,7 +114,7 @@
                 android:button="@null"
                 android:textSize="@dimen/text_size_14"
                 android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/common_checkbox_btn_bg"
+                android:drawableLeft="@drawable/rskj_common_checkbox_btn_bg"
                 android:text="@string/basic_already_married_text"/>
             <RadioButton
                 android:id="@+id/basic_not_marry_Rb"
@@ -124,7 +124,7 @@
                 android:button="@null"
                 android:textSize="@dimen/text_size_14"
                 android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/common_checkbox_btn_bg"
+                android:drawableLeft="@drawable/rskj_common_checkbox_btn_bg"
                 android:text="@string/basic_not_marry_text"/>
         </RadioGroup>
     </RelativeLayout>
@@ -221,7 +221,7 @@
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
         android:layout_marginTop="40dip"
-        android:background="@drawable/common_button_selector"
+        android:background="@drawable/rskj_common_button_selector"
         android:gravity="center"
         android:text="@string/next_step_text"
         android:textColor="@color/color_ffffff"

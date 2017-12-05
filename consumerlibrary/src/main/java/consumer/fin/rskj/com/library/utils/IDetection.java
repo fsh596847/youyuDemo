@@ -39,8 +39,11 @@ public class IDetection {
 	}
 
 	public void animationInit() {
-		int[] reses = { R.drawable.face_liveness_head_up_down, R.drawable.face_liveness_head_left_right,
-				R.drawable.face_liveness_mouth_open_closed, R.drawable.face_liveness_eye_open_closed };
+		int[] reses = {
+				R.drawable.rskj_face_liveness_head_up_down, R.drawable.rskj_face_liveness_head_left_right,
+				R.drawable.rskj_face_liveness_mouth_open_closed,
+				R.drawable.rskj_face_liveness_eye_open_closed
+		};
 		for (int oneRes : reses) {
 			mDrawableCache.put(oneRes, (mContext.getResources().getDrawable(oneRes)));
 		}
@@ -56,8 +59,10 @@ public class IDetection {
 	}
 
 	public void changeType(final Detector.DetectionType detectiontype, long timeout) {
-		Animation animationIN = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_rightin);
-		Animation animationOut = AnimationUtils.loadAnimation(mContext, R.anim.face_liveness_leftout);
+		Animation animationIN =
+				AnimationUtils.loadAnimation(mContext, R.anim.rskj_face_liveness_rightin);
+		Animation animationOut =
+				AnimationUtils.loadAnimation(mContext, R.anim.rskj_face_liveness_leftout);
 
 		if (mCurShowIndex != -1) // 已经存在layout 需要移除之
 		{
@@ -103,18 +108,18 @@ public class IDetection {
 		case POS_PITCH:
 		case POS_PITCH_UP:
 		case POS_PITCH_DOWN:
-			resID = R.drawable.face_liveness_head_up_down;
+			resID = R.drawable.rskj_face_liveness_head_up_down;
 			break;
 		case POS_YAW_LEFT:
 		case POS_YAW_RIGHT:
 		case POS_YAW:
-			resID = R.drawable.face_liveness_head_left_right;
+			resID = R.drawable.rskj_face_liveness_head_left_right;
 			break;
 		case MOUTH:
-			resID = R.drawable.face_liveness_mouth_open_closed;
+			resID = R.drawable.rskj_face_liveness_mouth_open_closed;
 			break;
 		case BLINK:
-			resID = R.drawable.face_liveness_eye_open_closed;
+			resID = R.drawable.rskj_face_liveness_eye_open_closed;
 			break;
 		}
 		Drawable cachedDrawAble = mDrawableCache.get(resID);

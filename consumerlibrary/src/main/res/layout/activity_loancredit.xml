@@ -15,7 +15,7 @@
         app:titleColor="@android:color/black"
         app:titleText="借据"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
 
@@ -333,7 +333,7 @@
             android:drawablePadding="5dp"
             android:checked="true"
             android:button="@null"
-            android:drawableLeft="@drawable/check_selector"
+            android:drawableLeft="@drawable/rskj_check_selector"
             />
 
         <TextView
@@ -362,7 +362,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/common_button_selector"
+        android:background="@drawable/rskj_common_button_selector"
         android:textColor="@color/color_ffffff"
 
         android:gravity="center"

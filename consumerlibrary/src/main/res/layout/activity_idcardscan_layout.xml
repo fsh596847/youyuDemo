@@ -38,7 +38,7 @@
             android:layout_width="140dip"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@mipmap/sfz_front"
+            android:src="@mipmap/rskj_sfz_front"
             />
         <TextView 
             android:id="@+id/idcardscan_layout_idCardText"
@@ -97,7 +97,7 @@
         android:id="@+id/debugRectangle"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/rskj_rectangle"
         android:visibility="gone"/>
 
     <LinearLayout

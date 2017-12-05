@@ -41,7 +41,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:background">@null</item>
         <item name="android:button">@null</item>
-        <item name="android:drawableLeft">@drawable/common_checkbox_btn_bg</item>
+      <item name="android:drawableLeft">@drawable/rskj_common_checkbox_btn_bg</item>
         <item name="android:drawablePadding">5dip</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingRight">15dip</item>
@@ -74,7 +74,7 @@
         <item name="android:textColor">@color/color_000000</item>
         <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:textColorHint">@color/color_c7c7cd</item>
-        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+      <item name="android:textCursorDrawable">@drawable/rskj_color_cursor</item>
         <item name="android:drawablePadding">20dip</item>
     </style>
 
@@ -101,8 +101,8 @@
     </style>
 
     <style name="pickerview_dialogAnim" mce_bogus="1" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/pickerview_dialog_scale_in</item>
-        <item name="android:windowExitAnimation">@anim/pickerview_dialog_scale_out</item>
+      <item name="android:windowEnterAnimation">@anim/rskj_pickerview_dialog_scale_in</item>
+      <item name="android:windowExitAnimation">@anim/rskj_pickerview_dialog_scale_out</item>
     </style>
 
 

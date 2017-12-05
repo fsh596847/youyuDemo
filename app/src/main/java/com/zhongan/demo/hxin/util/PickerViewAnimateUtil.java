@@ -23,8 +23,8 @@ public class PickerViewAnimateUtil
 		switch (gravity)
 		{
 		case Gravity.BOTTOM:
-			return isInAnimation ? R.anim.slide_in_bottom : R.anim.slide_out_bottom;
-		}
+      return isInAnimation ? R.anim.rskj_slide_in_bottom : R.anim.rskj_slide_out_bottom;
+    }
 		return INVALID;
 	}
 }

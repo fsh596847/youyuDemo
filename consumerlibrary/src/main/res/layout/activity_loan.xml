@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:scaleType="center"
             android:padding="8dp"
-            android:src="@mipmap/back_b"/>
+            android:src="@mipmap/rskj_back_b"
+            />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -47,7 +48,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/card_shape">
+        android:background="@drawable/rskj_card_shape"
+        >
 
         <TextView
             android:id="@+id/loan_value"
@@ -100,7 +102,7 @@
             android:layout_height="20dp"
             android:textSize="10sp"
             android:textColor="@color/white"
-            android:background="@drawable/half_card_shape"
+            android:background="@drawable/rskj_half_card_shape"
             android:text="逾期"
             android:gravity="center"
             android:paddingTop="3dp"

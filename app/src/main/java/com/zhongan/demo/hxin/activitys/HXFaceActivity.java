@@ -175,9 +175,11 @@ public class HXFaceActivity extends HXBaseActivity
 			return;
 		isHandleStart = true;
 		// 开始动画
-		Animation animationIN = AnimationUtils.loadAnimation(HXFaceActivity.this, R.anim.face_liveness_rightin);
-		Animation animationOut = AnimationUtils.loadAnimation(HXFaceActivity.this, R.anim.face_liveness_leftout);
-		headViewLinear.startAnimation(animationOut);
+    Animation animationIN =
+        AnimationUtils.loadAnimation(HXFaceActivity.this, R.anim.rskj_face_liveness_rightin);
+    Animation animationOut =
+        AnimationUtils.loadAnimation(HXFaceActivity.this, R.anim.rskj_face_liveness_leftout);
+    headViewLinear.startAnimation(animationOut);
 		mIDetection.mAnimViews[0].setVisibility(View.VISIBLE);
 		mIDetection.mAnimViews[0].startAnimation(animationIN);
 		animationOut.setAnimationListener(new Animation.AnimationListener() {

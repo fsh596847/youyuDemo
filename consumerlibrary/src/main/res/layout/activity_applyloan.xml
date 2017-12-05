@@ -39,7 +39,7 @@
         android:layout_marginTop="20dp"
         android:padding="5dp"
         android:gravity="center"
-        android:background="@drawable/edittext_shape"
+        android:background="@drawable/rskj_edittext_shape"
         android:hint="输入金额"
         />
 
@@ -67,7 +67,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:button="@null"
-            android:background="@drawable/fenqi_selector"
+            android:background="@drawable/rskj_fenqi_selector"
             android:text="3"
             />
 
@@ -80,7 +80,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:button="@null"
-            android:background="@drawable/fenqi_selector"
+            android:background="@drawable/rskj_fenqi_selector"
             android:text="6"
             />
 
@@ -92,7 +92,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:button="@null"
-            android:background="@drawable/fenqi_selector"
+            android:background="@drawable/rskj_fenqi_selector"
             android:text="9"
             />
 

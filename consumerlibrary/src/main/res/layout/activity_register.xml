@@ -97,7 +97,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="获取验证码"
-        android:textColor="@color/login_selector"
+        android:textColor="@color/rskj_login_selector"
         android:textSize="12sp"
         />
 
@@ -268,7 +268,7 @@
       android:layout_marginTop="20dp"
       android:gravity="center"
       android:text="注册"
-      android:textColor="@color/login_selector"
+      android:textColor="@color/rskj_login_selector"
       android:textSize="18sp"
       />
 

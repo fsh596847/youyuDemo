@@ -15,7 +15,7 @@
         app:titleColor="@android:color/black"
         app:titleText="重置交易密码"
         app:titleSize="15sp"
-        app:leftDrawable="@mipmap/back_b"
+        app:leftDrawable="@mipmap/rskj_back_b"
         />
 
     <View
@@ -238,7 +238,7 @@
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
         android:layout_marginTop="40dip"
-        android:background="@drawable/common_button_selector"
+        android:background="@drawable/rskj_common_button_selector"
         android:textColor="@color/color_ffffff"
         android:gravity="center"
         android:text="重置交易密码"

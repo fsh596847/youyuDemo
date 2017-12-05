@@ -37,7 +37,7 @@
         android:layout_marginLeft="@dimen/common_margin"
         android:layout_marginRight="@dimen/common_margin"
         android:layout_marginTop="60dip"
-        android:background="@drawable/common_button_selector"
+        android:background="@drawable/rskj_common_button_selector"
         android:gravity="center"
         android:text="@string/start_link_network"
         android:textColor="@color/color_ffffff"
