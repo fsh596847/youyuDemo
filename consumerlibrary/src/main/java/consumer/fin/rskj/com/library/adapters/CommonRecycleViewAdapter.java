@@ -22,7 +22,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<R
      * 主要包括设置HeaderView，FooterView。
      * 向下滑动时候，不进行加载数据。
      */
-    private static final String TAG = "BaseRecyclerAdapter--->";
+    private static final String TAG = CommonRecycleViewAdapter.class.getSimpleName();
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_ITEM = 1;
     private static final int TYPE_FOOT = 2;

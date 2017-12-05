@@ -20,168 +20,163 @@ import consumer.fin.rskj.com.library.utils.LogUtils;
 /**
  * 账单适配器
  **/
-public class BillAdapter extends RecyclerView.Adapter<BillAdapter.TViewHolder>{
+public class BillAdapter extends RecyclerView.Adapter<BillAdapter.TViewHolder> {
 
-	private Context context;
+  private Context context;
 
-	private List<BillItem> list;
+  private List<BillItem> list;
 
-	private OnItemClickListener onItemClickListener;
-	private OnItemClickListener onChexboxListener;
+  private OnItemClickListener onItemClickListener;
+  private OnItemClickListener onChexboxListener;
 
-	private OnItemRemoveListner OnItemRemoveListner;
-	private static final int TYPE_NORMAL = 0;
-	private static final int TYPE_SOLDOUT = 1;
+  private OnItemRemoveListner OnItemRemoveListner;
+  private static final int TYPE_NORMAL = 0;
+  private static final int TYPE_SOLDOUT = 1;
 
+  boolean isDelay;
 
-	boolean isDelay;
+  public BillAdapter(Context context, List<BillItem> list, boolean isDelay) {
+    this.context = context;
+    this.list = list;
+    this.isDelay = isDelay;
+  }
 
+  @Override
+  public int getItemViewType(int position) {
+    //		if(list.get(position).getCurrentEndDate().equals("123")){
+    //			return TYPE_SOLDOUT;
+    //		}
 
-	public BillAdapter(Context context, List<BillItem> list, boolean isDelay) {
-		this.context = context;
-		this.list = list;
-		this.isDelay = isDelay;
-	}
+    return TYPE_NORMAL;
+  }
 
+  @Override
+  public BillAdapter.TViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-	@Override
-	public int getItemViewType(int position) {
-//		if(list.get(position).getCurrentEndDate().equals("123")){
-//			return TYPE_SOLDOUT;
-//		}
+    //		if(viewType == TYPE_SOLDOUT ){
+    //
+    //		}
 
-		return TYPE_NORMAL;
-	}
+    View v = LayoutInflater.from(context).inflate(R.layout.bill_item, parent, false);
+    BillAdapter.TViewHolder th = new BillAdapter.TViewHolder(v);
 
-	@Override
-	public BillAdapter.TViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    return th;
+  }
 
-//		if(viewType == TYPE_SOLDOUT ){
-//
-//		}
+  @Override
+  public void onBindViewHolder(final BillAdapter.TViewHolder holder, final int position) {
 
-		View v = LayoutInflater.from(context).inflate(R.layout.bill_item,parent,false);
-		BillAdapter.TViewHolder th = new BillAdapter.TViewHolder(v);
+    BillItem billItem = list.get(position);
 
-		return th;
-	}
+    if (getItemViewType(position) == TYPE_SOLDOUT) {
+      holder.check.setVisibility(View.INVISIBLE);
+      holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.light_gray));
+      return;
+    }
 
+    holder.check.setChecked(billItem.getCheck());
 
-	@Override
-	public void onBindViewHolder(final BillAdapter.TViewHolder holder, final int position) {
+    if (isDelay) {
+      holder.check.setVisibility(View.VISIBLE);
+      holder.overInt.setVisibility(View.VISIBLE);
+      holder.status.setText("已逾期");
+    } else {
+      holder.check.setVisibility(View.GONE);
+      holder.status.setText("");
+      holder.overInt.setVisibility(View.GONE);
+    }
 
-		BillItem billItem = list.get(position);
+    holder.currentPeriod_period.setText(
+        billItem.getCurrentPeriod() + "/" + billItem.getPeriod() + "期");
 
-		if(getItemViewType(position) == TYPE_SOLDOUT) {
-			holder.check.setVisibility(View.INVISIBLE);
-			holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.light_gray));
-			return;
-		}
+    holder.currentEndDate.setText(billItem.getCurrentEndDate());
+    //textView.setText(Html.fromHtml(String.format(getString(R.string.delete_bank),"9999")));
+    holder.totalPay.setText(
+        Html.fromHtml(String.format(context.getString(R.string.totalPay), billItem.getTotalPay())));
+    holder.currentInterest.setText("含利息:" + billItem.getCurrentInterest());
+    holder.overInt.setText("罚息:" + billItem.getOverInt());
 
-		holder.check.setChecked(billItem.getCheck());
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        LogUtils.d(BillAdapter.class.getSimpleName(),
+            "------itemView--onClick---------" + position);
+        onItemClickListener.OnItemClick(v, holder, position);
+        notifyItemChanged(position);
+      }
+    });
 
-		if(isDelay){
-			holder.check.setVisibility(View.VISIBLE);
-			holder.overInt.setVisibility(View.VISIBLE);
-			holder.status.setText("已逾期");
-		}else {
-			holder.check.setVisibility(View.GONE);
-			holder.status.setText("");
-			holder.overInt.setVisibility(View.GONE);
-		}
+    //		holder.remove.setOnClickListener(new View.OnClickListener() {
+    //			@Override
+    //			public void onClick(View v) {
+    //				if(OnItemRemoveListner !=null){
+    //					OnItemRemoveListner.OnItemRemoveListner(v,position);
+    //				}
+    //			}
+    //		});
 
-		holder.currentPeriod_period.setText(billItem.getCurrentPeriod() + "/" + billItem.getPeriod() + "期");
+    //		holder.check.setOnClickListener(null);
+    holder.check.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        LogUtils.d(BillAdapter.class.getSimpleName(), "-----check---onClick---------");
+        onChexboxListener.OnItemClick(v, holder, position);
+        notifyItemChanged(position);
+      }
+    });
+  }
 
-		holder.currentEndDate.setText(billItem.getCurrentEndDate());
-		//textView.setText(Html.fromHtml(String.format(getString(R.string.delete_bank),"9999")));
-		holder.totalPay.setText(Html.fromHtml(String.format(context.getString(R.string.totalPay),billItem.getTotalPay())));
-		holder.currentInterest.setText("含利息:" + billItem.getCurrentInterest());
-		holder.overInt.setText("罚息:" + billItem.getOverInt());
+  @Override
+  public int getItemCount() {
+    return list.size();
+  }
 
+  public void checkAll() {
+    for (int i = 0; i < this.getItemCount(); i++) {
 
-		holder.itemView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				LogUtils.d("TTTT333","------itemView--onClick---------"+position);
-				onItemClickListener.OnItemClick(v,holder,position);
-				notifyItemChanged(position);
-			}
-		});
+    }
+  }
 
+  public class TViewHolder extends RecyclerView.ViewHolder {
+    public CheckBox check;
+    public TextView currentPeriod_period;
+    public TextView status;
 
-//		holder.remove.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if(OnItemRemoveListner !=null){
-//					OnItemRemoveListner.OnItemRemoveListner(v,position);
-//				}
-//			}
-//		});
+    public TextView currentEndDate;
+    public TextView totalPay;
+    public TextView currentInterest;
+    public TextView overInt;
 
-//		holder.check.setOnClickListener(null);
-		holder.check.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				LogUtils.d("TTTTAAA","-----check---onClick---------");
-				onChexboxListener.OnItemClick(v,holder,position);
-				notifyItemChanged(position);
-			}
-		});
-	}
+    public TViewHolder(View itemView) {
+      super(itemView);
+      check = (CheckBox) itemView.findViewById(R.id.checkbox);
+      currentPeriod_period = (TextView) itemView.findViewById(R.id.currentPeriod_period);
+      status = (TextView) itemView.findViewById(R.id.status);
 
-	@Override
-	public int getItemCount() {
-		return list.size();
-	}
+      currentEndDate = (TextView) itemView.findViewById(R.id.currentEndDate);
+      totalPay = (TextView) itemView.findViewById(R.id.totalPay);
+      currentInterest = (TextView) itemView.findViewById(R.id.currentInterest);
+      overInt = (TextView) itemView.findViewById(R.id.overInt);
+    }
+  }
 
-	public void checkAll(){
-		for (int i=0;i<this.getItemCount();i++){
+  public interface OnItemClickListener {
+    void OnItemClick(View view, BillAdapter.TViewHolder holder, int position);
+  }
 
-		}
-	}
+  public void setOnItemClickListener(OnItemClickListener listener) {
+    this.onItemClickListener = listener;
+  }
 
-	public class TViewHolder extends RecyclerView.ViewHolder{
-		public CheckBox check;
-		public TextView currentPeriod_period;
-		public TextView status;
+  public void setCheckboxClickListener(OnItemClickListener listener) {
+    this.onChexboxListener = listener;
+  }
 
-		public TextView currentEndDate;
-		public TextView totalPay;
-		public TextView currentInterest;
-		public TextView overInt;
+  public interface OnItemRemoveListner {
+    void OnItemRemoveListner(View view, int position);
+  }
 
-
-		public TViewHolder(View itemView) {
-			super(itemView);
-			check = (CheckBox)itemView.findViewById(R.id.checkbox);
-			currentPeriod_period = (TextView)itemView.findViewById(R.id.currentPeriod_period);
-			status = (TextView)itemView.findViewById(R.id.status);
-
-			currentEndDate = (TextView)itemView.findViewById(R.id.currentEndDate);
-			totalPay = (TextView)itemView.findViewById(R.id.totalPay);
-			currentInterest = (TextView)itemView.findViewById(R.id.currentInterest);
-			overInt = (TextView)itemView.findViewById(R.id.overInt);
-		}
-	}
-
-	public interface OnItemClickListener {
-		void OnItemClick(View view, BillAdapter.TViewHolder holder, int position);
-	}
-
-	public void setOnItemClickListener(OnItemClickListener listener){
-		this.onItemClickListener = listener;
-	}
-
-	public void setCheckboxClickListener(OnItemClickListener listener){
-		this.onChexboxListener = listener;
-	}
-
-	public interface OnItemRemoveListner {
-		void OnItemRemoveListner(View view, int position);
-	}
-
-	public void setOnItemRemoveListner(OnItemRemoveListner onItemRemoveListner) {
-		this.OnItemRemoveListner = onItemRemoveListner;
-	}
-
+  public void setOnItemRemoveListner(OnItemRemoveListner onItemRemoveListner) {
+    this.OnItemRemoveListner = onItemRemoveListner;
+  }
 }

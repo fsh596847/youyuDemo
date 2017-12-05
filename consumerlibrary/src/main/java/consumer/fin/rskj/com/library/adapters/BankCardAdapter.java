@@ -16,127 +16,111 @@ import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.module.BankCardItem;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 
+public class BankCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-public class BankCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+  private static final String TAG = BankCardAdapter.class.getSimpleName();
+  private Context context;
+  private List<BankCardItem> list;
+  private OnItemClickListener onItemClickListener;
+  private OnItemClickListener addListener;
 
-	private Context context;
+  private static final int TYPE_NORMAL = 0;
+  private static final int TYPE_OTHER = 1;
 
-	private List<BankCardItem> list;
+  public BankCardAdapter(Context context, List<BankCardItem> list) {
+    this.context = context;
+    this.list = list;
+    LogUtils.d(TAG, "------position--------" + list.size());
+  }
 
-	private OnItemClickListener onItemClickListener;
-	private OnItemClickListener addListener;
+  @Override
+  public int getItemViewType(int position) {
+    LogUtils.d(TAG, "------position--------" + position);
+    LogUtils.d(TAG, "------size--------" + list.size());
 
-	private static final int TYPE_NORMAL = 0;
-	private static final int TYPE_OTHER = 1;
+    if (position == list.size() - 1) {
+      return TYPE_OTHER;
+    }
 
+    return TYPE_NORMAL;
+  }
 
+  @Override
+  public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-	public BankCardAdapter(Context context, List<BankCardItem> list) {
-		this.context = context;
-		this.list = list;
-		LogUtils.d("TTTT","------position--------"+list.size());
-	}
+    LogUtils.d(TAG, "------onCreateViewHolder-------" + viewType);
 
+    if (viewType == TYPE_OTHER) {
+      View v0 = LayoutInflater.from(context).inflate(R.layout.bankcard_add, parent, false);
+      BankCardAdapter.AddViewHolder th0 = new BankCardAdapter.AddViewHolder(v0);
+      return th0;
+    }
 
-	@Override
-	public int getItemViewType(int position) {
-		LogUtils.d("TTTT","------position--------"+position);
-		LogUtils.d("TTTT","------size--------"+list.size());
+    View v = LayoutInflater.from(context).inflate(R.layout.bank_item, parent, false);
+    BankCardAdapter.TViewHolder th = new BankCardAdapter.TViewHolder(v);
 
-		if(position == list.size()-1){
-			return TYPE_OTHER;
-		}
+    return th;
+  }
 
-		return TYPE_NORMAL;
-	}
+  @Override
+  public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
-	@Override
-	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    LogUtils.d("TTTT", "------itemView--onClick---------" + position);
+    LogUtils.d("TTTT", "-------type------" + getItemViewType(position));
+    if (holder instanceof AddViewHolder) {
+      holder.itemView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          addListener.OnItemClick(v, holder, position);
+          notifyItemChanged(position);
+        }
+      });
+      return;
+    }
 
-		LogUtils.d("TTTT","------onCreateViewHolder-------"+viewType);
+    //加载网络图片
+    //Picasso.with(mContext).load(datas.get(position).getUrl()).into(((TViewHolder) holder).iv);
+    ((TViewHolder) holder).bank_name.setText(list.get(position).getBankName());
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        onItemClickListener.OnItemClick(v, holder, position);
+        notifyItemChanged(position);
+      }
+    });
+  }
 
-		if(viewType == TYPE_OTHER ){
-			View v0 = LayoutInflater.from(context).inflate(R.layout.bankcard_add,parent,false);
-			BankCardAdapter.AddViewHolder th0 = new BankCardAdapter.AddViewHolder(v0);
-			return th0;
-		}
+  @Override
+  public int getItemCount() {
+    return list.size();
+  }
 
+  public class TViewHolder extends RecyclerView.ViewHolder {
+    public ImageView logo;
+    public TextView bank_name;
 
-		View v = LayoutInflater.from(context).inflate(R.layout.bank_item,parent,false);
-		BankCardAdapter.TViewHolder th = new BankCardAdapter.TViewHolder(v);
+    public TViewHolder(View itemView) {
+      super(itemView);
+      logo = (ImageView) itemView.findViewById(R.id.bankLogo);
+      bank_name = (TextView) itemView.findViewById(R.id.bank_name);
+    }
+  }
 
-		return th;
-	}
+  public class AddViewHolder extends RecyclerView.ViewHolder {
+    public AddViewHolder(View itemView) {
+      super(itemView);
+    }
+  }
 
+  public interface OnItemClickListener {
+    void OnItemClick(View view, RecyclerView.ViewHolder holder, int position);
+  }
 
-	@Override
-	public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+  public void setOnItemClickListener(OnItemClickListener listener) {
+    this.onItemClickListener = listener;
+  }
 
-		LogUtils.d("TTTT","------itemView--onClick---------"+position);
-		LogUtils.d("TTTT","-------type------"+getItemViewType(position));
-		if(holder instanceof AddViewHolder) {
-			holder.itemView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					addListener.OnItemClick(v,holder,position);
-					notifyItemChanged(position);
-				}
-			});
-			return;
-		}
-
- 		//加载网络图片
-		//Picasso.with(mContext).load(datas.get(position).getUrl()).into(((TViewHolder) holder).iv);
-		((TViewHolder)holder).bank_name.setText(list.get(position).getBankName());
-		holder.itemView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				onItemClickListener.OnItemClick(v,holder,position);
-				notifyItemChanged(position);
-			}
-		});
-
-
-	}
-
-	@Override
-	public int getItemCount() {
-		return list.size();
-	}
-
-
-
-	public class TViewHolder extends RecyclerView.ViewHolder{
-		public ImageView logo;
-		public TextView bank_name;
-		public TViewHolder(View itemView) {
-			super(itemView);
-			logo = (ImageView)itemView.findViewById(R.id.bankLogo);
-			bank_name = (TextView)itemView.findViewById(R.id.bank_name);
-
-		}
-	}
-
-
-	public class AddViewHolder extends RecyclerView.ViewHolder{
-		public AddViewHolder(View itemView) {
-			super(itemView);
-
-		}
-	}
-
-
-	public interface OnItemClickListener {
-		void OnItemClick(View view, RecyclerView.ViewHolder holder, int position);
-	}
-
-	public void setOnItemClickListener(OnItemClickListener listener){
-		this.onItemClickListener = listener;
-	}
-
-
-	public void setAddListener(OnItemClickListener listener){
-		this.addListener = listener;
-	}
-
+  public void setAddListener(OnItemClickListener listener) {
+    this.addListener = listener;
+  }
 }
