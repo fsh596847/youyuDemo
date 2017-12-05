@@ -158,7 +158,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_face_idcard_info_upload_layout);
+    setContentView(R.layout.rskj_activity_face_idcard_info_upload_layout);
     LogUtils.d("FaceIDCardInfoUploadActivity", "数组 = " + SysUtil.stepMap);
   }
 
@@ -551,7 +551,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
     if (timeDialog == null) {
       timeDialog = new Dialog(this, R.style.Dialog);
-      View view = LayoutInflater.from(this).inflate(R.layout.timer_dialog_layout, null);
+      View view = LayoutInflater.from(this).inflate(R.layout.rskj_timer_dialog_layout, null);
       TextView title = (TextView) view.findViewById(R.id.title);
       TextView name = (TextView) view.findViewById(R.id.name);
       TextView id_num = (TextView) view.findViewById(R.id.id_num);

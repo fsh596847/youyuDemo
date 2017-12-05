@@ -15,7 +15,6 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.megvii.idcardquality.IDCardQualityAssessment;
@@ -66,7 +65,7 @@ public class IDCardScanActivity extends Activity
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_idcardscan_layout);
+    setContentView(R.layout.rskj_activity_idcardscan_layout);
     init();
     initData();
   }

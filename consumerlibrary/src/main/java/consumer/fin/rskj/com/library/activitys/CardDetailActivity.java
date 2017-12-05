@@ -27,7 +27,7 @@ public class CardDetailActivity extends BaseActivity  {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bankdetail);
+        setContentView(R.layout.rskj_activity_bankdetail);
 
         switchButton = (SwitchButton) findViewById(R.id.switch_button);
 

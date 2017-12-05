@@ -6,14 +6,12 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
 
 import consumer.fin.rskj.com.consumerlibrary.R;
-import consumer.fin.rskj.com.library.activitys.MyBillListActivity;
 import consumer.fin.rskj.com.library.module.BillItem;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 
@@ -57,7 +55,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.TViewHolder> {
     //
     //		}
 
-    View v = LayoutInflater.from(context).inflate(R.layout.bill_item, parent, false);
+    View v = LayoutInflater.from(context).inflate(R.layout.rskj_bill_item, parent, false);
     BillAdapter.TViewHolder th = new BillAdapter.TViewHolder(v);
 
     return th;

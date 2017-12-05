@@ -13,7 +13,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import consumer.fin.rskj.com.consumerlibrary.R;
-import consumer.fin.rskj.com.library.module.BillItem;
 import consumer.fin.rskj.com.library.module.BystatdgeBillItem;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 
@@ -57,7 +56,7 @@ public class BSBillAdapter extends RecyclerView.Adapter<BSBillAdapter.TViewHolde
     //
     //		}
     LogUtils.d("viewType", "viewType = " + viewType);
-    View v = LayoutInflater.from(context).inflate(R.layout.bill_item, parent, false);
+    View v = LayoutInflater.from(context).inflate(R.layout.rskj_bill_item, parent, false);
     BSBillAdapter.TViewHolder th = new BSBillAdapter.TViewHolder(v);
 
     return th;

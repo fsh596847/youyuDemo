@@ -45,7 +45,7 @@ public class FaceResultActivity extends BaseActivity implements View.OnClickList
 
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_face_result);
+    setContentView(R.layout.rskj_activity_face_result);
     init();
   }
 

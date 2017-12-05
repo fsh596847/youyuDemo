@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +47,7 @@ public class PersonCenterActivity extends BaseActivity implements View.OnClickLi
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_personcenter);
+    setContentView(R.layout.rskj_activity_personcenter);
     naviState = getIntent().getStringExtra("naviState");
     getQuota();
     getBankInfo();

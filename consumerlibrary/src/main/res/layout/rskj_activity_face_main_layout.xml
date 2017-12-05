@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dip"
             android:layout_marginTop="15dip"
-            layout="@layout/face_detection_step"
+            layout="@layout/rskj_face_detection_step"
             android:visibility="gone" />
 
         <include
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dip"
             android:layout_marginTop="15dip"
-            layout="@layout/face_detection_step"
+            layout="@layout/rskj_face_detection_step"
             android:visibility="gone" />
 
         <LinearLayout

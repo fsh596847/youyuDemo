@@ -120,7 +120,7 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
 
     //建造器
     public static class Builder {
-        private int layoutRes = R.layout.pickerview_time;
+        private int layoutRes = R.layout.rskj_pickerview_time;
         private CustomListener customListener;
         private Context context;
         private OnTimeSelectListener timeSelectListener;
@@ -387,7 +387,7 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
         init();
         initEvents();
         if (customListener == null) {
-            LayoutInflater.from(context).inflate(R.layout.pickerview_time, contentContainer);
+            LayoutInflater.from(context).inflate(R.layout.rskj_pickerview_time, contentContainer);
 
             //顶部标题
             tvTitle = (TextView) findViewById(R.id.tvTitle);

@@ -175,7 +175,7 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_basic_info_layout);
+    setContentView(R.layout.rskj_activity_basic_info_layout);
 
     LogUtils.d("BasicInfoActivity", "数组 = " + SysUtil.stepMap);
   }

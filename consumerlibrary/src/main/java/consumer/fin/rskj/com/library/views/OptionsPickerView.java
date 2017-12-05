@@ -130,7 +130,7 @@ public class OptionsPickerView<T> extends BasePickerView implements View.OnClick
 
     //建造器
     public static class Builder {
-        private int layoutRes = R.layout.pickerview_options;
+        private int layoutRes = R.layout.rskj_pickerview_options;
         private CustomListener customListener;
         private Context context;
         private OnOptionsSelectListener optionsSelectListener;

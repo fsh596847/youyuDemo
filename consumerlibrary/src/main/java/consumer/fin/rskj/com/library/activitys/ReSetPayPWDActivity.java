@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wknight.keyboard.WKnightKeyboard;
 
@@ -22,7 +21,6 @@ import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.utils.Util;
 import consumer.fin.rskj.com.library.views.CountDownTimer;
-import consumer.fin.rskj.com.library.views.MultiEditText;
 import consumer.fin.rskj.com.library.views.TopNavigationView2;
 
 /**
@@ -70,7 +68,7 @@ public class ReSetPayPWDActivity extends BaseActivity {
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.activity_resetpaypwd);
+    setContentView(R.layout.rskj_activity_resetpaypwd);
   }
 
   @Override

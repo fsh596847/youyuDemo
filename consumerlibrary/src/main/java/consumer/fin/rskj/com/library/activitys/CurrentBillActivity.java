@@ -106,7 +106,7 @@ public class CurrentBillActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     loanId = getIntent().getStringExtra("loanId");
     currentStatus = getIntent().getBooleanExtra("currentStatus", false);
-    setContentView(R.layout.activity_currentbill);
+    setContentView(R.layout.rskj_activity_currentbill);
     LogUtils.d(TAG, "loanId = " + loanId);
     LogUtils.d(TAG, "currentStatus = " + currentStatus);
     getDetail();

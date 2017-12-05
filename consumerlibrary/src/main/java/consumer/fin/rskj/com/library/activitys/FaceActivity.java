@@ -108,7 +108,7 @@ public class FaceActivity extends BaseActivity
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_face_main_layout);
+    setContentView(R.layout.rskj_activity_face_main_layout);
     initData();
   }
 

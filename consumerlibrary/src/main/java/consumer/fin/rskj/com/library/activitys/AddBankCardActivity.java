@@ -31,7 +31,7 @@ public class AddBankCardActivity extends BaseActivity implements View.OnClickLis
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_addbankcard);
+    setContentView(R.layout.rskj_activity_addbankcard);
   }
 
   @Override

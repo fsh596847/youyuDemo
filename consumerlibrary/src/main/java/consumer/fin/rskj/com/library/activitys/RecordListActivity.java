@@ -39,7 +39,7 @@ public class RecordListActivity extends BaseActivity {
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_recordlist);
+    setContentView(R.layout.rskj_activity_recordlist);
     try {
       data = getIntent().getStringExtra("data");
       LogUtils.d(TAG, "data = " + data);

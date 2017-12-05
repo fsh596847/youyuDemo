@@ -106,7 +106,7 @@ public class TopNavigationView extends RelativeLayout implements View.OnClickLis
 
     private void initView(Context context)  {
         View layout = LayoutInflater.from(context).inflate(
-                R.layout.navigation_top, this,true);
+            R.layout.rskj_navigation_top, this, true);
 
         backView = (TextView) layout.findViewById(R.id.back_image);
         titleView = (TextView) layout.findViewById(R.id.text_title);
@@ -192,8 +192,7 @@ public class TopNavigationView extends RelativeLayout implements View.OnClickLis
         }
     }
 
-
-    public static interface NavigationViewClickListener{
+    public interface NavigationViewClickListener {
         /**
          * 点击返回按钮回调
          */

@@ -41,7 +41,7 @@ public class HtmlActivity2 extends BaseActivity implements OnClickListener {
     url = getIntent().getStringExtra("url");
     richText = getIntent().getStringExtra("richText");
     title = getIntent().getStringExtra("title");
-    setContentView(R.layout.activity_html2);
+    setContentView(R.layout.rskj_activity_html2);
   }
 
   /**

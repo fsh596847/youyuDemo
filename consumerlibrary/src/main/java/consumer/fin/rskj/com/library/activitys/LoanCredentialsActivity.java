@@ -3,8 +3,6 @@ package consumer.fin.rskj.com.library.activitys;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -19,7 +17,6 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import consumer.fin.rskj.com.library.utils.Constant;
 import org.greenrobot.eventbus.EventBus;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -144,7 +141,7 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_loancredit);
+    setContentView(R.layout.rskj_activity_loancredit);
     data = getIntent().getStringExtra("data");
     LogUtils.d(TAG, "data = " + data);
     if (TextUtils.isEmpty(data)) {
@@ -667,7 +664,7 @@ public class LoanCredentialsActivity extends BaseActivity implements View.OnClic
   private void initAllLinesPopWindow() {
     // 得到弹出菜单的view，login_setting_popup是弹出菜单的布局文件
     LayoutInflater inflater = LayoutInflater.from(this);
-    View contentView = inflater.inflate(R.layout.popwindow_layout, null);
+    View contentView = inflater.inflate(R.layout.rskj_popwindow_layout, null);
     mLinesPopWindow = new PopupWindow(contentView, WindowManager.LayoutParams.MATCH_PARENT,
         WindowManager.LayoutParams.MATCH_PARENT, false);
     // 实例化一个ColorDrawable颜色为半透明

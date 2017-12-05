@@ -129,7 +129,7 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_webview);
+    setContentView(R.layout.rskj_activity_webview);
     EventBus.getDefault().register(this);//注册
     url = getIntent().getStringExtra("url");
     title = getIntent().getStringExtra("title");

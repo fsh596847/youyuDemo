@@ -69,7 +69,7 @@ public class LoanListActivity extends BaseActivity
     data = getIntent().getStringExtra("data");
     LogUtils.d(TAG, "data = " + data);
 
-    setContentView(R.layout.activity_loanlist);
+    setContentView(R.layout.rskj_activity_loanlist);
 
     requestData();
   }
@@ -97,7 +97,7 @@ public class LoanListActivity extends BaseActivity
     recyclerView.setScrollChangeListener(this);
     recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-    pAdapter = new CommonRecycleViewAdapter(recyclerView, itemList, R.layout.plrecord_item) {
+    pAdapter = new CommonRecycleViewAdapter(recyclerView, itemList, R.layout.rskj_plrecord_item) {
 
       @Override public void bindConvert(RecyclerViewHolder holder, int position, Object item,
           boolean isScrolling) {

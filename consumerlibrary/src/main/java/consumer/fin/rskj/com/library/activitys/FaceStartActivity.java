@@ -55,7 +55,7 @@ public class FaceStartActivity extends BaseActivity implements OnClickListener {
 
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_face_start_layout);
+    setContentView(R.layout.rskj_activity_face_start_layout);
 
     init();
     netWorkWarranty();

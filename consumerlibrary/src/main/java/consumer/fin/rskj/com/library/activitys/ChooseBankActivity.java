@@ -44,7 +44,7 @@ public class ChooseBankActivity extends BaseActivity implements View.OnClickList
   protected void onCreate(Bundle arg0) {
     super.onCreate(arg0);
     selected = getIntent().getStringExtra("selected");
-    setContentView(R.layout.activity_choosebank);
+    setContentView(R.layout.rskj_activity_choosebank);
     Log.d(TAG, "selected = " + selected);
     getBankList();
   }

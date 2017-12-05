@@ -1,7 +1,6 @@
 package consumer.fin.rskj.com.library.activitys;
 
 import android.Manifest;
-import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,7 +10,6 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
@@ -40,7 +38,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,11 +45,9 @@ import android.widget.Toast;
 import com.wknight.keyboard.WKnightKeyboard;
 
 import consumer.fin.rskj.com.library.login.OkHttpRequestManager;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,8 +56,6 @@ import consumer.fin.rskj.com.consumerlibrary.BuildConfig;
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.callback.FinishCallBackImpl;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
-import consumer.fin.rskj.com.library.module.BillItem;
-import consumer.fin.rskj.com.library.module.Rows;
 import consumer.fin.rskj.com.library.okhttp.HttpInfo;
 import consumer.fin.rskj.com.library.okhttp.OkHttpUtil;
 import consumer.fin.rskj.com.library.okhttp.callback.Callback;
@@ -73,9 +66,6 @@ import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.utils.SharedPreferenceUtils;
 import consumer.fin.rskj.com.library.views.MultiEditText;
 import consumer.fin.rskj.com.library.views.MyDialog;
-
-import static android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
-import static android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 
 /**
  * 公共Activity
@@ -181,7 +171,7 @@ public abstract class BaseActivity extends AppCompatActivity
   }
 
   public void initPWDDialog() {
-    dialogView = inflater.inflate(R.layout.ubound_dialog, null);// 得到加载view
+    dialogView = inflater.inflate(R.layout.rskj_ubound_dialog, null);// 得到加载view
     mDialog = new Dialog(this, R.style.myDialogTheme);// 创建自定义样式dialog
     TextView textView = (TextView) dialogView.findViewById(R.id.bankTail);
     textView.setText(Html.fromHtml(String.format(getString(R.string.delete_bank), "9999")));
@@ -827,7 +817,7 @@ public abstract class BaseActivity extends AppCompatActivity
   private WebViewActivity.BackCallBack backCallBack;
 
   private void initNetDialog() {
-    netView = inflater.inflate(R.layout.net_dialog, null);// 得到加载view
+    netView = inflater.inflate(R.layout.rskj_net_dialog, null);// 得到加载view
     layout = (LinearLayout) netView.findViewById(R.id.dialog_view);// 加载布局
 
     layout.setOnClickListener(new View.OnClickListener() {

@@ -23,7 +23,6 @@ import consumer.fin.rskj.com.library.activitys.BaseActivity;
 import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.utils.RegexUtils;
-import consumer.fin.rskj.com.library.utils.Util;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.json.JSONException;
@@ -81,7 +80,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener, T
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_register);
+    setContentView(R.layout.rskj_activity_register);
 
     initViews();
   }

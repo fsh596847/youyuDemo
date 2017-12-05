@@ -5,8 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,12 +49,12 @@ public class BankCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     LogUtils.d(TAG, "------onCreateViewHolder-------" + viewType);
 
     if (viewType == TYPE_OTHER) {
-      View v0 = LayoutInflater.from(context).inflate(R.layout.bankcard_add, parent, false);
+      View v0 = LayoutInflater.from(context).inflate(R.layout.rskj_bankcard_add, parent, false);
       BankCardAdapter.AddViewHolder th0 = new BankCardAdapter.AddViewHolder(v0);
       return th0;
     }
 
-    View v = LayoutInflater.from(context).inflate(R.layout.bank_item, parent, false);
+    View v = LayoutInflater.from(context).inflate(R.layout.rskj_bank_item, parent, false);
     BankCardAdapter.TViewHolder th = new BankCardAdapter.TViewHolder(v);
 
     return th;

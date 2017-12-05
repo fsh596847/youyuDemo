@@ -22,7 +22,7 @@ public class AboutActivity extends  BaseActivity implements View.OnClickListener
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.rskj_activity_about);
 
         bank_card = (LinearLayout) findViewById(R.id.bank_card);
         bank_card.setOnClickListener(this);

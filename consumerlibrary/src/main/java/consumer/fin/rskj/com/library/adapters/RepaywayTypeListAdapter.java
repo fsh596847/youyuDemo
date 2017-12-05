@@ -35,7 +35,7 @@ public class RepaywayTypeListAdapter extends BaseAdapter {
 		if (view == null) {
 			holder = new ViewHolder();
 			view =  LayoutInflater.from(context).inflate(
-					R.layout.repayway_type_pop_list_item_layout, null);
+					R.layout.rskj_repayway_type_pop_list_item_layout, null);
 			holder.mLine1 =  view.findViewById(R.id.line_one);
 			holder.mLine2= view.findViewById(R.id.line_two);
 			holder.mTitle=(TextView) view.findViewById(R.id.line_name_tv);

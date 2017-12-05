@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -69,7 +68,7 @@ public class ChangeBankActivity extends BaseActivity implements View.OnClickList
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_changebank);
+    setContentView(R.layout.rskj_activity_changebank);
     m000139();
   }
 

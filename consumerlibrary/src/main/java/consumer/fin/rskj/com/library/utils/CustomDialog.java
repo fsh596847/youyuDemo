@@ -122,7 +122,7 @@ public class CustomDialog extends Dialog {
 			// instantiate the dialog with the custom Theme
 			final CustomDialog dialog = new CustomDialog(context,
 					R.style.Dialog);
-			View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
+			View layout = inflater.inflate(R.layout.rskj_dialog_normal_layout, null);
 			dialog.addContentView(layout, new LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 			// set the dialog title
@@ -134,11 +134,11 @@ public class CustomDialog extends Dialog {
 				tipLineView.setVisibility(View.VISIBLE);
 			}else
 			{
-				((TextView) layout.findViewById(R.id.title)).setVisibility(View.GONE);
+				layout.findViewById(R.id.title).setVisibility(View.GONE);
 				tipLineView.setVisibility(View.GONE);
 			}
 			if (icon!=0) {
-				((ImageView)layout.findViewById(R.id.icon)).setBackgroundResource(icon);
+				layout.findViewById(R.id.icon).setBackgroundResource(icon);
 			}else
 			{
 				layout.findViewById(R.id.icon).setVisibility(View.GONE);
@@ -148,7 +148,7 @@ public class CustomDialog extends Dialog {
 				((Button) layout.findViewById(R.id.positiveButton))
 						.setText(positiveButtonText);
 				if (positiveButtonClickListener != null) {
-					((Button) layout.findViewById(R.id.positiveButton))
+					layout.findViewById(R.id.positiveButton)
 							.setOnClickListener(new View.OnClickListener() {
 								@Override
 								public void onClick(View v) {
@@ -168,7 +168,7 @@ public class CustomDialog extends Dialog {
 				((Button) layout.findViewById(R.id.negativeButton))
 						.setText(negativeButtonText);
 				if (negativeButtonClickListener != null) {
-					((Button) layout.findViewById(R.id.negativeButton))
+					layout.findViewById(R.id.negativeButton)
 							.setOnClickListener(new View.OnClickListener() {
 								@Override
 								public void onClick(View v) {

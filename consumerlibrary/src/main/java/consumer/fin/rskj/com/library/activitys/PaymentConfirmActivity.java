@@ -36,7 +36,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import static consumer.fin.rskj.com.library.utils.Constants.LEGALPER_NUM;
 import static consumer.fin.rskj.com.library.utils.Constants.REQUEST_URL;
 
 /**
@@ -85,7 +84,7 @@ public class PaymentConfirmActivity extends BaseActivity {
     currentStatus = getIntent().getIntExtra("currentStatus", 0);
     list = getIntent().getStringArrayListExtra("repayingList");
     rows = getIntent().getParcelableArrayListExtra("rows");
-    setContentView(R.layout.activity_paymentconfirm);
+    setContentView(R.layout.rskj_activity_paymentconfirm);
     SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     currentData = sDateFormat.format(new java.util.Date());
     LogUtils.d(TAG, "currentData =》 " + currentData);

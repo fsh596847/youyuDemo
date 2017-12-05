@@ -70,7 +70,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
   @Override protected void onCreate(Bundle arg0) {
     super.onCreate(arg0);
-    setContentView(R.layout.activity_login);
+    setContentView(R.layout.rskj_activity_login);
 
     mDialog = Util.createLoadingDialog(this, "数据加载中,请稍等...");
 

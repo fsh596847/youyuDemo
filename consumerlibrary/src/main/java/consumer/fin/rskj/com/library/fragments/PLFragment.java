@@ -1,19 +1,15 @@
 package consumer.fin.rskj.com.library.fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,9 +24,7 @@ import consumer.fin.rskj.com.library.activitys.RecordListActivity;
 import consumer.fin.rskj.com.library.adapters.CommonRecycleViewAdapter;
 import consumer.fin.rskj.com.library.adapters.RecyclerViewHolder;
 import consumer.fin.rskj.com.library.module.PLItem;
-import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
-import consumer.fin.rskj.com.library.views.MyItemDecoration;
 import me.leefeng.lfrecyclerview.LFRecyclerView;
 import me.leefeng.lfrecyclerview.OnItemClickListener;
 
@@ -90,7 +84,7 @@ public class PLFragment extends BaseFragment implements
                 parent.removeView(rootView);
             }
         } else {
-            rootView = inflater.inflate(R.layout.fragment_pl, null);
+            rootView = inflater.inflate(R.layout.rskj_fragment_pl, null);
             initView();// 控件初始化
         }
 
@@ -131,8 +125,8 @@ public class PLFragment extends BaseFragment implements
         recyclerView.setScrollChangeListener(this);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
-        pAdapter = new CommonRecycleViewAdapter(recyclerView, itemList, R.layout.plrecord_item){
+        pAdapter =
+            new CommonRecycleViewAdapter(recyclerView, itemList, R.layout.rskj_plrecord_item) {
 
             @Override
             public void bindConvert(RecyclerViewHolder holder, int position, Object item, boolean isScrolling) {

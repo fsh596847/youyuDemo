@@ -104,7 +104,7 @@ public class MyBillListActivity extends BaseActivity {
       e.printStackTrace();
     }
 
-    setContentView(R.layout.activity_billlist);
+    setContentView(R.layout.rskj_activity_billlist);
     LogUtils.d(TAG, "data = " + data);
 
     getBill();

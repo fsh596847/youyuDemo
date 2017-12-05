@@ -153,7 +153,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_deal_self_info_layout);
+    setContentView(R.layout.rskj_activity_deal_self_info_layout);
     LogUtils.d(TAG, "数组 = " + SysUtil.stepMap);
   }
 
@@ -846,9 +846,9 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
   private void initAllBanksDialog() {
     // 得到弹出菜单的view，login_setting_popup是弹出菜单的布局文件
     LayoutInflater inflater = LayoutInflater.from(this);
-    View contentView = inflater.inflate(R.layout.support_bank_layout, null);
+    View contentView = inflater.inflate(R.layout.rskj_support_bank_layout, null);
 
-    dialogView = inflater.inflate(R.layout.support_bank_layout, null);// 得到加载view
+    dialogView = inflater.inflate(R.layout.rskj_support_bank_layout, null);// 得到加载view
     mBanksPopWindow = new Dialog(this, R.style.myDialogTheme);//
     mBanksPopWindow.setContentView(contentView);
 

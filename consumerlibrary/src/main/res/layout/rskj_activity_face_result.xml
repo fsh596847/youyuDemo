@@ -7,10 +7,11 @@
 
     <include
         android:id="@+id/top_bar"
-        layout="@layout/top_title_bar_layout" />
+        layout="@layout/rskj_top_title_bar_layout"
+        />
 
     <include
-        layout="@layout/face_tip_layout"
+        layout="@layout/rskj_face_tip_layout"
         android:visibility="visible" />
 
     <LinearLayout

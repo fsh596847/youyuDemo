@@ -5,7 +5,7 @@
     android:background="@color/color_e5e5e5"
     android:orientation="vertical">
 
-    <include layout="@layout/top_title_bar_layout" />
+    <include layout="@layout/rskj_top_title_bar_layout"/>
 
 
     <LinearLayout
@@ -240,6 +240,6 @@
         android:textSize="@dimen/text_size_18"
         />
 
-    <include layout="@layout/face_network_warring_layout" />
+    <include layout="@layout/rskj_face_network_warring_layout"/>
 
 </LinearLayout>

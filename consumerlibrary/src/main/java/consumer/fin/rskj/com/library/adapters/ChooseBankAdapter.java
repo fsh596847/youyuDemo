@@ -49,7 +49,7 @@ public class ChooseBankAdapter extends RecyclerView.Adapter<ChooseBankAdapter.TV
 	@Override
 	public ChooseBankAdapter.TViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-		View v = LayoutInflater.from(context).inflate(R.layout.choosebank_item,parent,false);
+		View v = LayoutInflater.from(context).inflate(R.layout.rskj_choosebank_item, parent, false);
 		ChooseBankAdapter.TViewHolder th = new ChooseBankAdapter.TViewHolder(v);
 
 		return th;

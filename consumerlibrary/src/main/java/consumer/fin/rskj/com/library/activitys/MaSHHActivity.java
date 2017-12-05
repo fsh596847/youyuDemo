@@ -49,7 +49,7 @@ public class MaSHHActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_mashh);
+        setContentView(R.layout.rskj_activity_mashh);
 
         deviceCode = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         Log.d(TAG,"deviceCode = " + deviceCode);

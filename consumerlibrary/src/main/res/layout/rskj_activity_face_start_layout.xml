@@ -5,11 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/color_ffffff" >
- 
-   <include android:id="@+id/top_bar" layout="@layout/top_title_bar_layout"/>
+
+  <include
+      android:id="@+id/top_bar"
+      layout="@layout/rskj_top_title_bar_layout"
+      />
    
-   <include 
-       layout="@layout/face_tip_layout"  
+   <include
+       layout="@layout/rskj_face_tip_layout"
        android:visibility="visible"/>
 
     <Button
@@ -27,7 +30,7 @@
         android:textSize="@dimen/text_size_17"
         android:visibility="visible" />
 
-    
-   <include  layout="@layout/face_network_warring_layout"/>
+
+  <include layout="@layout/rskj_face_network_warring_layout"/>
 
 </LinearLayout>

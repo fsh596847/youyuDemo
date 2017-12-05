@@ -37,7 +37,7 @@ public class LoanMoneyPaytypeListAdapter extends BaseAdapter {
 		if (view == null) {
 			holder = new ViewHolder();
 			view =  LayoutInflater.from(context).inflate(
-					R.layout.loan_money_pay_type_list_item_layout, null);
+					R.layout.rskj_loan_money_pay_type_list_item_layout, null);
 			
 			holder.mTv1=(TextView) view.findViewById(R.id.loan_money_pay_type_pay_date_tv);
 			holder.mTv2=(TextView) view.findViewById(R.id.loan_money_pay_type_benjin_tv);
