@@ -10,10 +10,8 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import consumer.fin.rskj.com.library.utils.Constant;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.ArrayList;
 
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
@@ -72,9 +70,9 @@ public class RecordListActivity extends BaseActivity {
 
     if (mPosition == 1) {
       loan_record.setBackgroundColor(getResources().getColor(R.color.white));
-      payment_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+      payment_record.setBackground(getResources().getDrawable(R.mipmap.rskj_pop));
     } else {
-      loan_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+      loan_record.setBackground(getResources().getDrawable(R.mipmap.rskj_pop));
       payment_record.setBackgroundColor(getResources().getColor(R.color.white));
     }
 
@@ -95,19 +93,19 @@ public class RecordListActivity extends BaseActivity {
       @Override public void onPageSelected(int arg0) {
         switch (arg0) {
           case 0:
-            loan_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+            loan_record.setBackground(getResources().getDrawable(R.mipmap.rskj_pop));
             loan_record.setTextColor(getResources().getColor(R.color.black));
             payment_record.setBackgroundColor(getResources().getColor(R.color.white));
             payment_record.setTextColor(getResources().getColor(R.color.color_666666));
             break;
           case 1:
             loan_record.setBackgroundColor(getResources().getColor(R.color.white));
-            payment_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+            payment_record.setBackground(getResources().getDrawable(R.mipmap.rskj_pop));
             loan_record.setTextColor(getResources().getColor(R.color.color_666666));
             payment_record.setTextColor(getResources().getColor(R.color.black));
             break;
           default:
-            loan_record.setBackground(getResources().getDrawable(R.mipmap.pop));
+            loan_record.setBackground(getResources().getDrawable(R.mipmap.rskj_pop));
             payment_record.setBackgroundColor(getResources().getColor(R.color.white));
             break;
         }

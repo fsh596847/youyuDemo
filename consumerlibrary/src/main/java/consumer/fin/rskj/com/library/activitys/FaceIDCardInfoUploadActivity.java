@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -20,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.megvii.idcardquality.IDCardQualityLicenseManager;
 import com.megvii.idcardquality.bean.IDCardAttr;
@@ -29,7 +27,6 @@ import com.megvii.licensemanager.Manager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -214,12 +211,12 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
       modifyName = mIdcardNameEt.getText().toString().trim();//姓名
       if (modifyName != null && !modifyName.equals("") && modifyName.length() >= 2) {
         //信息提交按钮可用状态
-        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mIdcardInfoSubmitBtn.setClickable(true);
       } else {
         //信息提交按钮不可用状态
         mIdcardInfoSubmitBtn.setClickable(false);
-        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_disable_bg);
+        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_disable_bg);
       }
     }
   };
@@ -374,7 +371,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
     showLoading(getResources().getString(R.string.dialog_showloading));
     mIdcardInfoSubmitBtn.setClickable(false);
-    mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_selected_bg);
+    mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_selected_bg);
     requestParams.clear();
     requestParams.put("transCode", Constants.TRANS_CODE_M100122);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
@@ -399,7 +396,7 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
 
         LogUtils.d("debug", "信息上传: data--->" + data);
         dismissLoading();
-        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mIdcardInfoSubmitBtn.setClickable(true);
         try {
           JSONObject jsonObject = new JSONObject(data);
@@ -436,13 +433,13 @@ public class FaceIDCardInfoUploadActivity extends BaseActivity implements OnClic
       @Override public void onError(String retrunCode, String errorMsg) {
 
         dismissLoading();
-        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mIdcardInfoSubmitBtn.setClickable(true);
       }
 
       @Override public void onFailure(String errorMsg) {
         dismissLoading();
-        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mIdcardInfoSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mIdcardInfoSubmitBtn.setClickable(true);
       }
     });

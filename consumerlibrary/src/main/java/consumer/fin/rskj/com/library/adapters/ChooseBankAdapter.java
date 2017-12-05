@@ -7,16 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.List;
 
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.module.BankCardItem;
-import consumer.fin.rskj.com.library.utils.LogUtils;
 
 /**
  * 选择银行适配器
@@ -67,10 +63,10 @@ public class ChooseBankAdapter extends RecyclerView.Adapter<ChooseBankAdapter.TV
 		Log.d("ChooseBankAdapter","selected = " + selected);
 
 		if(!TextUtils.isEmpty(selected) && selected.equals(list.get(position).getBankCode())){
-			holder.check.setImageResource(R.mipmap.bank_checked);
-		}else {
-			holder.check.setImageResource(R.mipmap.bank_unchecked);
-		}
+      holder.check.setImageResource(R.mipmap.rskj_bank_checked);
+    }else {
+      holder.check.setImageResource(R.mipmap.rskj_bank_unchecked);
+    }
 
 //		if(list.get(position).getCheck()){
 //			holder.check.setImageResource(R.mipmap.b_checked);

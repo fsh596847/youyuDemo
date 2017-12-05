@@ -114,7 +114,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:src="@mipmap/enter"/>
+            android:src="@mipmap/rskj_enter"
+            />
 
     </LinearLayout>
 
@@ -148,7 +149,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:src="@mipmap/enter"/>
+            android:src="@mipmap/rskj_enter"
+            />
 
         <TextView
             android:layout_toLeftOf="@id/array2"

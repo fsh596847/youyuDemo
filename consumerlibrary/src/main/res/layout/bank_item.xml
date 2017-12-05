@@ -28,7 +28,8 @@
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="10dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/bank_logo"/>
+                android:src="@mipmap/rskj_bank_logo"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -79,7 +80,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_margin="15dp"
-            android:src="@drawable/auto_pay"
+            android:src="@drawable/rskj_auto_pay"
             />
     </RelativeLayout>
 

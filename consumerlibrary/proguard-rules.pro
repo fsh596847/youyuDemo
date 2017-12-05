@@ -41,13 +41,14 @@
 -keep class com.google.gson.** { *; }
 -keep class io.realm.**{*;}
 -keep public class * extends android.support.v7.app
+
 -keep class consumer.fin.rskj.com.library.**{*;}
 
 #引用jar的包名
 -keep class com.megvii.**{*;}
 -keep class com.wknight.keyboard.**{*;}
--keep class com.megvii.licensemanager;.**{*;}
--keep class com.megvii.livenessdetection;.**{*;}
+-keep class com.megvii.licensemanager.**{*;}
+-keep class com.megvii.livenessdetection.**{*;}
 
 -keepattributes *Annotation*
 -keepclassmembers class ** {

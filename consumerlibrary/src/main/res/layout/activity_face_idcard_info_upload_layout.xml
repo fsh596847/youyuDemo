@@ -27,7 +27,8 @@
                 android:layout_height="90dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="33dip"
-                android:background="@mipmap/m_icon_idcard_front" />
+                android:background="@mipmap/rskj_m_icon_idcard_front"
+                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,7 +85,7 @@
                     android:layout_marginTop="8dip"
                     android:background="@null"
                     android:drawablePadding="5dip"
-                    android:drawableRight="@mipmap/m_icon_edit"
+                    android:drawableRight="@mipmap/rskj_m_icon_edit"
                     android:gravity="center"
                     android:textColor="@color/color_000000"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -135,7 +136,7 @@
                 android:layout_height="90dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="33dip"
-                android:background="@mipmap/m_icon_idcard_back"
+                android:background="@mipmap/rskj_m_icon_idcard_back"
                 android:contentDescription="" />
 
             <TextView

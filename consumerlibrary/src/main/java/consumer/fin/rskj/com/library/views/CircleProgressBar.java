@@ -64,7 +64,7 @@ public class CircleProgressBar extends View {
         paint = new Paint();
         oval = new RectF();
         textPaint = new TextPaint();
-        bit =BitmapFactory.decodeResource(getResources(), R.drawable.circle);
+        bit = BitmapFactory.decodeResource(getResources(), R.drawable.rskj_circle);
         sweepGradient = new SweepGradient(getWidth()/2, getHeight()/2, new int[]{0xfffe9a8e, 0xff3fd1e4
                 ,0xffdc968e},null);
     }

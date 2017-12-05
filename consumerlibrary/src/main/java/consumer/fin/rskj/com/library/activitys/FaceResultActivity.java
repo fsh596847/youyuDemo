@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -96,7 +95,7 @@ public class FaceResultActivity extends BaseActivity implements View.OnClickList
       boolean isSuccess =
           result.getString("result").equals(getResources().getString(R.string.verify_success));
       mResultImageView.setImageResource(
-          isSuccess ? R.mipmap.face_result_success : R.mipmap.face_result_fail);
+          isSuccess ? R.mipmap.rskj_face_result_success : R.mipmap.rskj_face_result_fail);
       if (isSuccess) {
         mResultFinishBtn.setVisibility(View.VISIBLE);
       } else {

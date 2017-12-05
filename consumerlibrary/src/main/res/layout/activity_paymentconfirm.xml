@@ -23,7 +23,7 @@
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:padding="10dp"
-        android:background="@mipmap/confirm_bg"
+        android:background="@mipmap/rskj_confirm_bg"
         android:orientation="vertical">
 
         <LinearLayout

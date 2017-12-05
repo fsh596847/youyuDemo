@@ -11,7 +11,8 @@
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@mipmap/top_pic">
+        android:background="@mipmap/rskj_top_pic"
+        >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -26,7 +27,8 @@
             android:scaleType="center"
             android:layout_alignParentRight="true"
             android:padding="8dp"
-            android:src="@mipmap/person_center"/>
+            android:src="@mipmap/rskj_person_center"
+            />
 
     </RelativeLayout>
 
@@ -224,7 +226,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:drawablePadding="5dp"
-                android:drawableTop="@mipmap/loan"
+                android:drawableTop="@mipmap/rskj_loan"
                 android:text="去借款"/>
 
 
@@ -234,7 +236,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:drawablePadding="5dp"
-                android:drawableTop="@mipmap/pay_back"
+                android:drawableTop="@mipmap/rskj_pay_back"
                 android:text="去还款"/>
 
         </LinearLayout>

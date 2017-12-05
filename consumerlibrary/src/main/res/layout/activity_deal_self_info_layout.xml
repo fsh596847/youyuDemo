@@ -88,7 +88,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="4dip"
-            android:background="@mipmap/m_icon_warn"/>
+            android:background="@mipmap/rskj_m_icon_warn"
+            />
     </RelativeLayout>
 
     <View

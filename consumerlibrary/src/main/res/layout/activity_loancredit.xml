@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@mipmap/credit"
+    android:background="@mipmap/rskj_credit"
     android:orientation="vertical">
 
     <consumer.fin.rskj.com.library.views.TopNavigationView2
@@ -25,7 +25,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@mipmap/combined_shape">
+        android:background="@mipmap/rskj_ombined_shape"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -232,7 +233,7 @@
         android:paddingTop="35dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@mipmap/combined_shape1"
+        android:background="@mipmap/rskj_combined_shape1"
         android:orientation="vertical">
 
 
@@ -260,7 +261,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_alignParentRight="true"
                 android:scaleType="center"
-                android:src="@mipmap/enter"/>
+                android:src="@mipmap/rskj_enter"
+                />
 
             <TextView
                 android:id="@+id/shoukuan_bank"

@@ -19,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -415,12 +414,12 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
           && linkRelationshipStr != null
           && !linkRelationshipStr.equals("")) {
         //信息提交按钮可用状态
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mSubmitBtn.setClickable(true);
       } else {
         //信息提交按钮不可用状态
         mSubmitBtn.setClickable(false);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_disable_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_disable_bg);
       }
     }
   };
@@ -634,7 +633,7 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
     }
     showLoading(getResources().getString(R.string.dialog_showloading));
     mSubmitBtn.setClickable(false);
-    mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_selected_bg);
+    mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_selected_bg);
     Map<String, String> requestParams = new HashMap<>();
     requestParams.put("transCode", Constants.TRANS_CODE_UPLOAD_BASIC_INFO);//接口标识
     requestParams.put("channelNo", Constants.CHANNEL_NO);//渠道标识
@@ -680,14 +679,14 @@ public class BasicInfoActivity extends BaseActivity implements View.OnClickListe
         LogUtils.d(TAG, "基本信息上传: errorMsg--->" + errorMsg);
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
       }
 
       @Override public void onFailure(String errorMsg) {
         LogUtils.d(TAG, "基本信息2上传: errorMsg--->" + errorMsg);
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
       }
     });
   }

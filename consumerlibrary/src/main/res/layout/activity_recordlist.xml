@@ -42,7 +42,7 @@
             android:layout_margin="15dp"
             android:padding="15dp"
             android:layout_height="match_parent"
-            android:background="@mipmap/pop"
+            android:background="@mipmap/rskj_pop"
             android:textSize="@dimen/text_size_17"
             android:textColor="@color/black"
             android:text="还款记录"/>

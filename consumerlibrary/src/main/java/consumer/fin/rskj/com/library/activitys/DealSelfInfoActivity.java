@@ -2,13 +2,11 @@ package consumer.fin.rskj.com.library.activitys;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.Spannable;
@@ -23,17 +21,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -41,22 +34,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import consumer.fin.rskj.com.consumerlibrary.R;
 import consumer.fin.rskj.com.library.adapters.CommonRecycleViewAdapter;
 import consumer.fin.rskj.com.library.adapters.RecyclerViewHolder;
 import consumer.fin.rskj.com.library.callback.FinishCallBackImpl;
 import consumer.fin.rskj.com.library.callback.ResultCallBack;
-import consumer.fin.rskj.com.library.module.PLItem;
 import consumer.fin.rskj.com.library.utils.Constants;
 import consumer.fin.rskj.com.library.utils.LogUtils;
 import consumer.fin.rskj.com.library.utils.SysUtil;
 import consumer.fin.rskj.com.library.utils.Util;
 import consumer.fin.rskj.com.library.views.CountDownTimer;
-import me.leefeng.lfrecyclerview.LFRecyclerView;
 
 /**
  * 银行卡验4
@@ -290,7 +279,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
     mAllLinesTv.setHighlightColor(
         getResources().getColor(android.R.color.transparent));//方法重新设置文字背景为透明色
     mSubmitBtn.setClickable(false);
-    mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_disable_bg);
+    mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_disable_bg);
     mSubmitBtn.setOnClickListener(this);
     mYzmBtn.setOnClickListener(this);
     mLinesWeituoshuTv.setOnClickListener(this);
@@ -456,12 +445,12 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
           && openYzm != null
           && !openYzm.equals("")) {
         //可用状态
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         mSubmitBtn.setClickable(true);
       } else {
         //不可用状态
         mSubmitBtn.setClickable(false);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_disable_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_disable_bg);
       }
     }
   };
@@ -669,7 +658,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
       String yzm) {
 
     mSubmitBtn.setClickable(false);
-    mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_selected_bg);
+    mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_selected_bg);
     showLoading(getResources().getString(R.string.dialog_showloading));
     requestParams.clear();
     requestParams.put("transCode", Constants.TRANS_CODE_M100106);//接口标识
@@ -730,13 +719,13 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
           }
 
           mSubmitBtn.setClickable(true);
-          mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+          mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         } catch (JSONException e) {
           dismissLoading();
           LogUtils.e("error", "数据解析有误" + e.toString());
           showToast("数据格式有误!", Constants.TOAST_SHOW_POSITION);
           mSubmitBtn.setClickable(true);
-          mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+          mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         }
       }
 
@@ -744,7 +733,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
 
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         if ("E1001065".equals(retrunCode)) {
           // 已经做过验四，直接进入人脸识别
           LogUtils.d("debug", "已经做过验4");
@@ -759,7 +748,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
 
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
       }
     });
   }
@@ -771,7 +760,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
       String yzm) {
 
     mSubmitBtn.setClickable(false);
-    mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_selected_bg);
+    mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_selected_bg);
     showLoading(getResources().getString(R.string.dialog_showloading));
     requestParams.clear();
     requestParams.put("transCode", Constants.TRANS_CODE_BANK_CARD_CHECK_THREE);//接口标识
@@ -807,13 +796,13 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
           }
 
           mSubmitBtn.setClickable(true);
-          mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+          mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         } catch (JSONException e) {
           dismissLoading();
           LogUtils.e("error", "数据解析有误" + e.toString());
           showToast("数据格式有误!", Constants.TOAST_SHOW_POSITION);
           mSubmitBtn.setClickable(true);
-          mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+          mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         }
       }
 
@@ -821,7 +810,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
 
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
         if ("E1001065".equals(retrunCode)) {
           // 已经做过验四，直接进入人脸识别
           LogUtils.d("debug", "已经做过验三");
@@ -836,7 +825,7 @@ public class DealSelfInfoActivity extends BaseActivity implements OnClickListene
 
         dismissLoading();
         mSubmitBtn.setClickable(true);
-        mSubmitBtn.setBackgroundResource(R.mipmap.m_icon_common_button_normal_bg);
+        mSubmitBtn.setBackgroundResource(R.mipmap.rskj_m_icon_common_button_normal_bg);
       }
     });
   }

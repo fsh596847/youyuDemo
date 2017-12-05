@@ -33,7 +33,8 @@
             android:layout_marginLeft="10dp"
             android:padding="5dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/bank_logo"/>
+            android:src="@mipmap/rskj_bank_logo"
+            />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -156,7 +157,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
-            android:src="@mipmap/enter"/>
+            android:src="@mipmap/rskj_enter"
+            />
 
     </LinearLayout>
 

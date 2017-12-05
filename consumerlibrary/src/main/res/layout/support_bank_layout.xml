@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="支持银行"
         android:textColor="@color/white"
-        android:background="@mipmap/card_bg"
+        android:background="@mipmap/rskj_card_bg"
         android:textSize="15sp"/>
 
 

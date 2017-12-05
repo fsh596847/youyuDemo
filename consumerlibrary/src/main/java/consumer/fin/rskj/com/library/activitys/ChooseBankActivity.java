@@ -89,7 +89,7 @@ public class ChooseBankActivity extends BaseActivity implements View.OnClickList
         //                pAdapter.disCheckAll();
 
         //这样会导致checkbox 与item点击不一致
-        holder.check.setImageResource(R.mipmap.bank_checked);
+        holder.check.setImageResource(R.mipmap.rskj_bank_checked);
         Intent intent = new Intent();
         intent.putExtra("item", mDatas.get(position));
         setResult(RESULT_OK, intent);

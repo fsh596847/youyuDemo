@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@mipmap/face_result_success" />
+            android:src="@mipmap/rskj_face_result_success"
+            />
     </FrameLayout>
 
     <TextView
@@ -52,7 +53,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:drawablePadding="5dp"
-            android:drawableTop="@mipmap/face_icon_hap"
+            android:drawableTop="@mipmap/rskj_face_icon_hap"
             android:gravity="center"
             android:text="@string/face_tip_one"
             android:textColor="@color/color_666666"
@@ -65,7 +66,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:drawablePadding="5dp"
-            android:drawableTop="@mipmap/face_icon_glasses"
+            android:drawableTop="@mipmap/rskj_face_icon_glasses"
             android:gravity="center"
             android:text="@string/face_tip_two"
             android:textColor="@color/color_666666"
@@ -78,7 +79,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:drawablePadding="5dp"
-            android:drawableTop="@mipmap/face_icon_light"
+            android:drawableTop="@mipmap/rskj_face_icon_light"
             android:gravity="center"
             android:text="@string/face_tip_three"
             android:textColor="@color/color_666666"

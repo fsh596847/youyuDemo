@@ -24,7 +24,7 @@
             style="@style/right_text_value_style"
             android:layout_toRightOf="@id/basic_info_family_address_tip_tv"
             android:hint="@string/basic_family_address_tip_text"
-            android:drawableRight="@mipmap/enter"
+            android:drawableRight="@mipmap/rskj_enter"
              />
         <View
             android:id="@+id/basic_line_one"
@@ -56,7 +56,8 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/basic_line_one"
             android:visibility="invisible"
-            android:src="@mipmap/m_icon_map"/>
+            android:src="@mipmap/rskj_m_icon_map"
+            />
         <View
             android:id="@+id/basic_line_two"
             android:layout_width="match_parent"
@@ -179,7 +180,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/basic_line_three"
             android:layout_marginRight="@dimen/common_margin"
-            android:src="@mipmap/m_icon_address_book"
+            android:src="@mipmap/rskj_m_icon_address_book"
             android:visibility="visible"/>
 
         <View
@@ -202,7 +203,7 @@
             style="@style/right_text_value_style"
             android:layout_below="@id/basic_line_four"
             android:layout_toRightOf="@id/basic_info_link_relationship_tip_tv"
-            android:drawableRight="@mipmap/enter"
+            android:drawableRight="@mipmap/rskj_enter"
             android:hint="@string/basic_link_relationship_tip_text"/>
 
     </RelativeLayout>

@@ -26,7 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/bank_logo"/>
+                android:src="@mipmap/rskj_bank_logo"
+                />
 
             <TextView
                 android:id="@+id/bank_name"
@@ -48,7 +49,7 @@
                 android:layout_marginRight="30dp"
                 android:button="@null"
                 android:enabled="true"
-                android:src="@mipmap/bank_unchecked"
+                android:src="@mipmap/rskj_bank_unchecked"
                 />
 
         </RelativeLayout>

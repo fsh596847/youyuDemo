@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -18,17 +17,14 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.lzyzsd.jsbridge.BridgeHandler;
-import com.github.lzyzsd.jsbridge.BridgeWebView;
 import com.github.lzyzsd.jsbridge.CallBackFunction;
 import com.github.lzyzsd.jsbridge.DefaultHandler;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -104,7 +100,7 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
           if ("1".equals(js.getString("showUserCenter"))) {
             right_btn.setText("");
 
-            rightImage = getResources().getDrawable(R.mipmap.person_center);
+            rightImage = getResources().getDrawable(R.mipmap.rskj_person_center);
             rightImage.setBounds(0, 0, rightImage.getMinimumWidth(), rightImage.getMinimumHeight());
             right_btn.setCompoundDrawables(null, null, rightImage, null);
 
@@ -295,7 +291,7 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
     if ("1".equals(showUserCenter)) {
       right_btn.setText("");
 
-      rightImage = getResources().getDrawable(R.mipmap.person_center);
+      rightImage = getResources().getDrawable(R.mipmap.rskj_person_center);
       rightImage.setBounds(0, 0, rightImage.getMinimumWidth(), rightImage.getMinimumHeight());
       right_btn.setCompoundDrawables(null, null, rightImage, null);
 

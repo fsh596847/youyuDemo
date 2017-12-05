@@ -26,7 +26,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/common_margin"
             android:background="@null"
-            android:drawableLeft="@mipmap/m_icon_back"
+            android:drawableLeft="@mipmap/rskj_m_icon_back"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_16"
             tools:ignore="RtlHardcoded" />

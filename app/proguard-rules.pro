@@ -57,7 +57,13 @@
 -keep public class * extends android.support.v7.app
 -keep class com.youyu.fin.pro.**{*;}
 
+
+#引用jar的包名
+-keep class com.megvii.**{*;}
 -keep class com.wknight.keyboard.**{*;}
+-keep class com.megvii.licensemanager.**{*;}
+-keep class com.megvii.livenessdetection.**{*;}
+
 
 -keepattributes *Annotation*
 -keepclassmembers class ** {

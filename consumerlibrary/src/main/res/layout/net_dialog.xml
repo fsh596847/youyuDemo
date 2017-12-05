@@ -14,7 +14,7 @@
          android:id="@+id/img"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:src="@mipmap/time_out"
+         android:src="@mipmap/rskj_time_out"
          android:scaleType="center"/>
 
 

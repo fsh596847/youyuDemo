@@ -29,7 +29,8 @@
         android:layout_marginBottom="15dip"
          android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/face_head_mask" />
+        android:src="@mipmap/rskj_face_head_mask"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -68,7 +69,8 @@
             <ImageView
                 android:layout_width="120dip"
                 android:layout_height="120dip"
-                android:src="@mipmap/face_liveness_phone_image" />
+                android:src="@mipmap/rskj_face_liveness_phone_image"
+                />
                <TextView
                 android:id="@+id/liveness_layout_promptText"
                 android:layout_width="wrap_content"
