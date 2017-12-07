@@ -1,47 +1,17 @@
 package com.zhongan.demo;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.provider.Settings;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.umeng.analytics.MobclickAgent;
-import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.finance.common.FinanceInitor;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.UUID;
-
-import static java.security.AccessController.getContext;
 
 public class MainActivity extends BaseActivity {
 

@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.ActivityStackManagerUtils;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.ToastUtils;
 import com.zhongan.demo.view.TopNavigationView;
@@ -93,43 +93,43 @@ public class SettingActivity extends BaseActivity {
         paramsMap.clear();
 
         okHttpRequestManager.requestAsyn("member/logout",
-                OkHttpRequestManager.TYPE_POST_JSON, paramsMap,
-                new ReqCallBack<String>() {
+            OkHttpRequestManager.TYPE_POST_JSON, paramsMap,
+            new ReqCallBack<String>() {
 
-                    @Override
-                    public void onReqSuccess(String result) {
-                        progressDialogDismiss();
-                        LogUtils.Log(TAG, "onReqSuccess result = " + result);
+                @Override
+                public void onReqSuccess(String result) {
+                    progressDialogDismiss();
+                    LogUtils.Log(TAG, "onReqSuccess result = " + result);
 
-                        try {
-                            JSONObject jsonObject = new JSONObject(result);
+                    try {
+                        JSONObject jsonObject = new JSONObject(result);
 
-                            if ("success".equals(jsonObject.getString("code"))) {
-                                MyApplication.getSP(SettingActivity.this).setLogin(false);
-                                Intent intent = new Intent(SettingActivity.this, MenuListActivity.class);
-                                startActivity(intent);
-                                ActivityStackManagerUtils.getInstance().finishAllActivity();
-
-                            } else {
-                                Toast.makeText(SettingActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                            }
-
-                            LogUtils.Log(TAG, "------finishCallBack-------");
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                        if ("success".equals(jsonObject.getString("code"))) {
+                            MyApplication.getSP(SettingActivity.this).setLogin(false);
+                            Intent intent =
+                                new Intent(SettingActivity.this, MenuListActivity.class);
+                            startActivity(intent);
+                            finish();
+                            ActivityStackManagerUtils.getInstance().finishAllActivity();
+                        } else {
+                            Toast.makeText(SettingActivity.this, jsonObject.getString("message"),
+                                Toast.LENGTH_SHORT).show();
                         }
 
+                        LogUtils.Log(TAG, "------finishCallBack-------");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
+                }
 
-                    @Override
-                    public void onReqFailed(String errorMsg) {
-                        progressDialogDismiss();
-                        LogUtils.Log(TAG, "onReqFailed result = " + errorMsg);
+                @Override
+                public void onReqFailed(String errorMsg) {
+                    progressDialogDismiss();
+                    LogUtils.Log(TAG, "onReqFailed result = " + errorMsg);
 
-                        ToastUtils.showCenterToast(errorMsg, SettingActivity.this);
-                    }
-                });
+                    ToastUtils.showCenterToast(errorMsg, SettingActivity.this);
+                }
+            });
 
     }
 

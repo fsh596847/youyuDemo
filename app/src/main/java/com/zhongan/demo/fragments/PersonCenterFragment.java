@@ -2,6 +2,7 @@ package com.zhongan.demo.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,7 +59,7 @@ public class PersonCenterFragment extends HXBaseFragment implements View.OnClick
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+        Bundle savedInstanceState) {
 
         if (null != mBaseView) {
             ViewGroup parent = (ViewGroup) mBaseView.getParent();
@@ -125,7 +126,7 @@ public class PersonCenterFragment extends HXBaseFragment implements View.OnClick
 
             case R.id.help_center:
                 intent = new Intent(getActivity(), HtmlActivity.class);
-                intent.putExtra("url","http://app-web.rskj99.com/helpcenter/helpcenter.html");
+                intent.putExtra("url", sharePrefer.getHelpUrl());
                 intent.putExtra("title","帮助中心");
                 startActivity(intent);
                 break;
@@ -159,9 +160,9 @@ public class PersonCenterFragment extends HXBaseFragment implements View.OnClick
         paramsMap.put("clientToken", sharePrefer.getToken());//登录后token
 
         HttpInfo httpInfo = HttpInfo.Builder()
-                .setUrl(Constants.REQUEST_URL)//请求URL
-                .addParams(paramsMap)
-                .build();
+            .setUrl(Constants.REQUEST_URL)//请求URL
+            .addParams(paramsMap)
+            .build();
 
         OkHttpUtil.getDefault(this).doPostAsync(httpInfo, new Callback() {
             @Override
@@ -204,9 +205,9 @@ public class PersonCenterFragment extends HXBaseFragment implements View.OnClick
         paramsMap.put("clientToken", sharePrefer.getToken());//登录后token
 
         HttpInfo httpInfo = HttpInfo.Builder()
-                .setUrl(Constants.REQUEST_URL)//请求URL
-                .addParams(paramsMap)
-                .build();
+            .setUrl(Constants.REQUEST_URL)//请求URL
+            .addParams(paramsMap)
+            .build();
 
         OkHttpUtil.getDefault(this).doPostAsync(httpInfo, new Callback() {
             @Override

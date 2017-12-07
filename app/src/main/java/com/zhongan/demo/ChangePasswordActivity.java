@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.Util;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;
 import com.zhongan.demo.util.ToastUtils;

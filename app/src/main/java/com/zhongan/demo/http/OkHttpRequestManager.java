@@ -11,7 +11,7 @@ import com.google.gson.GsonBuilder;
 import com.zhongan.demo.BuildConfig;
 import com.zhongan.demo.LoginActivity;
 import com.zhongan.demo.contant.HttpContent;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.impl.UploadProgressCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;

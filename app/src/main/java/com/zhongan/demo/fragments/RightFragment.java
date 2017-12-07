@@ -13,14 +13,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.umeng.analytics.MobclickAgent;
 import com.zhongan.demo.HotPActivity;
 import com.zhongan.demo.HtmlActivity;
 import com.zhongan.demo.MainActivity;
-import com.zhongan.demo.MenuListActivity;
 import com.zhongan.demo.MenuListActivity2;
 import com.zhongan.demo.MyApplication;
 import com.zhongan.demo.R;
@@ -28,19 +26,14 @@ import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.hxin.HXBaseFragment;
 import com.zhongan.demo.module.BannerItem;
 import com.zhongan.demo.util.LogUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import consumer.fin.rskj.com.library.activitys.WebViewActivity;
+import consumer.fin.rskj.com.library.utils.Constants;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import consumer.fin.rskj.com.library.activitys.WebViewActivity;
-import consumer.fin.rskj.com.library.utils.Constants;
-
-import static consumer.fin.rskj.com.library.utils.Constants.BASE_URL;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * 首页页面
@@ -71,7 +64,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+			Bundle savedInstanceState) {
 
 		if (null != mBaseView) {
 			ViewGroup parent = (ViewGroup) mBaseView.getParent();
@@ -110,22 +103,23 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 						}else {
 							bannerItem.setAdvertTitle("xiaojin15");
 							bannerItem.setAdvertPic(object.getString("appLogoUrl"));
+
 							bannerItem.setProductId(object.getString("id"));
 							bannerItem.setAdvertUrl(object.getString("fundId"));
-//							sharePrefer.setId15(object.getString("id"));
-//							sharePrefer.setFundId15(object.getString("fundId"));
+							//							sharePrefer.setId15(object.getString("id"));
+							//							sharePrefer.setFundId15(object.getString("fundId"));
 						}
 
 						itemList01.add(bannerItem);
 					}
-//					for(int a = 0;a < jsonArray01.length(); a++){
-//						JSONObject object = jsonArray01.getJSONObject(a);
-//						BannerItem bannerItem = new BannerItem();
-//						bannerItem.setAdvertTitle(object.getString("advertTitle"));
-//						bannerItem.setAdvertPic(object.getString("advertPic"));
-//						bannerItem.setAdvertUrl(object.getString("advertUrl"));
-//						itemList01.add(bannerItem);
-//					}
+					//					for(int a = 0;a < jsonArray01.length(); a++){
+					//						JSONObject object = jsonArray01.getJSONObject(a);
+					//						BannerItem bannerItem = new BannerItem();
+					//						bannerItem.setAdvertTitle(object.getString("advertTitle"));
+					//						bannerItem.setAdvertPic(object.getString("advertPic"));
+					//						bannerItem.setAdvertUrl(object.getString("advertUrl"));
+					//						itemList01.add(bannerItem);
+					//					}
 
 					//热门产品
 					JSONArray jsonArray02 = jsonObject.getJSONObject("data").getJSONArray("bktj");
@@ -178,7 +172,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 
 	private void initView() {
 
-//		mBaseView.findViewById(R.id.item1).setOnClickListener(this);
+		//		mBaseView.findViewById(R.id.item1).setOnClickListener(this);
 		image_layout1 = (LinearLayout) mBaseView.findViewById(R.id.image_layout1);
 		image_layout2 = (LinearLayout) mBaseView.findViewById(R.id.image_layout2);
 		image_layout3 = (LinearLayout) mBaseView.findViewById(R.id.image_layout3);
@@ -208,7 +202,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 		if(view.getId() == R.id.read_more2){
 			Intent intent = new Intent(getActivity(),HtmlActivity.class);
 			String url = "http://app-web.rskj99.com/creditLoanMore.html";
-//			String url = "http://test.xmqq99.com/youyu/creditLoanMore.html";
+			//			String url = "http://test.rskj99.com/youyu/creditLoanMore.html";
 			intent.putExtra("url", url + "?url="+HttpContent.BASE_URL);
 			intent.putExtra("title","加载中...");
 			startActivity(intent);
@@ -217,7 +211,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 		if(view.getId() == R.id.read_more3){
 			Intent intent = new Intent(getActivity(),HtmlActivity.class);
 			String url = "http://app-web.rskj99.com/cardMore.html";
-//			String url = "http://test.xmqq99.com/youyu/cardMore.html";
+			//			String url = "http://test.xmqq99.com/youyu/cardMore.html";
 			intent.putExtra("url", url + "?url="+HttpContent.BASE_URL);
 			intent.putExtra("title","加载中...");
 			startActivity(intent);
@@ -229,7 +223,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 	private void refreshData(){
 		if(null != itemList01 && !itemList01.isEmpty()){
 			if(itemList01.size() <= 1){
-//				textViewList[0].setVisibility(View.GONE);
+				//				textViewList[0].setVisibility(View.GONE);
 			}
 			adapterList(itemList01,image_layout1);
 		}else {
@@ -244,9 +238,9 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 
 		if(null != itemList03 && !itemList03.isEmpty()){
 
-//			if(itemList03.size() <= 3){
-//				textViewList[2].setVisibility(View.GONE);
-//			}
+			//			if(itemList03.size() <= 3){
+			//				textViewList[2].setVisibility(View.GONE);
+			//			}
 
 			for (int index = 0; index < itemList03.size();index ++){
 				final BannerItem bannerItem = itemList03.get(index);
@@ -327,7 +321,7 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 
 	public interface FinishCallBackImpl {
 
-		public void finishCallBack(String data);
+		void finishCallBack(String data);
 	}
 
 
@@ -372,5 +366,16 @@ public class RightFragment extends HXBaseFragment implements View.OnClickListene
 
 	}
 
+	//	@Override
+	//	public void onHiddenChanged(boolean hidden) {
+	//		// TODO Auto-generated method stub
+	//		super.onHiddenChanged(hidden);
+	//
+	//		if(!hidden){
+	//			if(!sharePrefer.iSLogin()){
+	//				startActivity(new Intent(getActivity(), MenuListActivity.class));
+	//			}
+	//		}
+	//	}
 
 }

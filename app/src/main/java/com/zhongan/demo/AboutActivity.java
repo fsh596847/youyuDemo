@@ -4,8 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.zhongan.demo.contant.HttpContent;
+import com.zhongan.demo.http.OkHttpRequestManager;
+import com.zhongan.demo.impl.ReqCallBack;
+import com.zhongan.demo.util.LogUtils;
+import com.zhongan.demo.util.ToastUtils;
 import com.zhongan.demo.view.TopNavigationView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by HP on 2017/10/17.
@@ -17,7 +26,7 @@ public class AboutActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        setContentView(R.layout.rskj_activity_about);
+        setContentView(R.layout.activity_about);
 
         initView();
     }
@@ -42,7 +51,7 @@ public class AboutActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AboutActivity.this, HtmlActivity.class);
-                intent.putExtra("url","http://app-web.rskj99.com/aboutus/aboutus.html");
+                intent.putExtra("url", MyApplication.getSP(getApplicationContext()).getAboutUrl());
                 intent.putExtra("title","关于");
                 startActivity(intent);
             }

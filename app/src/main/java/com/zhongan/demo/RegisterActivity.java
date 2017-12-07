@@ -1,9 +1,11 @@
 package com.zhongan.demo;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -15,16 +17,18 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.GsonBuilder;
 import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.http.OkHttpRequestManager;
 import com.zhongan.demo.hxin.util.Util;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;
 import com.zhongan.demo.util.ToastUtils;
+import com.zhongan.demo.view.TopNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,9 +43,9 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 	private EditText edit_phone;//手机号
 	private EditText codeEdit;//验证码
 	private EditText passEdit;//密码
-//	private ImageView clear; //清除
+	//	private ImageView clear; //清除
 	private Button registBtn;//注册按钮
-//	private TextView login_now;//登录
+	//	private TextView login_now;//登录
 	private CheckBox checkall;
 
 	private EditText recommend_code;
@@ -88,7 +92,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rskj_activity_register);
+		setContentView(R.layout.activity_register);
 
 		initViews();
 
@@ -109,8 +113,8 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 		get_code = (Button) findViewById(R.id.get_code);
 		get_code.setOnClickListener(this);
 		edit_phone = (EditText) findViewById(R.id.edit_phone);
-//		clear = (ImageView) findViewById(R.id.clear);
-//		clear.setOnClickListener(this);
+		//		clear = (ImageView) findViewById(R.id.clear);
+		//		clear.setOnClickListener(this);
 
 		codeEdit = (EditText) findViewById(R.id.edit_code);
 		passEdit = (EditText) findViewById(R.id.register_password);
@@ -119,7 +123,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 		registBtn.setOnClickListener(this);
 
 		link_protocol = (TextView) findViewById(R.id.link_protocol);
-//		link_protocol.setText(Html.fromHtml(getString(R.string.register_protocol)));
+		//		link_protocol.setText(Html.fromHtml(getString(R.string.register_protocol)));
 
 		link_protocol.setOnClickListener(this);
 		checkall = (CheckBox) findViewById(R.id.checkall);
@@ -152,9 +156,9 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-//			case R.id.clear:
-//				edit_phone.setText("");
-//				break;
+			//			case R.id.clear:
+			//				edit_phone.setText("");
+			//				break;
 
 			case R.id.show:
 				if(show.isChecked()) {
@@ -173,15 +177,15 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 				doRegistPost();
 				break;
 
-//			case R.id.login_now:
-//				this.finish();
-////				intent = new Intent(this,LoginActivity.class);
-////				startActivity(intent);
-//				break;
+			//			case R.id.login_now:
+			//				this.finish();
+			////				intent = new Intent(this,LoginActivity.class);
+			////				startActivity(intent);
+			//				break;
 
 			case R.id.link_protocol:
 				intent = new Intent(this,HtmlActivity.class);
-				intent.putExtra("url",HttpContent.REGISTER_PROTOCOL);
+				intent.putExtra("url", MyApplication.getSP(getApplicationContext()).getRProtocal());
 				startActivity(intent);
 				break;
 
@@ -191,13 +195,13 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 
 				if(TextUtils.isEmpty(phoneNum) ){
 					//Toast.makeText(this,"请输入手机号",	Toast.LENGTH_SHORT).show();
-                    ToastUtils.showCenterToast( "请输入手机号" ,this);
+					ToastUtils.showCenterToast("请输入手机号", this);
 					return;
 				}
 
 				if(!RegexUtils.isMatchPhoneNum(phoneNum.toString())){
 					//Toast.makeText(this,"请输入正确的手机号",	Toast.LENGTH_SHORT).show();
-                    ToastUtils.showCenterToast( "请输入正确的手机号" ,this);
+					ToastUtils.showCenterToast("请输入正确的手机号", this);
 					return;
 				}
 
@@ -227,7 +231,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 		String phone = edit_phone.getText().toString();
 		if(!RegexUtils.isMatchPhoneNum(phone)){
 			//Toast.makeText(this,"请输入正确的手机号", Toast.LENGTH_SHORT).show();
-            ToastUtils.showCenterToast( "请输入正确的手机号" ,this);
+			ToastUtils.showCenterToast("请输入正确的手机号", this);
 			return;
 		}
 
@@ -323,13 +327,13 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 			}else {
 				channelCode = "";
 				//Toast.makeText(this,"请输入10位渠道代码",Toast.LENGTH_SHORT).show();
-                ToastUtils.showCenterToast( "请输入10位渠道代码" ,this);
+				ToastUtils.showCenterToast("请输入10位渠道代码", this);
 				return;
 			}
 
 		}else {
 			channelCode = "";
-//			channelCode = "1002020001";
+			//			channelCode = "1002020001";
 		}
 
 
@@ -409,7 +413,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Te
 
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count,
-                                  int after) {
+			int after) {
 
 	}
 

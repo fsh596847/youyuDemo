@@ -9,10 +9,10 @@ public class Contants {
 	public static String cacheVideo = "livenessDemo_video";
 	public static String cacheCampareImage = "livenessDemo_campareimage";
 	public static String dirName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/faceapp";
-	
-//	public static final String BASE_URL="http://47.93.6.6:9090/quickloan";// 8090 测试环境
-	public static final String BASE_URL="http://120.55.174.179:8070/quickloan";// 8070 测试环境
-//	public static final String BASE_URL = "http://quick.rskj99.com/quickloan";//生产环境
+
+	//	public static final String BASE_URL="http://47.93.6.6:9090/quickloan";// 8090 测试环境
+	//	public static final String BASE_URL="http://120.55.174.179:8070/quickloan";// 8070 测试环境
+	public static final String BASE_URL = "http://quick.rskj99.com/quickloan";//生产环境
 
 	public static final String REQUEST_URL = BASE_URL + "/jsonHttpServlet";
 
@@ -28,7 +28,7 @@ public class Contants {
 	public static final String TRANS_CODE_CHECK_YZM = "M000008";// 验证短信验证码接口
 	public static final String TRANS_CODE_MIX_PASSWORD = "M000003";// 密码加密接口标识
 	public static final String TRANS_CODE_SET_PAY_PASSWORD = "M000158";// 设置支付密码接口接口标识
-    public static final String TRANS_CODE_SET_WORK = "M000159";// 设置工作流接口接口标识
+	public static final String TRANS_CODE_SET_WORK = "M000159";// 设置工作流接口接口标识
 	public static final String TRANS_CODE_UPLOAD_PICTURE = "M100105";// 客户身份证照片上传接口接口标识
 
 	public static final String TRANS_CODE_UPLOAD_CUST_INFO = "M010307";// 单一客户保存移动端

@@ -13,12 +13,11 @@
 
   <uses-feature android:name="android.hardware.camera"/>
   <uses-feature android:name="android.hardware.camera.autofocus"/>
-
   <uses-permission android:name="android.permission.BLUETOOTH"/>
   <!--采集传感器信息必要权限-->
   <uses-feature
-      android:name="android.hardware.sensor.accelerometer"
-      android:required="true"/>
+      android:required="true"
+      android:name="android.hardware.sensor.accelerometer"/>
   <!--以下三个权限不需要采集，可以不加-->
   <!--获取联系人-->
   <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -32,12 +31,12 @@
       android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
   <application
-      android:name=".MyApplication"
       android:allowBackup="true"
-      android:icon="@mipmap/rskj_ic_launcher"
+      android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
       android:supportsRtl="true"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      android:name=".MyApplication">
     <activity
         android:name=".MainActivity"
         android:windowSoftInputMode="stateHidden|adjustResize"
@@ -91,12 +90,13 @@
     <!--功能菜单-->
     <activity
         android:name=".MenuListActivity"
-        android:screenOrientation="portrait"/>
+        android:screenOrientation="portrait"
+        android:launchMode="singleTop"/>
 
     <activity
         android:name=".MenuListActivity2"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait">
+        android:screenOrientation="portrait"
+        android:launchMode="singleTask">
       <intent-filter>
         <action android:name="android.com.rskj.menu.list"/>
         <category android:name="android.intent.category.DEFAULT"/>
@@ -108,11 +108,11 @@
         android:screenOrientation="portrait"/>
 
     <meta-data
-        android:name="UMENG_APPKEY"
-        android:value="59351f78b27b0a2c8900020c"/>
+        android:value="59351f78b27b0a2c8900020c"
+        android:name="UMENG_APPKEY"/>
     <meta-data
-        android:name="UMENG_CHANNEL"
-        android:value="${UMENG_CHANNEL_VALUE}"/>
+        android:value="${UMENG_CHANNEL_VALUE}"
+        android:name="UMENG_CHANNEL"/>
 
 
     <!-- -恒心小贷-->
@@ -171,8 +171,8 @@
 
     <activity
         android:name=".hxin.activitys.HXFaceIDCardScanActivity"
-        android:configChanges="orientation|keyboardHidden"
-        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+        android:configChanges="orientation|keyboardHidden"/>
     <activity
         android:name=".hxin.activitys.HXFaceResultActivity"
         android:screenOrientation="portrait"/>
@@ -249,6 +249,8 @@
     <activity
         android:name=".hxin.activitys.HXResultingActivity"
         android:screenOrientation="portrait"/>
+
+
     <!-- 白骑士键盘调用 -->
     <activity
         android:name="com.wknight.keyboard.WKnightKeyboardActivity"

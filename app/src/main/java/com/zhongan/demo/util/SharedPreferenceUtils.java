@@ -2,7 +2,6 @@ package com.zhongan.demo.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 
 /**
  * Created by gxj on 2016/6/24.
@@ -382,4 +381,35 @@ public class SharedPreferenceUtils {
     public String getFundId15() {
         return sharedPreferences.getString("fundId", "");
     }
+
+    //关于我们
+    public void setAboutUrl(String data) {
+        editor.putString("about_url", data);
+        editor.commit();
+    }
+
+    public String getAboutUrl() {
+        return sharedPreferences.getString("about_url", "");
+    }
+
+    //帮助中心
+    public void setHelpUrl(String data) {
+        editor.putString("help_url", data);
+        editor.commit();
+    }
+
+    public String getHelpUrl() {
+        return sharedPreferences.getString("help_url", "");
+    }
+
+    //注册协议
+    public void setRProtocal(String data) {
+        editor.putString("register_protocol_url", data);
+        editor.commit();
+    }
+
+    public String getRProtocal() {
+        return sharedPreferences.getString("register_protocol_url", "");
+    }
+
 }

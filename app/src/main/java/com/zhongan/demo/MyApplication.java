@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.lidroid.xutils.HttpUtils;
+import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.SharedPreferenceUtils;
 import com.zhongan.finance.common.FinanceInitor;
@@ -33,13 +35,19 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import org.greenrobot.eventbus.EventBus;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
 
 import consumer.fin.rskj.com.library.message.NetMessage;
+import consumer.fin.rskj.com.library.okhttp.HttpInfo;
 import consumer.fin.rskj.com.library.okhttp.OkHttpUtil;
 import consumer.fin.rskj.com.library.okhttp.annotation.CacheType;
 import consumer.fin.rskj.com.library.okhttp.annotation.Encoding;
+import consumer.fin.rskj.com.library.okhttp.callback.Callback;
 import consumer.fin.rskj.com.library.okhttp.cookie.PersistentCookieJar;
 import consumer.fin.rskj.com.library.okhttp.cookie.cache.SetCookieCache;
 import consumer.fin.rskj.com.library.okhttp.cookie.persistence.SharedPrefsCookiePersistor;
@@ -50,6 +58,8 @@ import consumer.fin.rskj.com.library.utils.HttpInterceptor;
  */
 
 public class MyApplication extends Application implements Application.ActivityLifecycleCallbacks {
+
+    private static final String TAG = MyApplication.class.getSimpleName();
 
     public static MyApplication instance;
     public HttpUtils dataHttp;
@@ -64,15 +74,15 @@ public class MyApplication extends Application implements Application.ActivityLi
                 handler.removeCallbacksAndMessages(null);
                 if(timeOut <= 0){
                     getSP(getApplicationContext()).setLogin(false);
-//                    Intent intent = new Intent(getApplicationContext(), MenuListActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(intent);
+                    //                    Intent intent = new Intent(getApplicationContext(), MenuListActivity.class);
+                    //                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    //                    startActivity(intent);
                     handler.removeCallbacksAndMessages(null);
                     return;
                 }else {
                     timeOut --;
                 }
-                //LogUtils.Log("MyApplication","timeOut == " + timeOut);
+                //LogUtils.Log(TAG,"timeOut == " + timeOut);
                 handler.sendEmptyMessageDelayed(0,1000);
             }
         }
@@ -87,18 +97,18 @@ public class MyApplication extends Application implements Application.ActivityLi
         initImageLoader(getApplicationContext());
         dataHttp = new HttpUtils("5*60 * 1000");
 
-      //第三个参数0表示⽣产环境，1表示验收测试环境，2表示开发测试环境   众安初始化
+        //第三个参数0表示⽣产环境，1表示验收测试环境，2表示开发测试环境   众安初始化
         FinanceInitor.initFinance(this, BuildConfig.DEBUG, 0);
-//        JSONObject json = new JSONObject();
-//        try {
-//            json.put("partnerNo", "8016112151261010");
-//            json.put("channel", "XMQQ");
-//            //TODO other data
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        FinanceInitor.setBusinessInfo(json.toString());
+        //        JSONObject json = new JSONObject();
+        //        try {
+        //            json.put("partnerNo", "8016112151261010");
+        //            json.put("channel", "XMQQ");
+        //            //TODO other data
+        //        } catch (JSONException e) {
+        //            e.printStackTrace();
+        //        }
+        //
+        //        FinanceInitor.setBusinessInfo(json.toString());
 
         initOkHttpUtil();
 
@@ -106,6 +116,8 @@ public class MyApplication extends Application implements Application.ActivityLi
 
         //initCallback();
         registerActivityLifecycleCallbacks(this);
+
+        getUrl();
     }
 
 
@@ -154,7 +166,7 @@ public class MyApplication extends Application implements Application.ActivityLi
         @Override
         public void onReceive(Context context, Intent intent) {
             ConnectivityManager connectivityManager=(ConnectivityManager)
-                    context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo mobNetInfo=connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
             NetworkInfo  wifiNetInfo=connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
@@ -186,32 +198,32 @@ public class MyApplication extends Application implements Application.ActivityLi
         // 缓存文件的目录
         File cacheDir = StorageUtils.getOwnCacheDirectory(context,"RongShu/Cache");
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                context)
-                .memoryCacheExtraOptions(480, 800)
-                // max width, max height，即保存的每个缓存文件的最大长宽
-                .threadPoolSize(3)
-                // 线程池内加载的数量
-                .threadPriority(Thread.NORM_PRIORITY - 2)
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
-                // 将保存的时候的URI名称用MD5 加密
-                .memoryCache(new LruMemoryCache(5 * 1024 * 1024))//建议内存设在5-10M,可以有比较好的表现
-                .memoryCacheSize(5 * 1024 * 1024) // 内存缓存的最大值
-                .diskCacheSize(50 * 1024 * 1024) // 50 Mb sd卡(本地)缓存的最大值
-                .tasksProcessingOrder(QueueProcessingType.LIFO)
-                .discCacheFileCount(100) //缓存的文件数量
-                // 由原先的discCache -> diskCache
-                .diskCache(new UnlimitedDiskCache(cacheDir))// 自定义缓存路径
-                .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
-                .imageDownloader(
-                        new BaseImageDownloader(context, 5 * 1000, 30 * 1000)) // connectTimeout
-                // (5
-                // s),
-                // readTimeout
-                // (30
-                // s)超时时间
-                // .writeDebugLogs() // 显示log日志
-                .build();
+            context)
+            .memoryCacheExtraOptions(480, 800)
+            // max width, max height，即保存的每个缓存文件的最大长宽
+            .threadPoolSize(3)
+            // 线程池内加载的数量
+            .threadPriority(Thread.NORM_PRIORITY - 2)
+            .denyCacheImageMultipleSizesInMemory()
+            .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+            // 将保存的时候的URI名称用MD5 加密
+            .memoryCache(new LruMemoryCache(5 * 1024 * 1024))//建议内存设在5-10M,可以有比较好的表现
+            .memoryCacheSize(5 * 1024 * 1024) // 内存缓存的最大值
+            .diskCacheSize(50 * 1024 * 1024) // 50 Mb sd卡(本地)缓存的最大值
+            .tasksProcessingOrder(QueueProcessingType.LIFO)
+            .discCacheFileCount(100) //缓存的文件数量
+            // 由原先的discCache -> diskCache
+            .diskCache(new UnlimitedDiskCache(cacheDir))// 自定义缓存路径
+            .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+            .imageDownloader(
+                new BaseImageDownloader(context, 5 * 1000, 30 * 1000)) // connectTimeout
+            // (5
+            // s),
+            // readTimeout
+            // (30
+            // s)超时时间
+            // .writeDebugLogs() // 显示log日志
+            .build();
         // 全局初始化此配置
         ImageLoader.getInstance().init(config);
     }
@@ -220,19 +232,19 @@ public class MyApplication extends Application implements Application.ActivityLi
     public static DisplayImageOptions getOptions(){
         //自定义加载图片的配置信息
         DisplayImageOptions option = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_launcher)// 设置图片下载期间显示的图片
-                .showImageForEmptyUri(R.drawable.ic_launcher) // 设置图片Uri为空或是错误的时候显示的图片
-                .showImageOnFail(R.drawable.ic_launcher)// 设置图片加载或解码过程中发生错误显示的图片
-                .resetViewBeforeLoading(false)// default 设置图片在加载前是否重置、复位
-                //        .delayBeforeLoading(1000)// 下载前的延迟时间
-                .cacheInMemory(true)// default  设置下载的图片是否缓存在内存中
-                .cacheOnDisk(true)// default  设置下载的图片是否缓存在SD卡中
-                .considerExifParams(false)
-                .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)//设置图片的显示比例
-                .bitmapConfig(Bitmap.Config.RGB_565)// default 设置图片的解码类型
-                //        .displayer(new RoundedBitmapDisplayer(75))//设置图片的圆角半径
-                .displayer(new FadeInBitmapDisplayer(8000))//设置图片显示的透明度过程时间
-                .build();
+            .showImageOnLoading(R.drawable.ic_launcher)// 设置图片下载期间显示的图片
+            .showImageForEmptyUri(R.drawable.ic_launcher) // 设置图片Uri为空或是错误的时候显示的图片
+            .showImageOnFail(R.drawable.ic_launcher)// 设置图片加载或解码过程中发生错误显示的图片
+            .resetViewBeforeLoading(false)// default 设置图片在加载前是否重置、复位
+            //        .delayBeforeLoading(1000)// 下载前的延迟时间
+            .cacheInMemory(true)// default  设置下载的图片是否缓存在内存中
+            .cacheOnDisk(true)// default  设置下载的图片是否缓存在SD卡中
+            .considerExifParams(false)
+            .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)//设置图片的显示比例
+            .bitmapConfig(Bitmap.Config.RGB_565)// default 设置图片的解码类型
+            //        .displayer(new RoundedBitmapDisplayer(75))//设置图片的圆角半径
+            .displayer(new FadeInBitmapDisplayer(8000))//设置图片显示的透明度过程时间
+            .build();
 
         return option;
     }
@@ -249,23 +261,24 @@ public class MyApplication extends Application implements Application.ActivityLi
         }
 
         OkHttpUtil.init(getApplicationContext())
-                .setConnectTimeout(10)//连接超时时间 单位：秒
-                .setWriteTimeout(15)//写超时时间 单位：秒
-                .setReadTimeout(15)//读超时时间 单位：秒
-                .setMaxCacheSize(10 * 1024 * 1024)//缓存空间大小
-                .setCacheType(CacheType.FORCE_NETWORK)//缓存类型
-                .setHttpLogTAG("HttpLog")//设置请求日志标识
-                .setIsGzip(false)//Gzip压缩，需要服务端支持
-                .setShowHttpLog(false)//显示请求日志
-                .setShowLifecycleLog(false)//显示Activity销毁日志
-                .setRetryOnConnectionFailure(false)//失败后不自动重连
-                .setCachedDir(new File(cacheDir, "yy_cache"))//缓存目录
-                .setDownloadFileDir(downloadFileDir)//文件下载保存目录
-                .setResponseEncoding(Encoding.UTF_8)//设置全局的服务器响应编码
-                .addResultInterceptor(HttpInterceptor.ResultInterceptor)//请求结果拦截器
-                .addExceptionInterceptor(HttpInterceptor.ExceptionInterceptor)//请求链路异常拦截器
-                .setCookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(this)))//持久化cookie
-                .build();
+            .setConnectTimeout(10)//连接超时时间 单位：秒
+            .setWriteTimeout(15)//写超时时间 单位：秒
+            .setReadTimeout(15)//读超时时间 单位：秒
+            .setMaxCacheSize(10 * 1024 * 1024)//缓存空间大小
+            .setCacheType(CacheType.FORCE_NETWORK)//缓存类型
+            .setHttpLogTAG("HttpLog")//设置请求日志标识
+            .setIsGzip(false)//Gzip压缩，需要服务端支持
+            .setShowHttpLog(false)//显示请求日志
+            .setShowLifecycleLog(false)//显示Activity销毁日志
+            .setRetryOnConnectionFailure(false)//失败后不自动重连
+            .setCachedDir(new File(cacheDir, "yy_cache"))//缓存目录
+            .setDownloadFileDir(downloadFileDir)//文件下载保存目录
+            .setResponseEncoding(Encoding.UTF_8)//设置全局的服务器响应编码
+            .addResultInterceptor(HttpInterceptor.ResultInterceptor)//请求结果拦截器
+            .addExceptionInterceptor(HttpInterceptor.ExceptionInterceptor)//请求链路异常拦截器
+            .setCookieJar(new PersistentCookieJar(new SetCookieCache(),
+                new SharedPrefsCookiePersistor(this)))//持久化cookie
+            .build();
 
     }
 
@@ -295,6 +308,49 @@ public class MyApplication extends Application implements Application.ActivityLi
         if(null != handler){
             handler.removeCallbacksAndMessages(null);
         }
+    }
+
+    //获取 相关url地址
+    private void getUrl() {
+
+        LogUtils.Log(TAG, "----------相关url地址----------");
+        HashMap<String, String> paramsMap = new HashMap<>();
+
+        HttpInfo httpInfo = HttpInfo.Builder()
+            .setUrl(HttpContent.GET_URL)//请求URL
+            .addParams(paramsMap)
+            .build();
+
+        OkHttpUtil.getDefault(this).doGetAsync(httpInfo, new Callback() {
+            @Override
+            public void onSuccess(HttpInfo info) throws IOException {
+                String result = info.getRetDetail().toString();
+                Log.d(TAG, "onSuccess result = " + result);
+                JSONObject jsonObject = null;
+                try {
+                    jsonObject = new JSONObject(result);
+
+                    if ("success".equals(jsonObject.getString("code"))) {
+                        String about_url = jsonObject.getJSONObject("data").getString("about_url");
+                        String help_url = jsonObject.getJSONObject("data").getString("help_url");
+                        String register_protocol_url =
+                            jsonObject.getJSONObject("data").getString("register_protocol_url");
+
+                        getSP(getApplicationContext()).setAboutUrl(about_url);
+                        getSP(getApplicationContext()).setHelpUrl(help_url);
+                        getSP(getApplicationContext()).setRProtocal(register_protocol_url);
+                    }
+                } catch (JSONException e) {
+                    LogUtils.Log("error", "数据解析有误" + e.toString());
+                }
+            }
+
+            @Override
+            public void onFailure(HttpInfo info) throws IOException {
+                String result = info.getRetDetail().toString();
+                LogUtils.Log("onFailure = ", "数据解析有误" + result);
+            }
+        });
     }
 
 }

@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.umeng.analytics.MobclickAgent;
 import com.zhongan.demo.http.OkHttpRequestManager;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.module.BannerItem;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.ToastUtils;

@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.google.gson.GsonBuilder;
 import com.zhongan.demo.contant.HttpContent;
 import com.zhongan.demo.http.OkHttpRequestManager;
-import consumer.fin.rskj.com.library.login.ReqCallBack;
+import com.zhongan.demo.impl.ReqCallBack;
 import com.zhongan.demo.module.CommonResponse;
 import com.zhongan.demo.util.LogUtils;
 import com.zhongan.demo.util.RegexUtils;

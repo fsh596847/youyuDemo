@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 /**
  * Created by HP on 2017/8/7.
  * 功能菜单列表
@@ -63,68 +64,10 @@ public class MenuListActivity2 extends HXBaseActivity {
 
   private String idCard = "", userName = "";
 
-  //    private Dialog updateDialog;//更新提示框
-  //    private String fileUrl;//文件下载路径
-  //    private String uopdateMsg;
-  //    private int isrelease = -1;
-
   private long curMillions = 0;
 
-  //    private Handler handler=new Handler(){
-  //        public void handleMessage(Message msg) {
-  //            switch (msg.what) {
-  //                case 0:
-  //                    getUpdateInfo();
-  //                    break;
-  //
-  //                case 2:
-  //                    String text22 =(String) msg.obj;
-  //                    Log.d(TAG,"text22 = " + text22);
-  //
-  //                    JSONObject update_info;
-  //                    String code;
-  //                    try {
-  //                        update_info = new JSONObject(text22);
-  //                        //数据返回成功
-  //                        code = update_info.getString("code");
-  //                        Log.d(TAG,"code = " + code);
-  //
-  //                        if(!TextUtils.isEmpty(code) && "success".equals(code)){
-  //                            JSONObject updateItem = update_info.getJSONObject("data");
-  //                            if(null != updateItem){
-  //
-  //                                uopdateMsg = updateItem.getString("content");//发布内容
-  //                                fileUrl = updateItem.getString("fileUrl");//发布内容
-  //                                isrelease = updateItem.getInt("isrelease");//是否强制更新
-  //
-  //                                if(2 == isrelease){
-  //                                    showVersionDialog(true);//强制更新
-  //                                }else if(1 == isrelease){
-  //                                    showVersionDialog(false);//普通更新
-  //                                }else {
-  //                                    //没有更新
-  //                                    //ToastUtils.showCenterToast("没有更新",mActivity);
-  //                                    Log.d(TAG,"没有更新");
-  //                                }
-  //
-  //                            }
-  //
-  //                        }else {
-  //                            Log.d(TAG,"no update info");
-  //                        }
-  //
-  //                    } catch (Exception e) {
-  //                        Log.d(TAG,"Exception = " + e.getMessage());
-  //                    }
-  //                    break;
-  //
-  //                default:
-  //                    break;
-  //            }
-  //        }
-  //    };
-
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.activity_menulist2);
@@ -202,7 +145,8 @@ public class MenuListActivity2 extends HXBaseActivity {
         });*/
   }
 
-  @NonNull private Tab getHomeTab() {
+  @NonNull
+  private Tab getHomeTab() {
     Tab num1;
     if ("mashanghuan".equals(getSharePrefer().getIdentity())) {
       num1 = new Tab(R.string.tap_home, R.drawable.m_tab1selector, YouYUFragment.class);
@@ -250,7 +194,8 @@ public class MenuListActivity2 extends HXBaseActivity {
 
     httpRequest(Contants.REQUEST_URL, params, new ResultCallBack() {
 
-      @Override public void onSuccess(String data) {
+      @Override
+      public void onSuccess(String data) {
         LogUtils.Log(TAG, "onSuccess = " + data);
         mDialog.cancel();
 
@@ -264,8 +209,14 @@ public class MenuListActivity2 extends HXBaseActivity {
           getSharePrefer().setUserId(userId);
           getSharePrefer().setCustNum(custNum);
           getSharePrefer().setProductId(productId);
-          idCard = jsonObject.getString("idCard");
-          userName = jsonObject.getString("userName");
+
+          try {
+            idCard = jsonObject.getString("idCard");
+            userName = jsonObject.getString("userName");
+          } catch (Exception e) {
+
+          }
+
           if (!TextUtils.isEmpty(idCard)) {
             getSharePrefer().setIdCardNum(idCard);
           }
@@ -279,23 +230,29 @@ public class MenuListActivity2 extends HXBaseActivity {
         } catch (JSONException e) {
           e.printStackTrace();
         }
+
       }
 
-      @Override public void onStart() {
+      @Override
+      public void onStart() {
         mDialog.show();
       }
 
-      @Override public void onFailure(HttpException exception, String msg) {
+      @Override
+      public void onFailure(HttpException exception, String msg) {
         mDialog.cancel();
         LogUtils.Log(TAG, "onFailure = " + msg);
       }
 
-      @Override public void onError(String returnCode, String msg) {
+      @Override
+      public void onError(String returnCode, String msg) {
         mDialog.cancel();
         LogUtils.Log(TAG, "onError = " + msg);
       }
     });
+
   }
+
 
   //判断授信状态
   private void nextStep(String userStateInfo) {
@@ -309,6 +266,7 @@ public class MenuListActivity2 extends HXBaseActivity {
 
       Intent intent0 = new Intent(this, HXResultingActivity.class);
       startActivity(intent0);
+
     } else if ("cedbad".equals(userStateInfo)) {
       //授信申请被拒绝
       //Toast.makeText(this, "授信申请被拒绝，请重新申请...", Toast.LENGTH_SHORT).show();
@@ -322,7 +280,8 @@ public class MenuListActivity2 extends HXBaseActivity {
 
       Intent intent0 = new Intent(this, HXResultingActivity.class);
       startActivity(intent0);
-    } else if ("0".equals(userStateInfo) || "registered".equals(userStateInfo)) {
+    } else if ("0".equals(userStateInfo)
+        || "registered".equals(userStateInfo)) {
       //状态为0 、已注册、身份证已上传 跳转到身份证上传页面
       Intent uploadIntent = new Intent(this, HXFaceIDCardInfoUploadActivity.class);
       this.startActivity(uploadIntent);
@@ -348,9 +307,11 @@ public class MenuListActivity2 extends HXBaseActivity {
 
       Intent intent0 = new Intent(this, HXResultingActivity.class);
       startActivity(intent0);
+
     } else if ("00".equals(userStateInfo)) {//verifi4 = 00
       //完成银行卡验证 跳转结果页面
-      Intent faceIntent = new Intent(this, HXFaceStartActivity.class);
+      Intent faceIntent = new Intent(this,
+          HXFaceStartActivity.class);
       startActivity(faceIntent);
     } else if ("face++".equals(userStateInfo)) {
       //            Intent intent = new Intent(this,ResultActivity.class);
@@ -373,7 +334,8 @@ public class MenuListActivity2 extends HXBaseActivity {
       startActivity(uploadIntent);
     } else if ("verifi4".equals(userStateInfo)) {
       //完成银行卡验证 跳转结果页面
-      Intent faceIntent = new Intent(this, HXFaceStartActivity.class);
+      Intent faceIntent = new Intent(this,
+          HXFaceStartActivity.class);
       startActivity(faceIntent);
     } else {//其他情况都返回结果页面
       Intent intent0 = new Intent(this, HXResultingActivity.class);
@@ -393,120 +355,55 @@ public class MenuListActivity2 extends HXBaseActivity {
     params.addBodyParameter("legalPerNum", "00009");// 法人编号
     //  /product/getProduct
     MyApplication.instance.dataHttp.send(HttpMethod.GET,
-        HttpContent.BASE_URL + "/product/getProductList", params, new RequestCallBack<String>() {
-          @Override public void onFailure(HttpException arg0, String arg1) {
+        HttpContent.BASE_URL + "/product/getProductList",
+        params, new RequestCallBack<String>() {
+          @Override
+          public void onFailure(HttpException arg0, String arg1) {
             LoggerUtil.debug(TAG, "HttpException--------------->" + arg1 + arg0.getMessage());
           }
 
-          @Override public void onSuccess(ResponseInfo<String> responseInfo) {
+          @Override
+          public void onSuccess(ResponseInfo<String> responseInfo) {
             if (responseInfo != null && responseInfo.result != null) {
               LoggerUtil.debug(TAG, "onSuccess---->" + responseInfo.result);
               finishCallBack.finishCallBack(responseInfo.result);
+
             }
           }
 
-          @Override public void onStart() {
+          @Override
+          public void onStart() {
             super.onStart();
           }
         });
   }
 
-  //获取版本信息
-  //    private void getUpdateInfo() {
-  //
-  //
-  //        RequestParams params = new RequestParams("utf-8");
-  //        params.addHeader("Content-Type", "application/json");
-  //        params.addHeader("deviceType", "android");
-  //        params.addHeader("version", BuildConfig.VERSION_NAME);
-  //        params.addHeader("code", "youyu");
-  //        LoggerUtil.debug(TAG, "----getUpdateInfo----------->" + params.toString());
-  //        MyApplication.instance.dataHttp.send(HttpMethod.POST, HttpContent.VERSION_UPDATE,
-  //                params, new RequestCallBack<String>() {
-  //                    @Override
-  //                    public void onFailure(HttpException arg0, String arg1) {
-  //                        LoggerUtil.debug(TAG, "HttpException----getUpdateInfo----->" + arg1 + arg0.getMessage());
-  //                    }
-  //
-  //                    @Override
-  //                    public void onSuccess(ResponseInfo<String> responseInfo) {
-  //                        if (responseInfo != null && responseInfo.result != null) {
-  //                            LoggerUtil.debug(TAG, "onSuccess--getUpdateInfo-->" + responseInfo.result );
-  //                            handler.obtainMessage(2,responseInfo.result).sendToTarget();
-  //                        }
-  //                    }
-  //
-  //                    @Override
-  //                    public void onStart() {
-  //                        super.onStart();
-  //                    }
-  //                });
-  //
-  //    }
-
-  //    protected void showVersionDialog(final boolean option) {
-  //        if (updateDialog == null) {
-  //            updateDialog = new Dialog(this, R.style.myDialogTheme);
-  //            View view = LayoutInflater.from(this).inflate(R.layout.update_dialog_layout, null);
-  //            TextView title = (TextView) view.findViewById(R.id.title);
-  //            TextView content = (TextView) view.findViewById(R.id.content);
-  //            content.setText(uopdateMsg);//更新提示
-  //
-  //            TextView sureBtn = (TextView) view.findViewById(R.id.sure);
-  //            sureBtn.setOnClickListener(new View.OnClickListener() {
-  //                @Override
-  //                public void onClick(View v) {
-  //                    //执行下载
-  //                    if(!TextUtils.isEmpty(fileUrl)){
-  //                        //跳转浏览器下载
-  //                        Intent intent= new Intent();
-  //                        intent.setAction("android.intent.action.VIEW");
-  //                        Uri content_url = Uri.parse(fileUrl);
-  //                        intent.setData(content_url);
-  //                        startActivity(intent);
-  //                    }
-  //
-  //                }
-  //            });
-  //
-  //            TextView cancleBtn = (TextView) view.findViewById(R.id.cancel);
-  //            if(option){
-  //                cancleBtn.setText("退出");
-  //            }
-  //            cancleBtn.setOnClickListener(new View.OnClickListener() {
-  //                @Override
-  //                public void onClick(View v) {
-  //                    updateDialog.dismiss();
-  //
-  //                    if(option){//如果是强制更新 点击返回就退出
-  //                        onBackPressed();
-  //                    }
-  //                }
-  //            });
-  //
-  //            updateDialog.setContentView(view);
-  //            updateDialog.setCanceledOnTouchOutside(false);
-  //            WindowManager.LayoutParams params = updateDialog.getWindow().getAttributes();
-  //            params.width = (int) (screenWidth * 0.8);
-  //            params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-  //            updateDialog.getWindow().setAttributes(params);
-  //        }
-  //        updateDialog.show();
-  //    }
-
-  @Override protected void onNewIntent(Intent intent) {
+  @Override
+  protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
     //initTabHost();
   }
 
-  @Override protected void onDestroy() {
+  @Override
+  protected void onResume() {
+    super.onResume();
+    LogUtils.Log(TAG, "------onResume---------");
+    if (!getSharePrefer().iSLogin()) {
+      startActivity(new Intent(this, MenuListActivity.class));
+      this.finish();
+    }
+  }
+
+  @Override
+  protected void onDestroy() {
     super.onDestroy();
     //        if(null != handler){
     //            handler.removeCallbacksAndMessages(null);
     //        }
   }
 
-  @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
     if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 
       long millions = System.currentTimeMillis();
