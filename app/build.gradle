@@ -36,6 +36,7 @@ android {
       zipAlignEnabled true
       shrinkResources false
       debuggable true
+      applicationIdSuffix ".release"
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.release
     }
@@ -45,6 +46,7 @@ android {
       zipAlignEnabled true
       shrinkResources false
       debuggable true
+      applicationIdSuffix ".debug"
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.debug
     }
@@ -71,6 +73,12 @@ android {
     baidu {}
     zhongdaws {}
     rskj {}
+    free {
+      applicationIdSuffix ".free"
+    }
+    pro {
+      applicationIdSuffix ".pro"
+    }
   }
 
   productFlavors.all { flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
@@ -91,7 +99,7 @@ dependencies {
   compile(name: 'zaf-sdk-1.6', ext: 'aar')
   //    compile(name: 'youyusdk-release', ext: 'aar')
   compile project(':consumerlibrary')
-  compile project(':lfrecyclerview')
+//  compile project(':lfrecyclerview')
   //    compile(name: 'consumerlibrary-release', ext: 'aar')
   //    compile(name: 'lfrecyclerview-release', ext: 'aar')
   compile 'com.zhy.base:fileprovider:1.0.0'

@@ -1,1 +1,1 @@
-include ':app',  ':consumerlibrary', ':lfrecyclerview'
+include ':app',  ':consumerlibrary'
